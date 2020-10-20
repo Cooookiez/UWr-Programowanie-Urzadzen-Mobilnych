@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Zad_01_01_CounterApp</string>
+    <string name="Hello_there">Hello there</string>
+    <string name="general_kenobi">general kenobi</string>
+    <string name="count_init_val">0</string>
+    <string name="reset">Reset</string>
+    <string name="countDown">-1</string>
+    <string name="countUp">+1</string>
+</resources>
