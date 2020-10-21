@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/first_operand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:inputType="numberDecimal"
+        android:hint="First operand"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:id="@+id/second_operand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:inputType="numberDecimal"
+        android:hint="Second operand"
+        android:layout_margin="8dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/operation_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="32sp"/>
+
+        <Button
+            android:id="@+id/operation_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="32sp"
+            android:layout_toEndOf="@id/operation_add"/>
+
+        <Button
+            android:id="@+id/operation_res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textSize="32sp"
+            android:layout_below="@id/operation_add"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/operation_res_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="32sp"/>
+
+
+</LinearLayout>
