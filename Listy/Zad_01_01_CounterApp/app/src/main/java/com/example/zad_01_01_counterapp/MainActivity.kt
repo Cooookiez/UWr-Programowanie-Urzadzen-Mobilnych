@@ -46,14 +46,14 @@ class MainActivity : Activity() {
             mShowCount!!.text = mCount.toString()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt("counter_state", mCount)
-    }
-
     fun resetCounter(view: View) {
         mCount = 0
         if (mShowCount != null)
             mShowCount!!.text = mCount.toString()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("counter_state", mCount)
     }
 }
