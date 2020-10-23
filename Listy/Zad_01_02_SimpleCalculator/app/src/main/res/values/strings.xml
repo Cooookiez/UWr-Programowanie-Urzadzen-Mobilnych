@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Zad_01_02_SimpleCalculator</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="tim">*</string>
+    <string name="div">/</string>
+    <string name="res">=</string>
+    <string name="first_operand">First operand</string>
+    <string name="second_operand">Second operand</string>
 </resources>

@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity() {
     private var mOperandFirstInput: EditText? = null
     private var mOperandSecondInput: EditText? = null
     private var mResult: TextView? = null
-    private var mBttAdd: Button? = null
-    private var mBttSub: Button? =  null
     private var mBttRes: Button? =  null
+    private var mBttOperationCur: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,33 +27,46 @@ class MainActivity : AppCompatActivity() {
         mResult = findViewById(R.id.operation_res_textView)
         mOperandFirstInput = findViewById(R.id.first_operand)
         mOperandSecondInput = findViewById(R.id.second_operand)
-        mBttAdd = findViewById(R.id.operation_add)
-        mBttSub = findViewById(R.id.operation_sub)
+        val mBttAdd: Button? = findViewById(R.id.operation_add)
+        val mBttSub: Button? = findViewById(R.id.operation_sub)
+        val mBttTim: Button? = findViewById(R.id.operation_tim)
+        val mBttDiv: Button? = findViewById(R.id.operation_div)
         mBttRes = findViewById(R.id.operation_res)
+        mBttOperationCur = findViewById(R.id.operation_cur)
 
-        Log.d("onCreate", "testy")
-
-        val mBttAddLis = mBttAdd
-        mBttAddLis?.setOnClickListener {
-            mOperator = Computation.Operator.ADD
-
-            Log.d("onCreate", "add")
+        if(savedInstanceState != null) {
+            mResult?.text = savedInstanceState.getString("mResult")
+            mBttOperationCur?.text = savedInstanceState.getString("mBttOperation_cur_str")
+            mOperator = savedInstanceState!!.getSerializable("mOperator") as Computation.Operator
         }
 
-        val mBttSubLis = mBttSub
-        mBttSubLis?.setOnClickListener {
+        mBttAdd?.setOnClickListener {
+            mOperator = Computation.Operator.ADD
+            showCurOperator(mBttAdd)
+        }
+        mBttSub?.setOnClickListener {
             mOperator = Computation.Operator.SUB
+            showCurOperator(mBttSub)
+        }
 
-            Log.d("onCreate", "sub")
+        mBttTim?.setOnClickListener {
+            mOperator = Computation.Operator.TIM
+            showCurOperator(mBttTim)
+        }
+        mBttDiv?.setOnClickListener {
+            mOperator = Computation.Operator.DIV
+            showCurOperator(mBttDiv)
         }
 
         val mBttResLis = mBttRes
         mBttResLis?.setOnClickListener {
-
-            Log.d("onCreate", "res")
             if(mOperator != null)
                 compute(mOperator!!)
         }
+    }
+
+    private fun showCurOperator(view: Button){
+        mBttOperationCur?.text = view.text
     }
 
     private companion object{
@@ -75,11 +87,20 @@ class MainActivity : AppCompatActivity() {
         var result: String = when(operator){
             Computation.Operator.ADD -> mCalc?.add(operandOne, operandTwo).toString()
             Computation.Operator.SUB -> mCalc?.sub(operandOne, operandTwo).toString()
+            Computation.Operator.TIM -> mCalc?.tim(operandOne, operandTwo).toString()
+            Computation.Operator.DIV -> mCalc?.div(operandOne, operandTwo).toString()
             else -> "SOME ERROR"
         }
 
         mResult?.text = result
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("mResult", mResult?.text.toString())
+        outState.putString("mBttOperation_cur_str", mBttOperationCur?.text.toString())
+        outState.putSerializable("mOperator", mOperator) // <- "Bundle" z Stackoverfflow
     }
 
 }

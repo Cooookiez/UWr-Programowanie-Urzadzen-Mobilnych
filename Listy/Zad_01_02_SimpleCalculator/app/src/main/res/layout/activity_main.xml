@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal">
 
     <EditText
         android:id="@+id/first_operand"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textSize="32sp"
         android:inputType="numberDecimal"
-        android:hint="First operand"
+        android:hint="@string/first_operand"
         android:layout_margin="8dp"/>
 
     <EditText
@@ -22,11 +23,12 @@
         android:layout_height="wrap_content"
         android:textSize="32sp"
         android:inputType="numberDecimal"
-        android:hint="Second operand"
+        android:hint="@string/second_operand"
         android:layout_margin="8dp"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center">
 
@@ -34,26 +36,63 @@
             android:id="@+id/operation_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="32sp"/>
+            android:text="@string/add"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/operation_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:layout_marginStart="8dp"
+            android:text="@string/sub"
             android:textSize="32sp"
-            android:layout_toEndOf="@id/operation_add"/>
+            app:layout_constraintStart_toEndOf="@id/operation_add"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/operation_tim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tim"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/operation_add" />
+
+        <Button
+            android:id="@+id/operation_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/div"
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@id/operation_tim"
+            app:layout_constraintTop_toBottomOf="@id/operation_sub" />
 
         <Button
             android:id="@+id/operation_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="="
+            android:layout_marginStart="8dp"
+            android:text="@string/res"
             android:textSize="32sp"
-            android:layout_below="@id/operation_add"/>
+            app:layout_constraintStart_toEndOf="@id/operation_div"
+            app:layout_constraintTop_toBottomOf="@id/operation_cur" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/operation_cur"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@+id/operation_sub"
+            app:layout_constraintEnd_toEndOf="@+id/operation_res"
+            app:layout_constraintStart_toEndOf="@+id/operation_sub"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/operation_res_textView"
