@@ -181,6 +181,7 @@
                 android:layout_weight="1"
                 android:text="@string/coma"
                 android:textSize="26sp"
+                android:onClick="onComa"
                 android:textStyle="bold"/>
 
         </LinearLayout>

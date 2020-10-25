@@ -69,7 +69,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onComa(viewL View) {
+    fun onComa(view: View) {
+        // check if u can add '.'
+
+        // is first char '-'? delete it
+        var value = inputOutputTextView.text.toString()
+        if (value.startsWith("-"))
+            value = value.removePrefix("-")
+
+        var numbers: List<String>? = null
+        numbers = when {
+            value.contains("+") -> value.split("+")
+            value.contains("-") -> value.split("-")
+            value.contains("*") -> value.split("*")
+            value.contains("/") -> value.split("/")
+            else -> value.split("+")
+        }
+        var lastNumber = numbers.last()
+
+        // does last number contain '.' if no, add
+        if (!lastNumber.contains("."))
+            inputOutputTextView.append(".")
 
     }
 
