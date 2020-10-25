@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Zad_02_01_TwoActivities</string>
+    <string name="send">SEND</string>
+    <string name="message">Message</string>
+    <string name="answer">ANSWER</string>
+    <string name="reply_recived">Reply Recived</string>
+    <string name="message_recived">Message Recived</string>
+</resources>
