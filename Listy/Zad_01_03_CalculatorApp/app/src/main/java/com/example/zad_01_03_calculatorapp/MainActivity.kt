@@ -10,6 +10,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        inputOutputTextView.text = savedInstanceState?.getString("inputOutputTextView")
+
     }
 
     fun onClear(view: View) {
@@ -39,5 +42,10 @@ class MainActivity : AppCompatActivity() {
         if (value.contains("+")){
 
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("inputOutputTextView", inputOutputTextView.text.toString())
     }
 }
