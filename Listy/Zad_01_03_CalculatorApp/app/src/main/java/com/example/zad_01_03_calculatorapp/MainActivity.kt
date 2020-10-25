@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isOperatorExist (value: String): Boolean {
-        return if (value.startsWith("-")) {
-            false
-        } else {
-            ( value.contains("+") || value.contains("-") || value.contains("*") || value.contains("/") )
+        var valueTMP = value
+        if (valueTMP.startsWith("-")) {
+            valueTMP = valueTMP.removePrefix("-")
         }
+        return ( valueTMP.contains("+") || valueTMP.contains("-") || valueTMP.contains("*") || valueTMP.contains("/") )
     }
 
     fun onOperator(view: View) {
