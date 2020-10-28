@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Zad_02_05_PhysicsQuiz</string>
+    <string name="strTrue">True</string>
+    <string name="strFalse">False</string>
+    <string name="ansCorrect">Correct!</string>
+    <string name="ansIncorrect">Incorrect :/</string>
+    <string name="next">Next</string>
+    <string name="question1">Was relative theory created by Isaac Newton</string>
+    <string name="question2">Can a fire have a shadow?</string>
+    <string name="question3">Can air make shadows?</string>
+</resources>
