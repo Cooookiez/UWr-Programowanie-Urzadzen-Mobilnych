@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,12 +19,12 @@ class MainActivity : AppCompatActivity() {
         const val ADD_QUESTION = 3
     }
 
-    private val questionBank = arrayListOf(
+    private var questionBank = arrayListOf(
         Question("JEDEN TRUE", true),
         Question("DWA FALSE", false),
-//        Question("CZY FALSE", false),
-//        Question("CZTERY TRUE", true),
-//        Question("PIĘĆ FALSE", false),
+        Question("CZY FALSE", false),
+        Question("CZTERY TRUE", true),
+        Question("PIĘĆ FALSE", false),
     )
 
     private var curIndex: Int = 0
@@ -32,10 +33,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (savedInstanceState != null) {
+            curIndex = savedInstanceState.getInt("curIndex")
+            val numberOfQuestions: Int = savedInstanceState.getInt("numberOfQuestions")
+            var questionBankTMP = arrayListOf<Question>()
+            for (i in 0 until numberOfQuestions) {
+                questionBankTMP.add(savedInstanceState.getParcelable<Question>("questionBank_$i") as Question)
+            }
+            questionBank = questionBankTMP
+            updateQuestion()
+        }
+
         updateQuestion()
 
         btnOdpTrue.setOnClickListener { checkAnswer(true) }
-
         btnOdpFalse.setOnClickListener { checkAnswer(false) }
 
         btnCheat.setOnClickListener {
@@ -152,6 +163,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         updateQuestion()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("curIndex", curIndex)
+        outState.putInt("numberOfQuestions", questionBank.size)
+        for(i in 0 until questionBank.size) {
+            outState.putParcelable("questionBank_$i", questionBank[i])
+        }
     }
 
 }

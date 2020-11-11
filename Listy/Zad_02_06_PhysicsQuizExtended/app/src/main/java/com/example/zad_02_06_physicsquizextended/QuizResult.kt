@@ -20,9 +20,17 @@ class QuizResult : AppCompatActivity() {
     private var questionBank = arrayListOf<Question>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_result)
+
+        if (savedInstanceState != null) {
+            numberOfQuestion = savedInstanceState.getInt("numberOfQuestion")
+            val questionBankTMP = arrayListOf<Question>()
+            for (i in 0 until numberOfQuestion) {
+                questionBankTMP.add(savedInstanceState.getParcelable<Question>("questionBank_$i") as Question)
+            }
+            questionBank = questionBankTMP
+        }
 
         numberOfQuestion = intent.getIntExtra("numberOfQuestions", 0)
         for (i in 0 until numberOfQuestion) {
@@ -32,7 +40,6 @@ class QuizResult : AppCompatActivity() {
         countResult()
 
         btnReset.setOnClickListener {
-            Log.d("jakiesRzeczy", "dd")
             val replyIntent: Intent = Intent()
             replyIntent.putExtra(EXTRA_RESET, true)
             setResult(RESULT_OK, replyIntent)
@@ -65,7 +72,15 @@ class QuizResult : AppCompatActivity() {
         numberOfCheatedAnswers.text = "$numberOfCheatedQuestions razy"
     }
 
-    override fun onBackPressed() {
+    override fun onBackPressed() { // by nie można się było cować
 //        super.onBackPressed()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("numberOfQuestion", numberOfQuestion)
+        for(i in 0 until questionBank.size) {
+            outState.putParcelable("questionBank_$i", questionBank[i])
+        }
     }
 }
