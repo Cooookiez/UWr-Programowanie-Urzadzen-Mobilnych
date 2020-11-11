@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -85,6 +87,13 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, ADD_QUESTION)
         }
 
+        btnShowCorrectAnswer.setOnClickListener {
+            val odp: String = "Poprawna odpowiedź: " + questionBank[curIndex].getAnswer().toString()
+            var toast = Toast.makeText(this, odp, Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.TOP, 0, 256)
+            toast.show()
+        }
+
     }
 
     private fun checkAnswer(usrAns: Boolean) {
@@ -108,9 +117,13 @@ class MainActivity : AppCompatActivity() {
         if (questionBank[curIndex].getAnswered()!!) {
             btnOdpFalse.visibility = View.INVISIBLE
             btnOdpTrue.visibility = View.INVISIBLE
+            btnShowCorrectAnswer.visibility = View.VISIBLE
+            answerTips.visibility = View.INVISIBLE
         } else {
             btnOdpFalse.visibility = View.VISIBLE
             btnOdpTrue.visibility = View.VISIBLE
+            btnShowCorrectAnswer.visibility = View.INVISIBLE
+            answerTips.visibility = View.VISIBLE
         }
     }
 

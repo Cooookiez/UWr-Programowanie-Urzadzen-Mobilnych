@@ -67,9 +67,9 @@ class QuizResult : AppCompatActivity() {
         }
         percent -= subPercent
 
-        result.text = "$percent%"
-        numberOfCorrectAnswers.text = "$numberOCorrectQuestions / $numberOfQuestions"
-        numberOfCheatedAnswers.text = "$numberOfCheatedQuestions razy"
+        result.text = "${percent.toInt()}%"
+        numberOfCorrectAnswers.text = "${numberOCorrectQuestions.toInt()} / ${numberOfQuestions.toInt()}"
+        numberOfCheatedAnswers.text = "${numberOfCheatedQuestions.toInt()} razy"
     }
 
     override fun onBackPressed() { // by nie można się było cować

@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".AddQuestion"></activity>
-        <activity android:name=".QuizResult" />
-        <activity android:name=".Cheater" />
+        <activity
+            android:name=".QuizResult"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Cheater"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
