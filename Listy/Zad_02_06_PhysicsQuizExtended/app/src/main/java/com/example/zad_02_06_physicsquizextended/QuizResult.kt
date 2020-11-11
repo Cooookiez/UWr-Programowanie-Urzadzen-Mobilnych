@@ -4,12 +4,17 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_quiz_result.*
 import java.lang.Math.round
 
 
 class QuizResult : AppCompatActivity() {
+
+    companion object {
+        const val EXTRA_RESET: String = "com.example.zad_02_06_PhysicsQuizExtended.extra.RESET"
+    }
 
     private var numberOfQuestion = 0
     private var questionBank = arrayListOf<Question>()
@@ -27,7 +32,11 @@ class QuizResult : AppCompatActivity() {
         countResult()
 
         btnReset.setOnClickListener {
-            System.exit(0)
+            Log.d("jakiesRzeczy", "dd")
+            val replyIntent: Intent = Intent()
+            replyIntent.putExtra(EXTRA_RESET, true)
+            setResult(RESULT_OK, replyIntent)
+            finish()
         }
 
     }
@@ -44,7 +53,7 @@ class QuizResult : AppCompatActivity() {
             if (questionBank[i].getCheated()!!) { numberOfCheatedQuestions++ }
         }
 
-        var percent = round((numberOCorrectQuestions / numberOfQuestions * 100).toDouble()).toInt()
+        var percent = round((numberOCorrectQuestions / numberOfQuestions * 100).toDouble())
         var subPercent = 15 * numberOfCheatedQuestions
         if (subPercent >= 100) {
             subPercent = 100

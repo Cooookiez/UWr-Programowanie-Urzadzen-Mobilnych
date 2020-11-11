@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
     private val questionBank = arrayListOf(
         Question("JEDEN TRUE", true),
         Question("DWA FALSE", false),
-        Question("CZY FALSE", false),
-        Question("CZTERY TRUE", true),
-        Question("PIĘĆ FALSE", false),
+//        Question("CZY FALSE", false),
+//        Question("CZTERY TRUE", true),
+//        Question("PIĘĆ FALSE", false),
     )
 
     private var curIndex: Int = 0
@@ -89,6 +89,10 @@ class MainActivity : AppCompatActivity() {
         questionTextShow.text = questionBank[curIndex].getText()
         questionCurMaxNumber.text = (curIndex+1).toString() + " / " + questionBank.size.toString()
 
+        if (isEveryQuestionAnswered()) {
+            showQuizResult()
+        }
+
         // buttons visibility
         if (questionBank[curIndex].getAnswered()!!) {
             btnOdpFalse.visibility = View.INVISIBLE
@@ -96,10 +100,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             btnOdpFalse.visibility = View.VISIBLE
             btnOdpTrue.visibility = View.VISIBLE
-        }
-
-        if (isEveryQuestionAnswered()) {
-            showQuizResult()
         }
     }
 
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         for (i in questionBank.indices){
             intent.putExtra("questionBank_$i", questionBank[i])
         }
-        startActivity(intent)
+        startActivityForResult(intent, RESULT)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -135,7 +135,13 @@ class MainActivity : AppCompatActivity() {
                 if (cheated != null) { questionBank[curIndex].setCheated(cheated) }
             }
             RESULT -> {
-
+                val reset = data?.getBooleanExtra(QuizResult.EXTRA_RESET, false)
+                if (reset == true) {
+                    Log.d("jakiesRzeczy", "if")
+                    for(i in 0 until questionBank.size) {
+                        questionBank[i].reset()
+                    }
+                }
             }
             ADD_QUESTION -> {
                 val newQuestion = data?.getParcelableExtra<Question>(EXTRA_ADD_QUESTION)

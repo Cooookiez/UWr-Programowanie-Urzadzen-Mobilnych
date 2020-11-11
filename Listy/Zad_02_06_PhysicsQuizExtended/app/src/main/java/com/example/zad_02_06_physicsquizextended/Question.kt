@@ -27,6 +27,12 @@ data class Question(private var text: String?,
     fun setCheated(cheated: Boolean) { this.cheated = cheated }
     fun setCorrectAnswer(correctAns: Boolean) {this.correctAns = correctAns}
 
+    fun reset() {
+        this.answered = false
+        this.correctAns = false
+        this.cheated = false
+    }
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(text)
         parcel.writeValue(answer)
