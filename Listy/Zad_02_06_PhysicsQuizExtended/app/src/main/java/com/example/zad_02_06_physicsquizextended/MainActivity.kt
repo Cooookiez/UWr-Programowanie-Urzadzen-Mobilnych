@@ -1,6 +1,7 @@
 package com.example.zad_02_06_physicsquizextended
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,10 +17,10 @@ class MainActivity : AppCompatActivity() {
 
     private val questionBank = listOf(
         Question("JEDEN TRUE", true),
-//        Question("DWA FALSE", false),
-//        Question("CZY FALSE", false),
-//        Question("CZTERY TRUE", true),
-//        Question("PIĘĆ FALSE", false),
+        Question("DWA FALSE", false),
+        Question("CZY FALSE", false),
+        Question("CZTERY TRUE", true),
+        Question("PIĘĆ FALSE", false),
     )
 
     private var curIndex: Int = 0
@@ -51,6 +52,18 @@ class MainActivity : AppCompatActivity() {
                 curIndex = questionBank.size - 1
             }
             updateQuestion()
+        }
+
+        btnSearchWeb.setOnClickListener {
+
+            val url: String = "https://www.google.com/search?q=" + questionBank[curIndex].getText()
+            val webpage: Uri = Uri.parse(url)
+
+            val intent: Intent = Intent(Intent.ACTION_VIEW, webpage)
+
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent)
+            }
         }
 
     }

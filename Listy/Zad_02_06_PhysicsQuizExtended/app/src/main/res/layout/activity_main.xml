@@ -59,10 +59,24 @@
         android:layout_height="wrap_content"
         android:text="@string/questionCurMaxNumber" />
 
-    <Button
-        android:id="@+id/btnCheat"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnCheat"/>
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnCheat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnCheat"/>
+
+        <Button
+            android:id="@+id/btnSearchWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search web"/>
+
+    </LinearLayout>
 
 </LinearLayout>
