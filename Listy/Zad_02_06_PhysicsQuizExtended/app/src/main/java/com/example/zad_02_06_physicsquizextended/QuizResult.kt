@@ -43,9 +43,9 @@ class QuizResult : AppCompatActivity() {
 
     private fun countResult() {
 
-        var numberOfQuestions = 0
-        var numberOCorrectQuestions = 0
-        var numberOfCheatedQuestions = 0
+        var numberOfQuestions = 0.0
+        var numberOCorrectQuestions = 0.0
+        var numberOfCheatedQuestions = 0.0
 
         for (i in 0 until questionBank.size) {
             numberOfQuestions++
@@ -53,10 +53,10 @@ class QuizResult : AppCompatActivity() {
             if (questionBank[i].getCheated()!!) { numberOfCheatedQuestions++ }
         }
 
-        var percent = round((numberOCorrectQuestions / numberOfQuestions * 100).toDouble())
+        var percent = round((numberOCorrectQuestions / numberOfQuestions * 100).toDouble()).toDouble()
         var subPercent = 15 * numberOfCheatedQuestions
         if (subPercent >= 100) {
-            subPercent = 100
+            subPercent = 100.0
         }
         percent -= subPercent
 
