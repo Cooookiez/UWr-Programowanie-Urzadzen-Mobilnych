@@ -12,10 +12,13 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_QUESTION: String = "com.example.zad_02_06_PhysicsQuizExtended.extra.QUESTION"
+        const val EXTRA_ADD_QUESTION: String = "com.example.zad_02_06_PhysicsQuizExtended.extra.ADD_QUESTION"
         const val CHEATED_ANSWER = 1
+        const val RESULT = 2
+        const val ADD_QUESTION = 3
     }
 
-    private val questionBank = listOf(
+    private val questionBank = arrayListOf(
         Question("JEDEN TRUE", true),
         Question("DWA FALSE", false),
         Question("CZY FALSE", false),
@@ -64,6 +67,11 @@ class MainActivity : AppCompatActivity() {
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent)
             }
+        }
+
+        addQuestion.setOnClickListener {
+            val intent: Intent = Intent(this, AddQuestion::class.java)
+            startActivityForResult(intent, ADD_QUESTION)
         }
 
     }
@@ -119,12 +127,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val replyQuestion = data?.getParcelableExtra<Question>(EXTRA_QUESTION)
 
-        val cheated = replyQuestion?.getCheated()
+        when (requestCode) {
+            CHEATED_ANSWER -> {
+                val replyQuestion = data?.getParcelableExtra<Question>(EXTRA_QUESTION)
+                val cheated = replyQuestion?.getCheated()
+                if (cheated != null) { questionBank[curIndex].setCheated(cheated) }
+            }
+            RESULT -> {
 
-        if (cheated != null) {
-            questionBank[curIndex].setCheated(cheated)
+            }
+            ADD_QUESTION -> {
+                val newQuestion = data?.getParcelableExtra<Question>(EXTRA_ADD_QUESTION)
+                if (newQuestion != null) {
+                    questionBank.add(newQuestion)
+                }
+            }
         }
 
         updateQuestion()

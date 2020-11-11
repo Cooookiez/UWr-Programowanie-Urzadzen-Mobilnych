@@ -9,6 +9,11 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
         android:id="@+id/questionTextShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,8 +80,19 @@
             android:id="@+id/btnSearchWeb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search web"/>
+            android:text="@string/search_web"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/addQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_question"/>
 
 </LinearLayout>

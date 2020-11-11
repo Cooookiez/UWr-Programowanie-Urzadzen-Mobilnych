@@ -38,7 +38,6 @@ class Cheater : AppCompatActivity() {
 
     override fun onBackPressed() {
         val replyIntent: Intent = Intent()
-
         replyIntent.putExtra(MainActivity.EXTRA_QUESTION, question)
         setResult(RESULT_OK, replyIntent)
         super.onBackPressed()

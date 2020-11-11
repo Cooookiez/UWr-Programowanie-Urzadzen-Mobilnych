@@ -13,4 +13,6 @@
     <string name="previous">Previous</string>
     <string name="cheatedOdp">\??????</string>
     <string name="btnShowAns">Show Correct Answer</string>
+    <string name="search_web">Search web</string>
+    <string name="dodaj">Dodaj</string>
 </resources>
