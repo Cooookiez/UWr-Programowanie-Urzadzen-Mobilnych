@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,10 +16,10 @@ class MainActivity : AppCompatActivity() {
 
     private val questionBank = listOf(
         Question("JEDEN TRUE", true),
-        Question("DWA FALSE", false),
-        Question("CZY FALSE", false),
-        Question("CZTERY TRUE", true),
-        Question("PIĘĆ FALSE", false),
+//        Question("DWA FALSE", false),
+//        Question("CZY FALSE", false),
+//        Question("CZTERY TRUE", true),
+//        Question("PIĘĆ FALSE", false),
     )
 
     private var curIndex: Int = 0
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         btnOdpFalse.setOnClickListener { checkAnswer(false) }
 
         btnCheat.setOnClickListener {
-            var intent: Intent = Intent(this, Cheater::class.java)
+            val intent: Intent = Intent(this, Cheater::class.java)
             intent.putExtra(EXTRA_QUESTION, questionBank[curIndex])
             startActivityForResult(intent, CHEATED_ANSWER)
         }
@@ -57,11 +58,50 @@ class MainActivity : AppCompatActivity() {
     private fun checkAnswer(usrAns: Boolean) {
         val correctAns = questionBank[curIndex].getAnswer()
         questionBank[curIndex].setAnswered(true)
+        if (usrAns == questionBank[curIndex].getAnswer()) {
+            questionBank[curIndex].setCorrectAnswer(true)
+        }
+        updateQuestion()
     }
 
     private fun updateQuestion() {
         questionTextShow.text = questionBank[curIndex].getText()
-        questionCurMaxNumber.text = questionBank[curIndex].getCheated().toString()
+        questionCurMaxNumber.text = (curIndex+1).toString() + " / " + questionBank.size.toString()
+
+        // buttons visibility
+        if (questionBank[curIndex].getAnswered()!!) {
+            btnOdpFalse.visibility = View.INVISIBLE
+            btnOdpTrue.visibility = View.INVISIBLE
+        } else {
+            btnOdpFalse.visibility = View.VISIBLE
+            btnOdpTrue.visibility = View.VISIBLE
+        }
+
+        if (isEveryQuestionAnswered()) {
+            showQuizResult()
+        }
+    }
+
+    private fun isEveryQuestionAnswered(): Boolean {
+        var everyQuestionAnswered = true
+
+        for(i in questionBank.indices) {
+            if (!questionBank[i].getAnswered()!!) {
+                everyQuestionAnswered = false
+                break
+            }
+        }
+
+        return everyQuestionAnswered
+    }
+
+    private fun showQuizResult() {
+        val intent: Intent = Intent(this, QuizResult::class.java)
+        intent.putExtra("numberOfQuestions", questionBank.size)
+        for (i in questionBank.indices){
+            intent.putExtra("questionBank_$i", questionBank[i])
+        }
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -57,7 +57,7 @@
         android:id="@+id/questionCurMaxNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/questionCurMaxNumber"/>
+        android:text="@string/questionCurMaxNumber" />
 
     <Button
         android:id="@+id/btnCheat"
