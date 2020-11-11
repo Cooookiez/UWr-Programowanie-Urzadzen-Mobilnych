@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Zad_02_06_PhysicsQuizExtended</string>
+    <string name="app_name">Physics Quiz</string>
+    <string name="questionText">Pytanie</string>
+    <string name="btnOdpTrue">True</string>
+    <string name="btnOdpFalse">False</string>
+    <string name="questionCurMaxNumber">2/6</string>
+    <string name="btnPrev">⬅️ Prev</string>
+    <string name="btnNext">Next ➡️</string>
+    <string name="btnCheat">Cheat</string>
+    <string name="add_question">Add question</string>
+    <string name="title_activity_cheater">cheater</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="cheatedOdp">\??????</string>
+    <string name="btnShowAns">Show Correct Answer</string>
 </resources>
