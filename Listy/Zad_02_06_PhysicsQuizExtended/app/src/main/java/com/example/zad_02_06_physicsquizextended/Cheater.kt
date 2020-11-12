@@ -79,4 +79,9 @@ class Cheater : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        saveToGoBack()
+        super.onBackPressed()
+    }
+
 }
