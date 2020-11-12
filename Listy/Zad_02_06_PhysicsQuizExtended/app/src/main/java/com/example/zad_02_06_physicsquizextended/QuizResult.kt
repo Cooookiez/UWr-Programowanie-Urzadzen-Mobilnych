@@ -1,7 +1,5 @@
 package com.example.zad_02_06_physicsquizextended
 
-import android.app.AlarmManager
-import android.app.PendingIntent
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +21,11 @@ class QuizResult : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_result)
 
+        numberOfQuestion = intent.getIntExtra("numberOfQuestions", 0)
+        for (i in 0 until numberOfQuestion) {
+            questionBank.add(intent.getParcelableExtra("questionBank_$i")!!)
+        }
+
         if (savedInstanceState != null) {
             numberOfQuestion = savedInstanceState.getInt("numberOfQuestion")
             val questionBankTMP = arrayListOf<Question>()
@@ -30,11 +33,6 @@ class QuizResult : AppCompatActivity() {
                 questionBankTMP.add(savedInstanceState.getParcelable<Question>("questionBank_$i") as Question)
             }
             questionBank = questionBankTMP
-        }
-
-        numberOfQuestion = intent.getIntExtra("numberOfQuestions", 0)
-        for (i in 0 until numberOfQuestion) {
-            questionBank.add(intent.getParcelableExtra("questionBank_$i")!!)
         }
 
         countResult()
@@ -67,14 +65,14 @@ class QuizResult : AppCompatActivity() {
         }
         percent -= subPercent
 
+        if (percent < 0.0) percent = 0.0
+
         result.text = "${percent.toInt()}%"
         numberOfCorrectAnswers.text = "${numberOCorrectQuestions.toInt()} / ${numberOfQuestions.toInt()}"
         numberOfCheatedAnswers.text = "${numberOfCheatedQuestions.toInt()} razy"
     }
 
-    override fun onBackPressed() { // by nie można się było cować
-//        super.onBackPressed()
-    }
+    override fun onBackPressed() {} // by nie można się było cować
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)

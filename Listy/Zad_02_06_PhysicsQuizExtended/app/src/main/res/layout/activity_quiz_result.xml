@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Uzyskano"
+        android:text="@string/uzyskano"
         android:textSize="32sp"
         android:textAlignment="center"/>
 
@@ -20,7 +20,6 @@
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1%"
         android:textStyle="bold"
         android:textSize="128sp"
         android:textAlignment="center"/>
@@ -34,14 +33,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Poprawnych opdowiedzi: "
+            android:text="@string/poprawnych_opdowiedzi"
             android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/numberOfCorrectAnswers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11/22"
             android:textStyle="bold"
             android:textSize="16sp"/>
 
@@ -56,14 +54,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oszukano: "
+            android:text="@string/Cheated"
             android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/numberOfCheatedAnswers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11 razy"
             android:textStyle="bold"
             android:textSize="16sp"/>
 
@@ -79,6 +76,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="Reset"/>
+        android:text="@string/reset"/>
 
 </LinearLayout>

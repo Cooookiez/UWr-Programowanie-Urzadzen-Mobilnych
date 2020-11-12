@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var questionBank = arrayListOf(
-        Question("JEDEN TRUE", true),
-        Question("DWA FALSE", false),
-        Question("CZY FALSE", false),
-        Question("CZTERY TRUE", true),
-        Question("PIĘĆ FALSE", false),
+        Question("Earth is flat", false),
+        Question("Fire has shadow", false),
+        Question("Black is effect of cobain all colors", false),
+        Question("There is no complete vacuum in space", true),
+        Question("Earth is in centaur of solar system", false),
     )
 
     private var curIndex: Int = 0
@@ -54,6 +54,10 @@ class MainActivity : AppCompatActivity() {
         btnCheat.setOnClickListener {
             val intent: Intent = Intent(this, Cheater::class.java)
             intent.putExtra(EXTRA_QUESTION, questionBank[curIndex])
+            intent.putExtra("numberOfQuestions", questionBank.size)
+            for (i in questionBank.indices){
+                intent.putExtra("questionBank_$i", questionBank[i])
+            }
             startActivityForResult(intent, CHEATED_ANSWER)
         }
 
@@ -99,7 +103,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkAnswer(usrAns: Boolean) {
         val correctAns = questionBank[curIndex].getAnswer()
         questionBank[curIndex].setAnswered(true)
-        if (usrAns == questionBank[curIndex].getAnswer()) {
+        if (usrAns == correctAns) {
             questionBank[curIndex].setCorrectAnswer(true)
         }
         updateQuestion()
@@ -166,6 +170,7 @@ class MainActivity : AppCompatActivity() {
                         questionBank[i].reset()
                     }
                 }
+                curIndex = 0
             }
             ADD_QUESTION -> {
                 val newQuestion = data?.getParcelableExtra<Question>(EXTRA_ADD_QUESTION)
