@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="#363A43"
+        android:textSize="22sp"
+        android:text="QUESTION"/>
+
+    <ImageView
+        android:id="@+id/imageViewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="image"
+        android:src="@drawable/ic_kiritimati_flag" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:max="10"
+            android:progress="0"/>
+
+        <TextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:text="0/10"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewAnswerOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_answer_shape"
+        android:gravity="center"
+        android:padding="13dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="HAHAHA"/>
+
+    <TextView
+        android:id="@+id/textViewAnswerTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_answer_shape"
+        android:gravity="center"
+        android:padding="13dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="HAHAHAHAHA"/>
+
+    <TextView
+        android:id="@+id/textViewAnswerThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_answer_shape"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="HAHAHAHAHAHAHA"/>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@color/design_default_color_primary"
+        android:text="SUBMIT"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:padding="12dp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
