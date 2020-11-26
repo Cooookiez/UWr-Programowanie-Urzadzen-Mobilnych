@@ -9,4 +9,38 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="intro_text">WFiA</string>
+    <string name="experimental">Experimental Physics</string>
+    <string name="theoretical">Theoretical Physics</string>
+    <string name="econo_physics">Econo-Physics</string>
+    <string name="computer_physics">Computer Physics</string>
+    <string name="issp">ISSP</string>
+    <string name="teaching_physics">Teaching Physics</string>
+    <string name="event">EVENT</string>
+    <string name="name_label_text">Name:</string>
+    <string name="enter_name_hint">Enter your name</string>
+    <string name="phone_label_string">Phone</string>
+    <string name="enter_phone_hint">Phone number</string>
+    <string name="note_label_text">Extra Notes</string>
+    <string name="enter_note_hint">Notes</string>
+    <string name="choose_delivery_method">Choose type of the event</string>
+    <string name="remote">Remote</string>
+    <string name="next_day_ground_delivery">Hybrid</string>
+    <string name="stream">Stream</string>
+    <string name="constact">Contact</string>
+    <string name="evnt">Event</string>
+    <string name="status">Status</string>
+    <string name="favorites">Favorites</string>
+    <string-array name="labels_array">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date">Date of the event:</string>
+    <string name="time">Event starts at</string>
+    <string name="enter_time">Enter time</string>
 </resources>
