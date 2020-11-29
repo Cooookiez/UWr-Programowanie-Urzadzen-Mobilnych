@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:spanCount="1"/>
+        app:spanCount="2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

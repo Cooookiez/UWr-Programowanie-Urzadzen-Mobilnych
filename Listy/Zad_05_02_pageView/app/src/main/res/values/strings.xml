@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Zad_05_02_pageView</string>
+
+    <string name="zos_stu">Be our Student</string>
+    <string name="s_astr">Astronomy</string>
+    <string name="s_fiz">Physics</string>
+    <string name="s_inf">Join.IT</string>
+    <string name="sz_dok">PhD Student</string>
+    <string name="kontakt">Call me :*</string>
+
 </resources>
