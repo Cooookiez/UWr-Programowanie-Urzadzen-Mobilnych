@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StudentCrimeApp</string>
+    <string name="title">Title</string>
+    <string name="enter_a_title">Enter a title</string>
+    <string name="details">Details</string>
+    <string name="crime_solved">Crime solved</string>
+</resources>
