@@ -13,6 +13,11 @@ class CrimeListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+    }
+
+    private val crimeItemListener = CrimesAdapter.OnClickListener{
+
     }
 
     override fun onCreateView(
@@ -23,6 +28,13 @@ class CrimeListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_crime_list, container, false)
         crimeRecyclerView = view.findViewById(R.id.recycler_view) as RecyclerView
         crimeRecyclerView.layoutManager = LinearLayoutManager(context)
+
+        val crimeList: List<Crime> = CrimeLab.getCrimes()
+        val recyclerView: RecyclerView = view!!.findViewById(R.id.recycler_view) as RecyclerView
+
+        val adapter = CrimesAdapter(crimeList, crimeItemListener)
+        recyclerView.adapter = adapter
+
         return view
     }
 }
