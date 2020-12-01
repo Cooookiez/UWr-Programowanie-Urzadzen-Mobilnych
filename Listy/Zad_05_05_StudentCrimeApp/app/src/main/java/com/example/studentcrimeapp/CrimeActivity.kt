@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import java.util.*
@@ -24,9 +25,5 @@ class CrimeActivity : AppCompatActivity() {
         viewPager2.adapter = viewPageAdapter
         viewPager2.setCurrentItem(position, false)
 
-    }
-    
-    private fun getPositionFromID(id: UUID, y: Any): Unit {
-        
     }
 }

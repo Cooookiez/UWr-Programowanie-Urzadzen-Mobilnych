@@ -3,6 +3,7 @@ package com.example.studentcrimeapp
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,9 @@ class CrimeFragment : Fragment() {
     private lateinit var titleField: EditText
     private lateinit var dateButton: Button
     private lateinit var solvedCheckBox: CheckBox
+    private lateinit var btn_Delete: Button
+    private lateinit var btn_GoToFirst: Button
+    private lateinit var btn_GoToLast: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +31,13 @@ class CrimeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_crime, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_crime, container, false)
         titleField = view.findViewById(R.id.crime_title) as EditText
         dateButton = view.findViewById(R.id.crime_date) as Button
         solvedCheckBox = view.findViewById(R.id.crime_solved) as CheckBox
+        btn_Delete = view.findViewById(R.id.btnDelete) as Button
+        btn_GoToFirst = view.findViewById(R.id.bnGoToFirst) as Button
+        btn_GoToLast = view.findViewById(R.id.bnGoToLast) as Button
 
         dateButton.apply {
             text = crime.date.toString()
@@ -55,6 +62,9 @@ class CrimeFragment : Fragment() {
         }
 
         titleField.addTextChangedListener(titleWatcher)
+        btn_Delete.setOnClickListener {
+            Log.d("spoti", "Elo")
+        }
         solvedCheckBox.apply {
             setOnCheckedChangeListener {
                 _,

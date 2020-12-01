@@ -55,8 +55,8 @@
     <ImageView
         android:id="@+id/crimeSolved"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:src="@drawable/ic_baseline_warning_24" />
 
 </LinearLayout>
