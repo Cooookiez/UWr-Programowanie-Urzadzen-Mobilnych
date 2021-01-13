@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Zad_08_03_Zadanie_3</string>
+    <string name="compute_factorial">COMPUTE FACTORIAL</string>
+    <string name="factorial">factorial of ...</string>
+</resources>
