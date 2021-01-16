@@ -9,10 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private companion object {
-        // z tego co wiem taki zapis
-        // równa się zapisowi
-        // private static final int COUNT_UP_TO = 10
-        // z Javy
         const val COUNT_UP_TO: Int = 10
     }
 
