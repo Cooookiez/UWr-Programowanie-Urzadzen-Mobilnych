@@ -12,7 +12,9 @@ class Crime {
         this.id = UUID.randomUUID()
         this.date = Date()
     }
-    constructor(id: UUID) { this.id = id }
+    constructor(id: UUID) {
+        this.id = id
+    }
 
     fun setTitle(title: String) { this.title = title}
     fun getTitle(): String { return this.title }

@@ -11,10 +11,19 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingBtnReportACrime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_baseline_add_24"
+        android:contentDescription="@string/report_a_new_crime"
+        android:layout_margin="16dp"/>
+
     <Button
         android:id="@+id/btnReportACrime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REPORT A CRIME"/>
+        android:text="@string/report_a_new_crime"/>
 
 </LinearLayout>
