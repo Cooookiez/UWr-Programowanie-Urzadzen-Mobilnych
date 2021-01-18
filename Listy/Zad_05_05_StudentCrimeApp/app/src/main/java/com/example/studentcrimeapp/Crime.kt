@@ -11,9 +11,8 @@ class Crime {
     constructor() {
         this.id = UUID.randomUUID()
         this.date = Date()
-    }
-    constructor(id: UUID) {
-        this.id = id
+        this.title = "Brand new crime"
+        this.bSolved = false
     }
 
     fun setTitle(title: String) { this.title = title}

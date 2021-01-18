@@ -3,6 +3,7 @@ package com.example.studentcrimeapp
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,7 +57,19 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
         }
 
         holder.btnDelete.setOnClickListener {
-            CrimeLab.get(mContext)!!.getCrimes().drop(holder.adapterPosition)
+            Log.d("zaq1", "Delete BTN")
+            val a1 = CrimeLab.get(mContext)!!.getCrimes()
+//            val b = CrimeLab.get(mContext)!!.getCrimes().drop(holder.adapterPosition)
+            CrimeLab.get(mContext)!!.removeAtIndexOf(holder.adapterPosition)
+            val a2 = CrimeLab.get(mContext)!!.getCrimes()
+            Log.d("zaq1", "prenotify")
+            notifyDataSetChanged()
+            Log.d("zaq1", "notify")
+            val a3 = CrimeLab.get(mContext)!!.getCrimes()
+            Log.d("zaq1 a1", "$a1")
+            Log.d("zaq1 a2", "$a2")
+            Log.d("zaq1 a3", "$a3")
+//            Log.d("zaq1 b", "$b")
         }
 
     }

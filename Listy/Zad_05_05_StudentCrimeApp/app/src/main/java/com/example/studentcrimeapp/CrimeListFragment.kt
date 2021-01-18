@@ -15,7 +15,6 @@ class CrimeListFragment : Fragment() {
     private lateinit var mAdapter: CrimeRecyclerAdapter
 
     private lateinit var recyclerCrimeView: RecyclerView
-    private lateinit var btnReportACrime: Button
     private lateinit var floatingBtnReportACrime: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +28,8 @@ class CrimeListFragment : Fragment() {
     ): View? {
         val view: View =
             inflater.inflate(R.layout.fragment_crime_list, container, false)
-        this.btnReportACrime = view.findViewById(R.id.btnReportACrime)
-        this.btnReportACrime.setOnClickListener {
+        this.floatingBtnReportACrime = view.findViewById(R.id.floatingBtnReportACrime)
+        this.floatingBtnReportACrime.setOnClickListener {
             CrimeLab.get(inflater.context)!!.addEmpty()
             this.mAdapter.notifyDataSetChanged()
         }

@@ -7,6 +7,8 @@ import kotlin.random.Random
 
 class CrimeLab {
 
+    private var crimes = ArrayList<Crime>(0)
+
     companion object {
         private var crimeLab: CrimeLab? = null
         operator fun get(context: Context?): CrimeLab? {
@@ -15,13 +17,12 @@ class CrimeLab {
             return crimeLab
         }
     }
-    private var crimes = ArrayList<Crime>(0)
 
     constructor(context: Context) {
         this.crimes = ArrayList(0)
-        for (i in 0 until 100) {
+        for (i in 0 until 3) {
             val crime: Crime = Crime()
-            val bSolved: Boolean = i%2 == 0
+            val bSolved: Boolean = Random.nextInt(0, 2) % 2 == 0
             crime.setTitle("Crime no. $i")
             crime.setSolvedTo(bSolved)
             this.crimes.add(crime)
@@ -48,6 +49,10 @@ class CrimeLab {
             }
         }
         return -1
+    }
+
+    fun removeAtIndexOf(index: Int) {
+        this.crimes.removeAt(index)
     }
 
 }

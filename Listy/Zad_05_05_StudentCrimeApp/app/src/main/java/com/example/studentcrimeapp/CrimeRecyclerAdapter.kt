@@ -14,7 +14,7 @@ import org.w3c.dom.Text
 
 class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolder> {
 
-    private lateinit var mContext: Context
+    private var mContext: Context
 
     constructor(context: Context) {
         this.mContext = context
@@ -59,11 +59,11 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
 
     class ViewHolder : RecyclerView.ViewHolder {
 
-        lateinit var parent: LinearLayout
+        var parent: LinearLayout
 
-        lateinit var crimeTitle: TextView
-        lateinit var crimeDate: TextView
-        lateinit var crimeSolved: ImageView
+        var crimeTitle: TextView
+        var crimeDate: TextView
+        var crimeSolved: ImageView
 
         constructor(itemView: View) : super(itemView) {
             parent = itemView.findViewById(R.id.linearLayoutCrimesList)
