@@ -9,4 +9,6 @@
     <string name="delete">DELETE</string>
     <string name="first_element">First element</string>
     <string name="last_element">Last element</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
