@@ -2,7 +2,7 @@ package com.example.studentcrimeapp
 
 import androidx.fragment.app.Fragment
 
-class CrimeListActivity : ListFragmentActivity() {
+class CrimeListActivity : SingleFragmentActivity() {
     override fun createFragment(): Fragment {
         return CrimeListFragment()
     }

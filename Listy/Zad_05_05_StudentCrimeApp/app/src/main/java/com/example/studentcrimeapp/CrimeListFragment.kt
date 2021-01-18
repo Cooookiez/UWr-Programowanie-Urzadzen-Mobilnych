@@ -1,44 +1,24 @@
 package com.example.studentcrimeapp
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CrimeListFragment : Fragment() {
-    private lateinit var crimeRecyclerView: RecyclerView
+
+    private lateinit var mAdapter: CrimeRecyclerAdapter
+
+    private lateinit var recyclerCrimeView: RecyclerView
+    private lateinit var floatingBtnReportACrime: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-    }
-
-    private val crimeItemListener = CrimesAdapter.OnClickListener{
-        crime ->
-        val crimeList: List<Crime> = CrimeLab.getCrimes()
-        val position: Int = getCrimePositionFromID(crimeList, crime.id)
-        val intent = Intent(activity, CrimeActivity::class.java)
-        intent.putExtra("position", position)
-        activity?.startActivity(intent)
-    }
-
-    private fun getCrimePositionFromID(crimeList: List<Crime>, id: UUID) : Int {
-        var index: Int = 0
-        var found: Boolean = false
-        while (!found) {
-            if (crimeList[index].id == id) {
-                found = true
-            } else {
-                index++
-            }
-        }
-        return index
     }
 
     override fun onCreateView(
@@ -46,16 +26,24 @@ class CrimeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_crime_list, container, false)
-        crimeRecyclerView = view.findViewById(R.id.recycler_view) as RecyclerView
-        crimeRecyclerView.layoutManager = LinearLayoutManager(context)
-
-        val crimeList: List<Crime> = CrimeLab.getCrimes()
-        val recyclerView: RecyclerView = view!!.findViewById(R.id.recycler_view) as RecyclerView
-
-        val adapter = CrimesAdapter(crimeList, crimeItemListener)
-        recyclerView.adapter = adapter
+        val view: View =
+            inflater.inflate(R.layout.fragment_crime_list, container, false)
+        this.floatingBtnReportACrime = view.findViewById(R.id.floatingBtnReportACrime)
+        this.floatingBtnReportACrime.setOnClickListener {
+            CrimeLab.get(inflater.context)!!.addEmpty()
+            this.mAdapter.notifyDataSetChanged()
+        }
+        this.recyclerCrimeView = view.findViewById(R.id.recyclerCrimeView)
+        this.recyclerCrimeView.layoutManager = LinearLayoutManager(activity)
+        this.mAdapter = CrimeRecyclerAdapter(inflater.context)
+        this.recyclerCrimeView.adapter = this.mAdapter
 
         return view
     }
+
+    override fun onResume() {
+        super.onResume()
+        this.mAdapter.notifyItemChanged(CrimeFragment.quit)
+    }
+
 }
