@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">StudentCrimeApp</string>
+    <string name="title">Title</string>
+    <string name="enter_a_title">Enter a title</string>
+    <string name="details">Details</string>
+    <string name="crime_solved">Crime solved</string>
+    <string name="crimeTitle">Title:</string>
+    <string name="date">Date:</string>
+    <string name="delete">DELETE</string>
+    <string name="first_element">First element</string>
+    <string name="last_element">Last element</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="report_a_new_crime">REPORT A NEW CRIME</string>
+</resources>
