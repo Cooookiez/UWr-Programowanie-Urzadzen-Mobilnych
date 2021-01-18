@@ -3,7 +3,7 @@ package com.example.studentcrimeapp
 import java.util.*
 
 class Crime {
-    private lateinit var id: UUID
+    private var id: UUID
     private lateinit var title: String
     private lateinit var date: Date
     private var bSolved: Boolean = false

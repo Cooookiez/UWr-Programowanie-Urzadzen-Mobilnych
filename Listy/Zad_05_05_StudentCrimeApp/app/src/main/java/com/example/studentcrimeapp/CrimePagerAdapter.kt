@@ -14,13 +14,6 @@ import java.util.*
 
 class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
-    private companion object {
-        val DATE_DIALOG: String = "DATE"
-        val DATE_REQUEST: Int = 0
-        val TIME_DIALOG: String = "TIME"
-        val TIME_REQUEST: Int = 1
-    }
-
     private lateinit var mContext: Context
 
     constructor(context: Context) {
@@ -72,13 +65,13 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
     class ViewHolder : RecyclerView.ViewHolder {
 
-        lateinit var crime_title: EditText
-        lateinit var crime_date: Button
-        lateinit var crime_solved: CheckBox
-        lateinit var btnDelete: Button
+        var crime_title: EditText
+        var crime_date: Button
+        var crime_solved: CheckBox
+        var btnDelete: Button
 
         constructor(itemView: View) : super(itemView) {
-            crime_title = itemView.findViewById(R.id.crimeTitle)
+            crime_title = itemView.findViewById(R.id.crime_title)
             crime_date = itemView.findViewById(R.id.crime_date)
             crime_solved = itemView.findViewById(R.id.crime_solved)
             btnDelete = itemView.findViewById(R.id.btnDelete)
