@@ -11,31 +11,24 @@ import androidx.viewpager2.widget.ViewPager2
 import java.util.*
 
 class CrimeFragment : Fragment {
-    // TODO("Usunac, zostawilem by skopjowac z")
-//    private companion object {
-//        val DATE_DIALOG: String = "DATE"
-//        val DATE_REQUEST: Int = 0
-//        val TIME_DIALOG: String = "TIME"
-//        val TIME_REQUEST: Int = 1
-//    }
-
-    companion object {
-        var quit: Int? = null
-    }
 
     private lateinit var crimeViewPager: ViewPager2
     private lateinit var crime: Crime
     private lateinit var btnGoToFirst: Button
     private lateinit var btnGoToLast: Button
 
-    private lateinit var adapter: CrimePagerAdapter
-    private lateinit var mContext: Context
+    private var adapter: CrimePagerAdapter? = null
+    private var mContext: Context
+
+    companion object {
+        var quit: Int = 0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val bundle: Bundle? = arguments
         if (bundle != null) {
-            this.crime = CrimeLab.get(this.mContext).getValueById(UUID.fromString(bundle.getString("id")))
+            this.crime = CrimeLab.get(this.mContext)!!.getValueById(UUID.fromString(bundle.getString("id")))
         } else {
             this.crime = Crime()
         }
@@ -59,7 +52,7 @@ class CrimeFragment : Fragment {
             this.adapter = CrimePagerAdapter(inflater.context)
             this.crimeViewPager.adapter = this.adapter
             this.crimeViewPager.currentItem = CrimeLab
-                .get(inflater.context).getIndexById(this.crime.getId())
+                    .get(inflater.context)!!.getIndexById(this.crime.getId())
         }
 
         this.btnGoToFirst.setOnClickListener {
@@ -67,8 +60,8 @@ class CrimeFragment : Fragment {
         }
 
         this.btnGoToLast.setOnClickListener {
-            val index = CrimeLab.get(view.context).getCrimes().size
-            this.crimeViewPager.setCurrentItem(index-1, true)
+            val index = CrimeLab.get(view.context)?.getCrimes()!!.size
+            this.crimeViewPager.setCurrentItem(index - 1, true)
         }
 
         return view

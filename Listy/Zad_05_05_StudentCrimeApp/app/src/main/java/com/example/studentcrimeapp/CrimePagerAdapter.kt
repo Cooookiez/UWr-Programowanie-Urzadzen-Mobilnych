@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
@@ -40,9 +39,9 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
     override fun onBindViewHolder(holder: CrimePagerAdapter.ViewHolder, position: Int) {
 
-        val title: String = CrimeLab.get(mContext).getCrimes()[holder.adapterPosition].getTitle()
-        val date: Date = CrimeLab.get(mContext).getCrimes()[holder.adapterPosition].getDate()
-        val solved: Boolean = CrimeLab.get(mContext).getCrimes()[holder.adapterPosition].getSolved()
+        val title: String = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getTitle()
+        val date: Date = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getDate()
+        val solved: Boolean = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getSolved()
 
         holder.crime_title.setText(title)           // ni mam pojecia czemu tu nie dziala ".text = "
         holder.crime_date.text = date.toString()
@@ -53,23 +52,23 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                CrimeLab.get(mContext).getCrimes()[holder.adapterPosition].setTitle(p0.toString())
+                CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].setTitle(p0.toString())
             }
 
             override fun afterTextChanged(p0: Editable?) { }
         })
 
         holder.crime_solved.setOnCheckedChangeListener { _, isChecked ->
-            CrimeLab.get(mContext).getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
+            CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
         }
 
         holder.btnDelete.setOnClickListener {
-            CrimeLab.get(mContext).getCrimes().drop(holder.adapterPosition)
+            CrimeLab.get(mContext)!!.getCrimes().drop(holder.adapterPosition)
         }
 
     }
 
-    override fun getItemCount(): Int { return CrimeLab.get(mContext).getCrimes().size }
+    override fun getItemCount(): Int { return CrimeLab.get(mContext)!!.getCrimes().size }
 
     class ViewHolder : RecyclerView.ViewHolder {
 

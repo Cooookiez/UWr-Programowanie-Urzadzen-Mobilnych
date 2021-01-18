@@ -31,7 +31,7 @@ class CrimeListFragment : Fragment() {
             inflater.inflate(R.layout.fragment_crime_list, container, false)
         this.btnReportACrime = view.findViewById(R.id.btnReportACrime)
         this.btnReportACrime.setOnClickListener {
-            CrimeLab.get(inflater.context).addEmpty()
+            CrimeLab.get(inflater.context)!!.addEmpty()
             this.mAdapter.notifyDataSetChanged()
         }
         this.recyclerCrimeView = view.findViewById(R.id.recyclerCrimeView)
@@ -44,7 +44,7 @@ class CrimeListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        this.mAdapter.notifyItemChanged(CrimeFragment.quit!!)
+        this.mAdapter.notifyItemChanged(CrimeFragment.quit)
     }
 
 }

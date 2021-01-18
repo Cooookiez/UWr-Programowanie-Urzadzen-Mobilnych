@@ -32,10 +32,10 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
 
     override fun onBindViewHolder(holder: CrimeRecyclerAdapter.ViewHolder, position: Int) {
         holder.crimeTitle.text =
-            CrimeLab.get(this.mContext).getCrimes()[position].getTitle()
+            CrimeLab.get(this.mContext)!!.getCrimes()[position].getTitle()
         holder.crimeDate.text =
-            CrimeLab.get(this.mContext).getCrimes()[position].getDate().toString()
-        if (CrimeLab.get(this.mContext).getCrimes()[position].getSolved()) {
+            CrimeLab.get(this.mContext)!!.getCrimes()[position].getDate().toString()
+        if (CrimeLab.get(this.mContext)!!.getCrimes()[position].getSolved()) {
             holder.crimeSolved.visibility = View.INVISIBLE
         } else {
             holder.crimeSolved.visibility = View.VISIBLE
@@ -45,7 +45,7 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
             var fragment: CrimeFragment = CrimeFragment(this.mContext)
             var bundle: Bundle = Bundle()
             val id = CrimeLab
-                .get(this.mContext).getCrimes()[holder.adapterPosition]
+                    .get(this.mContext)!!.getCrimes()[holder.adapterPosition]
                 .getId().toString()
             bundle.putString("id", id)
             fragment.arguments = bundle
@@ -55,7 +55,7 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
         }
     }
 
-    override fun getItemCount(): Int { return CrimeLab.get(this.mContext).getCrimes().size }
+    override fun getItemCount(): Int { return CrimeLab.get(this.mContext)!!.getCrimes().size }
 
     class ViewHolder : RecyclerView.ViewHolder {
 

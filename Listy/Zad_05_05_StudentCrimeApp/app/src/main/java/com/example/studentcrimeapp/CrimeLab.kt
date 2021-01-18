@@ -8,21 +8,20 @@ import kotlin.random.Random
 class CrimeLab {
 
     companion object {
-        private lateinit var crimeLab: CrimeLab
-
-        fun get(context: Context): CrimeLab {
-            if (Companion.crimeLab == null) Companion.crimeLab = CrimeLab(context)
-            return Companion.crimeLab
+        private var crimeLab: CrimeLab? = null
+        operator fun get(context: Context?): CrimeLab? {
+            if (crimeLab == null)
+                crimeLab = CrimeLab(context!!)
+            return crimeLab
         }
     }
-
     private var crimes = ArrayList<Crime>(0)
 
     constructor(context: Context) {
         this.crimes = ArrayList(0)
         for (i in 0 until 100) {
             val crime: Crime = Crime()
-            val bSolved: Boolean = Random.nextInt(0, 1) == 0
+            val bSolved: Boolean = i%2 == 0
             crime.setTitle("Crime no. $i")
             crime.setSolvedTo(bSolved)
             this.crimes.add(crime)
