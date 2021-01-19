@@ -16,9 +16,11 @@ import java.util.*
 class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
     private lateinit var mContext: Context
+    private lateinit var mParent: CrimeFragment
 
-    constructor(context: Context) {
+    constructor(context: Context, parent: CrimeFragment) {
         this.mContext = context
+        this.mParent = parent
     }
 
     override fun onCreateViewHolder(

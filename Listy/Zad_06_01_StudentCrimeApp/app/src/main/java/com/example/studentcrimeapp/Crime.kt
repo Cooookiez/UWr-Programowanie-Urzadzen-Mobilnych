@@ -15,6 +15,13 @@ class Crime {
         this.bSolved = false
     }
 
+    constructor(id: UUID) {
+        this.id = id
+        this.date = Date()
+        this.title = "Brand new crime"
+        this.bSolved = false
+    }
+
     fun setTitle(title: String) { this.title = title}
     fun getTitle(): String { return this.title }
 
