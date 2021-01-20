@@ -1,5 +1,7 @@
 package com.example.studentcrimeapp
 
+import android.app.Dialog
+import android.app.TimePickerDialog
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,10 +12,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
+
+    companion object {
+        private val DATE_DIALOG: String = "DATE"
+        private val DATE_REQUEST: Int = 0
+        private val TIME_DIALOG: String = "TIME"
+        private val TIME_REQUEST: Int = 1
+    }
 
     private lateinit var mContext: Context
     private lateinit var mParent: CrimeFragment
@@ -26,40 +36,83 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CrimePagerAdapter.ViewHolder {
+    ): ViewHolder {
         val view: View = LayoutInflater
             .from(parent.context)
             .inflate(R.layout.fragment_crime, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CrimePagerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val title: String = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getTitle()
-        val date: Date = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getDate()
-        val solved: Boolean = CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].getSolved()
+        val title: String = CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].getTitle()
+        val date: Date = CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].getDate()
+        val solved: Boolean = CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].getSolved()
 
+
+        // Title change and save
         holder.crime_title.setText(title)           // ni mam pojecia czemu tu nie dziala ".text = "
-        holder.crime_date.text = date.toString()
-        holder.crime_date.isEnabled = false
-        holder.crime_solved.isChecked = solved
-
         holder.crime_title.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+            // TODO("Ni wiem czemu mi ni dziala (nie zapisuje sie lokalnie? (nie db))")
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].setTitle(p0.toString())
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setTitle(s.toString())
             }
 
-            override fun afterTextChanged(p0: Editable?) { }
+            override fun afterTextChanged(s: Editable?) {
+                CrimeLab[mContext]!!.updateAtIndexOf(holder.adapterPosition)
+            }
+
         })
 
-        holder.crime_solved.setOnCheckedChangeListener { _, isChecked ->
-            CrimeLab.get(mContext)!!.getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
+        // Date change and save
+        holder.crime_date.text = date.toString()
+        holder.crime_date.setOnClickListener {
+            val fragmentManager: FragmentManager? = this.mParent.fragmentManager
+            val dialog: DatePickerFragment =
+                DatePickerFragment.newInstance( CrimeLab[this.mContext]!!
+                    .getCrimes()[holder.adapterPosition].getDate() )
+            dialog.setTargetFragment(this.mParent, DATE_REQUEST)
+            dialog.show(fragmentManager!!, DATE_DIALOG)
         }
 
+        // Time change and save
+        val hours = if (date.hours < 10) {
+            "0${date.hours}"
+        } else {
+            "${date.hours}"
+        }
+        val minutes = if (date.minutes < 10) {
+            "0${date.minutes}"
+        } else {
+            "${date.minutes}"
+        }
+        holder.crime_time.text = "$hours:$minutes"
+        holder.crime_time.setOnClickListener {
+            val fragmentManager: FragmentManager? = this.mParent.fragmentManager
+            val dialog: TimePickerFragment =
+                TimePickerFragment.newInstance( CrimeLab[this.mContext]!!
+                    .getCrimes()[holder.adapterPosition].getDate() )
+            dialog.setTargetFragment(this.mParent, TIME_REQUEST)
+            dialog.show(fragmentManager!!, TIME_DIALOG)
+        }
+
+        // Crime solved status
+        holder.crime_solved.isChecked = solved
+        holder.crime_solved.setOnCheckedChangeListener { _, isChecked ->
+            Log.d("zaq1", "check clicked")
+            CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
+            Log.d("zaq1", "Zmieniono localnie")
+            CrimeLab[mContext]!!.updateAtIndexOf(holder.adapterPosition)
+            Log.d("zaq1", "Zmieniono w db")
+        }
+
+        // Delete crime
         holder.btnDelete.setOnClickListener {
-            CrimeLab.get(mContext)!!.removeAtIndexOf(holder.adapterPosition)
+            Log.d("zaq1", "del clicked")
+            CrimeLab[mContext]!!.removeAtIndexOf(holder.adapterPosition)
+            Log.d("zaq1", "Zmieniono localnie")
             notifyDataSetChanged()
         }
 
@@ -67,16 +120,18 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
     override fun getItemCount(): Int { return CrimeLab.get(mContext)!!.getCrimes().size }
 
-    class ViewHolder : RecyclerView.ViewHolder {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var crime_title: EditText
         var crime_date: Button
+        var crime_time: Button
         var crime_solved: CheckBox
         var btnDelete: Button
 
-        constructor(itemView: View) : super(itemView) {
+        init {
             crime_title = itemView.findViewById(R.id.crime_title)
             crime_date = itemView.findViewById(R.id.crime_date)
+            crime_time = itemView.findViewById(R.id.crime_time)
             crime_solved = itemView.findViewById(R.id.crime_solved)
             btnDelete = itemView.findViewById(R.id.btnDelete)
         }

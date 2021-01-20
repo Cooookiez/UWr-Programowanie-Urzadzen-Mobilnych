@@ -29,7 +29,7 @@ class CrimeLab {
         reLoad()
     }
 
-    private fun reLoad() {
+    fun reLoad() {
         this.crimes.clear()
         val cursor: Cursor = dbHandler.getCrimes()
 
@@ -74,15 +74,6 @@ class CrimeLab {
         return Crime()
     }
 
-    fun getValueById(id: UUID) : Crime {
-        for (crime in crimes) {
-            if ( id == UUID.fromString(crime.getId().toString()) ) {
-                return crime
-            }
-        }
-        return Crime()
-    }
-
     fun getIndexById(id: UUID) : Int {
         for (i in 0 until crimes.size) {
             if ( id == UUID.fromString(crimes[i].getId().toString()) ) {
@@ -98,7 +89,9 @@ class CrimeLab {
     }
 
     fun updateAtIndexOf(index: Int) {
+        Log.d("zaq1 – in updateAt", "start")
         dbHandler.updateCrime(this.crimes[index])
+        Log.d("zaq1 – in updateAt", "zapisano to db")
     }
 
     fun setSearch(searchFilter: String) { this.searchFilter = searchFilter.toLowerCase() }

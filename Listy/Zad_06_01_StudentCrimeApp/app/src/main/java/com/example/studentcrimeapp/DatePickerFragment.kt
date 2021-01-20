@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment
 import java.util.*
 
 class DatePickerFragment : DialogFragment() {
+
     companion object {
         private val DATE_ARG = "date"
         val DATE_EXTRA = "Date"

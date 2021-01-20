@@ -25,9 +25,7 @@ class CrimeFragment : Fragment {
     companion object {
         var quit: Int = 0
 
-        private val DATE_DIALOG: String = "DATE"
         private val DATE_REQUEST: Int = 0
-        private val TIME_DIALOG: String = "TIME"
         private val TIME_REQUESTG: Int = 1
     }
 
@@ -35,7 +33,7 @@ class CrimeFragment : Fragment {
         super.onCreate(savedInstanceState)
         val bundle: Bundle? = arguments
         if (bundle != null) {
-            this.crime = CrimeLab.get(this.mContext)!!.getValueById(UUID.fromString(bundle.getString("id")))
+            this.crime = CrimeLab.get(this.mContext)!!.getCrimeById(UUID.fromString(bundle.getString("id")))
         } else {
             this.crime = Crime()
         }
@@ -89,12 +87,12 @@ class CrimeFragment : Fragment {
                         .getSerializableExtra(DatePickerFragment.DATE_EXTRA) as Date
 
                     val gCalender: Date = GregorianCalendar(
-                        date.year,
+                        date.year + 1900,
                         date.month,
-                        date.day,
+                        date.date,
                         this.crime.getDate().hours,
                         this.crime.getDate().minutes
-                    ) as Date
+                    ).time as Date
 
                     CrimeLab[this.mContext]!!.getCrimes()[this.crimeViewPager.currentItem]
                         .setDate(gCalender)
@@ -106,12 +104,12 @@ class CrimeFragment : Fragment {
                         .getSerializableExtra(TimePickerFragment.TIME_EXTRA) as Date
 
                     val gCalendar: Date = GregorianCalendar(
-                        this.crime.getDate().year,
+                        this.crime.getDate().year + 1900,
                         this.crime.getDate().month,
-                        this.crime.getDate().day,
+                        this.crime.getDate().date,
                         date.hours,
                         date.minutes
-                    ) as Date
+                    ).time as Date
 
                     CrimeLab[this.mContext]!!.getCrimes()[this.crimeViewPager.currentItem]
                         .setDate(gCalendar)

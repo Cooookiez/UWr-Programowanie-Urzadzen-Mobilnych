@@ -4,19 +4,12 @@ import java.util.*
 
 class Crime {
     private var id: UUID
-    private lateinit var title: String
-    private lateinit var date: Date
+    private var title: String
+    private var date: Date
     private var bSolved: Boolean = false
 
     constructor() {
         this.id = UUID.randomUUID()
-        this.date = Date()
-        this.title = "Brand new crime"
-        this.bSolved = false
-    }
-
-    constructor(id: UUID) {
-        this.id = id
         this.date = Date()
         this.title = "Brand new crime"
         this.bSolved = false

@@ -69,9 +69,9 @@ class MydbHandler : SQLiteOpenHelper {
             db.delete(
                 TABLE_NAME,
                 "$COLUMN_UUID = ?",
-                listOf<String>(
+                arrayOf(
                     uuid.toString()
-                ).toTypedArray()
+                )
             )
         }
         cursor.close()
@@ -85,6 +85,7 @@ class MydbHandler : SQLiteOpenHelper {
         val contentValues: ContentValues = ContentValues()
         contentValues.put(COLUMN_UUID, crime.getId().toString())
         contentValues.put(COLUMN_TITLE, crime.getTitle())
+        Log.d("zaq1 – title do bazy", crime.getTitle())
         contentValues.put(COLUMN_DATE, crime.getDate().time)
         contentValues.put(COLUMN_SOLVED, crime.getSolved())
 
@@ -92,10 +93,10 @@ class MydbHandler : SQLiteOpenHelper {
             db.update(
                 TABLE_NAME,
                 contentValues,
-                COLUMN_UUID,
-                listOf<String>(
+                "$COLUMN_UUID = ?",
+                arrayOf(
                     crime.getId().toString()
-                ).toTypedArray()
+                )
             )
         }
         cursor.close()
