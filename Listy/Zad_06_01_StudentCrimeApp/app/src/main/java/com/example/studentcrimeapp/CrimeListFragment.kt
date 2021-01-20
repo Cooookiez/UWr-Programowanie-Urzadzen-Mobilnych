@@ -46,9 +46,11 @@ class CrimeListFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 CrimeLab[inflater.context]?.setSearch(s.toString())
                 CrimeLab[inflater.context]?.reLoad()
+                mAdapter.notifyDataSetChanged();
             }
 
-            override fun afterTextChanged(s: Editable?) { }
+            override fun afterTextChanged(s: Editable?) {
+            }
         })
 
         this.recyclerCrimeView = view.findViewById(R.id.recyclerCrimeView)

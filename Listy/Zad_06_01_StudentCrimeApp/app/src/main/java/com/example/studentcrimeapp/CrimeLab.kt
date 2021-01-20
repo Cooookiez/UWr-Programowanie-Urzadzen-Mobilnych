@@ -33,12 +33,10 @@ class CrimeLab {
         this.crimes.clear()
         val cursor: Cursor = dbHandler.getCrimes()
 
-        if (cursor.count == 0) {
-            Log.d("zaq1", "cursor is empty")
-        } else {
+        if (cursor.count != 0) {
             while (cursor.moveToNext()) {
                 val title = cursor.getString(2)
-                if (searchFilter == "" || title.toLowerCase() == searchFilter) {
+                if (searchFilter == "" || title.toLowerCase().contains(searchFilter.toLowerCase())) {
                     val date: Date = Date()
                     date.time = cursor.getLong(3) // datetime
 
@@ -89,9 +87,7 @@ class CrimeLab {
     }
 
     fun updateAtIndexOf(index: Int) {
-        Log.d("zaq1 – in updateAt", "start")
         dbHandler.updateCrime(this.crimes[index])
-        Log.d("zaq1 – in updateAt", "zapisano to db")
     }
 
     fun setSearch(searchFilter: String) { this.searchFilter = searchFilter.toLowerCase() }
