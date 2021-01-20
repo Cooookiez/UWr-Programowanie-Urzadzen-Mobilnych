@@ -57,10 +57,11 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setTitle(s.toString())
             }
 
             override fun afterTextChanged(s: Editable?) {
+                CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setTitle(s.toString())
+                //CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
                 CrimeLab[mContext]!!.updateAtIndexOf(holder.adapterPosition)
             }
 
@@ -101,18 +102,13 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
         // Crime solved status
         holder.crime_solved.isChecked = solved
         holder.crime_solved.setOnCheckedChangeListener { _, isChecked ->
-            Log.d("zaq1", "check clicked")
             CrimeLab[mContext]!!.getCrimes()[holder.adapterPosition].setSolvedTo(isChecked)
-            Log.d("zaq1", "Zmieniono localnie")
             CrimeLab[mContext]!!.updateAtIndexOf(holder.adapterPosition)
-            Log.d("zaq1", "Zmieniono w db")
         }
 
         // Delete crime
         holder.btnDelete.setOnClickListener {
-            Log.d("zaq1", "del clicked")
             CrimeLab[mContext]!!.removeAtIndexOf(holder.adapterPosition)
-            Log.d("zaq1", "Zmieniono localnie")
             notifyDataSetChanged()
         }
 
