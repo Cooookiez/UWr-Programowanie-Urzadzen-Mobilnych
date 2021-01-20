@@ -25,8 +25,8 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
         private val TIME_REQUEST: Int = 1
     }
 
-    private lateinit var mContext: Context
-    private lateinit var mParent: CrimeFragment
+    private var mContext: Context
+    private var mParent: CrimeFragment
 
     constructor(context: Context, parent: CrimeFragment) {
         this.mContext = context
@@ -53,7 +53,6 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
         // Title change and save
         holder.crime_title.setText(title)           // ni mam pojecia czemu tu nie dziala ".text = "
         holder.crime_title.addTextChangedListener(object: TextWatcher {
-            // TODO("Ni wiem czemu mi ni dziala (nie zapisuje sie lokalnie? (nie db))")
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -114,7 +113,7 @@ class CrimePagerAdapter : RecyclerView.Adapter<CrimePagerAdapter.ViewHolder> {
 
     }
 
-    override fun getItemCount(): Int { return CrimeLab.get(mContext)!!.getCrimes().size }
+    override fun getItemCount(): Int { return CrimeLab[mContext]!!.getCrimes().size }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

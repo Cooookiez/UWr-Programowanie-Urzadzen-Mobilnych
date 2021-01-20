@@ -32,10 +32,11 @@ class CrimeFragment : Fragment {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val bundle: Bundle? = arguments
-        if (bundle != null) {
-            this.crime = CrimeLab.get(this.mContext)!!.getCrimeById(UUID.fromString(bundle.getString("id")))
+        this.crime = if (bundle != null) {
+            CrimeLab[this.mContext]!!
+                .getCrimeById(UUID.fromString(bundle.getString("id")))
         } else {
-            this.crime = Crime()
+            Crime()
         }
     }
 
@@ -48,7 +49,8 @@ class CrimeFragment : Fragment {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_crime_pager, container, false)
+        val view: View = inflater
+            .inflate(R.layout.fragment_crime_pager, container, false)
         this.crimeViewPager = view.findViewById(R.id.viewCrimePager2)
         this.btnGoToFirst = view.findViewById(R.id.btnGoToFirst)
         this.btnGoToLast = view.findViewById(R.id.btnGoToLast)
@@ -56,8 +58,8 @@ class CrimeFragment : Fragment {
         if (this.adapter == null) {
             this.adapter = CrimePagerAdapter(inflater.context, this)
             this.crimeViewPager.adapter = this.adapter
-            this.crimeViewPager.currentItem = CrimeLab
-                    .get(inflater.context)!!.getIndexById(this.crime.getId())
+            this.crimeViewPager.currentItem =
+                CrimeLab[inflater.context]!!.getIndexById(this.crime.getId())
         }
 
         this.btnGoToFirst.setOnClickListener {
@@ -65,7 +67,7 @@ class CrimeFragment : Fragment {
         }
 
         this.btnGoToLast.setOnClickListener {
-            val index = CrimeLab.get(view.context)?.getCrimes()!!.size
+            val index = CrimeLab[view.context]?.getCrimes()!!.size
             this.crimeViewPager.setCurrentItem(index - 1, true)
         }
 
@@ -78,7 +80,6 @@ class CrimeFragment : Fragment {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             this.crime = CrimeLab[this.mContext]!!.getCrimes()[this.crimeViewPager.currentItem]
             when (requestCode) {
@@ -89,7 +90,7 @@ class CrimeFragment : Fragment {
                     val gCalender: Date = GregorianCalendar(
                         date.year + 1900,
                         date.month,
-                        date.date,
+                        date.date,  // nie wiem czemu dziala .date, ale nie
                         this.crime.getDate().hours,
                         this.crime.getDate().minutes
                     ).time as Date

@@ -10,7 +10,7 @@ import kotlin.random.Random
 class CrimeLab {
 
     private var crimes = ArrayList<Crime>(0)
-    private lateinit var dbHandler: MydbHandler
+    private var dbHandler: MydbHandler
     var searchFilter: String = ""
 
     companion object {

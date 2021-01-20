@@ -23,19 +23,19 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CrimeRecyclerAdapter.ViewHolder {
+    ): ViewHolder {
         val view: View = LayoutInflater
             .from(parent.context)
             .inflate(R.layout.list_element, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CrimeRecyclerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.crimeTitle.text =
-            CrimeLab.get(this.mContext)!!.getCrimes()[position].getTitle()
+            CrimeLab[this.mContext]!!.getCrimes()[position].getTitle()
         holder.crimeDate.text =
-            CrimeLab.get(this.mContext)!!.getCrimes()[position].getDate().toString()
-        if (CrimeLab.get(this.mContext)!!.getCrimes()[position].getSolved()) {
+            CrimeLab[this.mContext]!!.getCrimes()[position].getDate().toString()
+        if (CrimeLab[this.mContext]!!.getCrimes()[position].getSolved()) {
             holder.crimeSolved.visibility = View.INVISIBLE
         } else {
             holder.crimeSolved.visibility = View.VISIBLE
@@ -55,23 +55,15 @@ class CrimeRecyclerAdapter : RecyclerView.Adapter<CrimeRecyclerAdapter.ViewHolde
         }
     }
 
-    override fun getItemCount(): Int { return CrimeLab.get(this.mContext)!!.getCrimes().size }
+    override fun getItemCount(): Int { return CrimeLab[this.mContext]!!.getCrimes().size }
 
-    class ViewHolder : RecyclerView.ViewHolder {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var parent: LinearLayout
+        var parent: LinearLayout = itemView.findViewById(R.id.linearLayoutCrimesList)
 
-        var crimeTitle: TextView
-        var crimeDate: TextView
-        var crimeSolved: ImageView
-
-        constructor(itemView: View) : super(itemView) {
-            parent = itemView.findViewById(R.id.linearLayoutCrimesList)
-
-            crimeTitle = itemView.findViewById(R.id.crimeTitle)
-            crimeDate = itemView.findViewById(R.id.crimeDate)
-            crimeSolved = itemView.findViewById(R.id.crimeSolved)
-        }
+        var crimeTitle: TextView = itemView.findViewById(R.id.crimeTitle)
+        var crimeDate: TextView = itemView.findViewById(R.id.crimeDate)
+        var crimeSolved: ImageView = itemView.findViewById(R.id.crimeSolved)
 
     }
 

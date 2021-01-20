@@ -32,7 +32,6 @@ class DatePickerFragment : DialogFragment() {
     private lateinit var datePicker: DatePicker
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-//        return super.onCreateDialog(savedInstanceState)
         val date: Date = arguments?.getSerializable(DATE_ARG) as Date
 
         val calendar: Calendar = Calendar.getInstance()

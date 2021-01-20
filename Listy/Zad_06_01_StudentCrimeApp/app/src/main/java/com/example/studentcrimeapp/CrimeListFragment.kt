@@ -21,15 +21,11 @@ class CrimeListFragment : Fragment() {
     private lateinit var floatingBtnReportACrime: FloatingActionButton
     private lateinit var editTextSearchBar: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val view: View =
             inflater.inflate(R.layout.fragment_crime_list, container, false)
         this.floatingBtnReportACrime = view.findViewById(R.id.floatingBtnReportACrime)

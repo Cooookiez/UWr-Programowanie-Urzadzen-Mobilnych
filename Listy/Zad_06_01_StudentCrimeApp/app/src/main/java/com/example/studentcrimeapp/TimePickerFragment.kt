@@ -32,7 +32,6 @@ class TimePickerFragment : DialogFragment() {
     private lateinit var timePicker: TimePicker
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-//        return super.onCreateDialog(savedInstanceState)
         val date: Date = arguments?.getSerializable(TIME_ARG) as Date
 
         val calendar: Calendar = Calendar.getInstance()
