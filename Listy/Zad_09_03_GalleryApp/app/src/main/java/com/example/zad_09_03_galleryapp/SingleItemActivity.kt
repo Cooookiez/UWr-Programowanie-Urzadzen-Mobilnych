@@ -31,7 +31,7 @@ import java.io.IOException
 import java.security.acl.AclNotFoundException
 import java.util.*
 
-class SingleActivity : AppCompatActivity() {
+class SingleItemActivity : AppCompatActivity() {
 
     companion object {
         private val CAMERA_PERMISSION_CODE = 0

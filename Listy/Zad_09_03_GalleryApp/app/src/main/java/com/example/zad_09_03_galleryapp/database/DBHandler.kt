@@ -4,11 +4,13 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.example.zad_09_03_galleryapp.models.SingleItemModel
 
 class DBHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
+
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "galleryJavaKotlin.db"
 
@@ -20,13 +22,13 @@ class DBHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_GALLERY_TABLE = (
-            "CREATE TABLE IF NOT EXISTS $TABLE_GALLERY(" +
+            "CREATE TABLE $TABLE_GALLERY(" +
             "$KEY_ID INTEGER PRIMARY KEY, " +
             "$KEY_TITLE TEXT, " +
             "$KEY_IMAGE TEXT" +
             ")"
         )
-        db?.execSQL(CREATE_GALLERY_TABLE)
+        db!!.execSQL(CREATE_GALLERY_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
