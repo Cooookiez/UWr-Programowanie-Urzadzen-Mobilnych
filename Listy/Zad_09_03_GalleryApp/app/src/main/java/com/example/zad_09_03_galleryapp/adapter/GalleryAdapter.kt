@@ -2,6 +2,7 @@ package com.example.zad_09_03_galleryapp.adapter
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class GalleryAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = list[position]
+        Log.d("zaq1 – onBindViewHolder", "position: $position")
         if (holder is MyViewHolder) {
             val imageViewRecyclerView =
                 holder.itemView.findViewById(R.id.image_view_recycler_view) as ImageView
