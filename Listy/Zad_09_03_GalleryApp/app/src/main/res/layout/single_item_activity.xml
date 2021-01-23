@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".SingleActivity">
 
     <EditText
         android:id="@+id/edit_text_title"
@@ -35,5 +35,14 @@
             android:text="@string/add"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:text="@string/save"/>
 
 </LinearLayout>
