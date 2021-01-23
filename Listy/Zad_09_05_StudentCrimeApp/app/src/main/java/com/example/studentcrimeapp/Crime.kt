@@ -1,5 +1,6 @@
 package com.example.studentcrimeapp
 
+import android.net.Uri
 import java.util.*
 
 class Crime {
@@ -7,6 +8,7 @@ class Crime {
     private var title: String
     private var date: Date
     private var bSolved: Boolean = false
+    private var imagePath: String? = null
 
     constructor() {
         this.id = UUID.randomUUID()
@@ -26,5 +28,8 @@ class Crime {
 
     fun setId(id: UUID) { this.id = id }
     fun getId(): UUID { return this.id }
+
+    fun setImagePath(imagePath: String) { this.imagePath = imagePath }
+    fun getImagePath(): String { return this.imagePath.toString() }
 
 }

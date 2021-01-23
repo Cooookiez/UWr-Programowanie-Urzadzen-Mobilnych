@@ -45,6 +45,7 @@ class CrimeLab {
                     crime.setTitle(title)
                     crime.setDate(date)
                     crime.setSolvedTo(cursor.getInt(4) != 0) // is solved
+                    crime.setImagePath(cursor.getString(5))
 
                     this.crimes.add(crime)
                 }
@@ -87,6 +88,7 @@ class CrimeLab {
     }
 
     fun updateAtIndexOf(index: Int) {
+        Log.d("zaq1", "SQLite UPDATE!")
         dbHandler.updateCrime(this.crimes[index])
     }
 

@@ -21,6 +21,7 @@ class MydbHandler : SQLiteOpenHelper {
         private val COLUMN_TITLE: String = "title"
         private val COLUMN_DATE: String = "date"
         private val COLUMN_SOLVED: String = "solved"
+        private val COLUMN_IMAGE_PATH: String = "image_path"
     }
 
     constructor(@Nullable context: Context?)
@@ -33,7 +34,8 @@ class MydbHandler : SQLiteOpenHelper {
                 "$COLUMN_UUID TEXT, " +
                 "$COLUMN_TITLE TEXT, " +
                 "$COLUMN_DATE INTEGER, " +
-                "$COLUMN_SOLVED BOOLEAN" +
+                "$COLUMN_SOLVED BOOLEAN, " +
+                "$COLUMN_IMAGE_PATH TEXT" +
             ");"
         db!!.execSQL(crimeTable)
     }
@@ -55,9 +57,11 @@ class MydbHandler : SQLiteOpenHelper {
         contentValues.put(COLUMN_TITLE, crime.getTitle())
         contentValues.put(COLUMN_DATE, crime.getDate().time)
         contentValues.put(COLUMN_SOLVED, crime.getSolved())
+        contentValues.put(COLUMN_IMAGE_PATH, crime.getImagePath())
 
         val db: SQLiteDatabase = this.writableDatabase
         db.insert(TABLE_NAME, null, contentValues)
+        db.close()
     }
 
     fun deleteCrime(uuid: UUID) {
@@ -85,9 +89,9 @@ class MydbHandler : SQLiteOpenHelper {
         val contentValues: ContentValues = ContentValues()
         contentValues.put(COLUMN_UUID, crime.getId().toString())
         contentValues.put(COLUMN_TITLE, crime.getTitle())
-        Log.d("zaq1 – title do bazy", crime.getTitle())
         contentValues.put(COLUMN_DATE, crime.getDate().time)
         contentValues.put(COLUMN_SOLVED, crime.getSolved())
+        contentValues.put(COLUMN_IMAGE_PATH, crime.getImagePath())
 
         if (cursor.moveToFirst()) {
             db.update(
