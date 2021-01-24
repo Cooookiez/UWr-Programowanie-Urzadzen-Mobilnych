@@ -140,6 +140,7 @@ class CrimeFragment : Fragment {
                     CrimeLab[mContext]?.getCrimes()?.get(this.binding.viewCrimePager2.currentItem)
                         ?.setImagePath(imagePath.toString())
                     CrimeLab[mContext]!!.updateAtIndexOf(this.binding.viewCrimePager2.currentItem)
+                    this.adapter!!.notifyItemChanged(this.crimeViewPager.currentItem)
                 }
                 GALLERY_REQUEST -> {
                     val contentUri: Uri = data?.data as Uri
@@ -153,6 +154,7 @@ class CrimeFragment : Fragment {
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
+                    this.adapter!!.notifyItemChanged(this.crimeViewPager.currentItem)
                 }
             }
         } else {

@@ -1,6 +1,5 @@
 package com.example.studentcrimeapp
 
-import android.net.Uri
 import java.util.*
 
 class Crime {
