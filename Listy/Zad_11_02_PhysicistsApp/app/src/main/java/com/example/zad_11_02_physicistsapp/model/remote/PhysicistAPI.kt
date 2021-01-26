@@ -1,5 +1,6 @@
-package com.example.zad_11_02_physicistsapp.model
+package com.example.zad_11_02_physicistsapp.model.remote
 
+import com.example.zad_11_02_physicistsapp.model.Physicist
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 

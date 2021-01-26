@@ -1,5 +1,6 @@
-package com.example.zad_11_02_physicistsapp.model
+package com.example.zad_11_02_physicistsapp.model.remote
 
+import com.example.zad_11_02_physicistsapp.model.Physicist
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Retrofit

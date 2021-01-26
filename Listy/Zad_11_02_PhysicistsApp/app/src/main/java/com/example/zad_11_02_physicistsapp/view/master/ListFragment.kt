@@ -41,7 +41,7 @@ class ListFragment : Fragment() {
                 binding.loadingProgress.visibility = View.VISIBLE
                 binding.textViewError.visibility = View.GONE
                 binding.recyclerViewList.visibility = View.GONE
-                viewModel.refresh()
+                viewModel.refreshFromRemote()
                 binding.swipeToRefresh.isRefreshing = false
             }
 
