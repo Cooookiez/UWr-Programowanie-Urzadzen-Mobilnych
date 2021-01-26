@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "countries")
 data class Country(
     @PrimaryKey(autoGenerate = true)
-    val uuid: Long?,
+    var uuid: Long?,
     val name: String?,
     val capital: String?,
     @SerializedName("flag")

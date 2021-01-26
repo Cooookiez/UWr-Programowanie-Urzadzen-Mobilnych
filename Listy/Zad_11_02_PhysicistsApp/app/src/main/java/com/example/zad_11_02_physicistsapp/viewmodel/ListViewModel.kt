@@ -40,6 +40,16 @@ class ListViewModel(application: Application)
         fetchRemote()
     }
 
+    private fun fetchLocal() {
+        physicistLoading.value = true
+        launch {
+            val physicists: List<Physicist> =
+                PhysicistRoom(getApplication()).physicistDAO().getAllPhysicists()
+            dataRetrieved(physicists)
+            Toast.makeText(getApplication(), "LOCAL", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     private fun fetchRemote() {
         physicistLoading.value = true
         disposable.add(
@@ -60,16 +70,6 @@ class ListViewModel(application: Application)
 
                 })
         )
-    }
-
-    private fun fetchLocal() {
-        physicistLoading.value = true
-        launch {
-            val physicists: List<Physicist> =
-                PhysicistRoom(getApplication()).physicistDAO().getAllPhysicists()
-            dataRetrieved(physicists)
-            Toast.makeText(getApplication(), "LOCAL", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun dataRetrieved(physicistList: List<Physicist>) {

@@ -2,4 +2,8 @@
     <string name="app_name">Zad_10_06_KrajeStolice</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="flag">flag</string>
+    <string name="capitol">Capitol</string>
+    <string name="country_name">Country name</string>
+    <string name="error_while_loading_data">ERROR WHILE LOADING DATA</string>
 </resources>

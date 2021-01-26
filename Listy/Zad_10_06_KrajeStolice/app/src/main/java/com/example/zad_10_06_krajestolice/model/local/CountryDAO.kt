@@ -9,10 +9,10 @@ import com.example.zad_10_06_krajestolice.model.Country
 interface CountryDAO {
 
     @Insert
-    suspend fun insertAll(vararg country: Country)
+    suspend fun insertAll(vararg country: Country): List<Long>
 
     @Query("SELECT * FROM `Countries`")
-    suspend fun getAllCountries()
+    suspend fun getAllCountries(): List<Country>
 
     @Query("DELETE FROM `Countries`")
     suspend fun deleteAllCountries()
