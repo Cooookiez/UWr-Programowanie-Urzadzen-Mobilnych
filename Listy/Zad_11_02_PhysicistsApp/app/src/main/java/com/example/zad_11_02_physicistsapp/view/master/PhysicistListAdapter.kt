@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.zad_11_02_physicistsapp.R
 import com.example.zad_11_02_physicistsapp.databinding.RecyclerViewItemBinding
 import com.example.zad_11_02_physicistsapp.model.Physicist
+import com.example.zad_11_02_physicistsapp.util.getProgressDrawable
+import com.example.zad_11_02_physicistsapp.util.loadImage
 
 class PhysicistListAdapter(
     private val physicistList: ArrayList<Physicist>
@@ -38,6 +40,10 @@ class PhysicistListAdapter(
         holder.binding.rvName.text = current.name
         holder.binding.rvLife.text = current.life
         holder.binding.rvNationality.text = current.nationality
+        holder.binding.rvPicture.loadImage(
+            current.imageUrl,
+            getProgressDrawable(holder.binding.rvPicture.context)
+        )
     }
 
     override fun getItemCount(): Int = physicistList.size

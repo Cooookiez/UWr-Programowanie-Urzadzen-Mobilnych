@@ -31,11 +31,19 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.init()
+        viewModel.refresh()
 
         binding.recyclerViewList.apply {
             layoutManager = LinearLayoutManager(context)
             this.adapter = this@ListFragment.adapter
+
+            binding.swipeToRefresh.setOnRefreshListener {
+                binding.loadingProgress.visibility = View.VISIBLE
+                binding.textViewError.visibility = View.GONE
+                binding.recyclerViewList.visibility = View.GONE
+                viewModel.refresh()
+                binding.swipeToRefresh.isRefreshing = false
+            }
 
             observeViewModel()
         }

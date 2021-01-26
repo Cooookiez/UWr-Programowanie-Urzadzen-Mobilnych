@@ -5,7 +5,7 @@
    "years": "1544-1603",
    "country": "English",
    "motivation": "hypothesized that the Earth is a giant magnet",
-   "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/1.jpg"
+   "photo_url": ""
  },
  {
    "id": 2,
@@ -13,7 +13,7 @@
    "years": "1564-1642",
    "country": "Italian",
    "motivation": "performed fundamental observations, experiments, and mathematical analyses in astronomy and physics; discovered mountains and craters on the moon, the phases of Venus, and the four largest satellites of Jupiter: Io, Europa, Callisto, and Ganymede",
-   "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/2.jpg"
+   "photo_url": "https://www.youtube.com/"
  },
  {
    "id": 3,
@@ -21,7 +21,7 @@
    "years": "1580-1626",
    "country": "Dutch",
    "motivation": "discovered law of refraction (Snell's law)",
-   "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/3.jpg"
+   "photo_url": "https://avatars.githubusercontent.com/u/19674364"
  },
  {
    "id": 4,
@@ -29,7 +29,6 @@
    "years": "1623-1662",
    "country": "French",
    "motivation": "discovered that pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of its container (Pascal's principle)",
-   "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/4.jpg"
  },
  {
    "id": 5,
