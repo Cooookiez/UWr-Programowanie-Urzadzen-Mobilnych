@@ -1,5 +1,6 @@
 package com.example.zad_10_06_krajestolice.view.master
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -36,7 +37,7 @@ class ListFragmentAdapter(
         val current: Country = countriesList[position]
 
         holder.binding.rvTextViewName.text = current.name
-        holder.binding.rvTextViewCapital.text = current.name
+        holder.binding.rvTextViewCapital.text = current.capital
         holder.binding.rvImageViewFlag.loadImage(
             current.flag_url,
             getProgressDrawable(holder.binding.rvImageViewFlag.context)
