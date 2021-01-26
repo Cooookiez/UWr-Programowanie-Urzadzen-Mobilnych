@@ -1,7 +1,8 @@
-package com.example.zad_10_06_krajestolice
+package com.example.zad_10_06_krajestolice.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.zad_10_06_krajestolice.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
