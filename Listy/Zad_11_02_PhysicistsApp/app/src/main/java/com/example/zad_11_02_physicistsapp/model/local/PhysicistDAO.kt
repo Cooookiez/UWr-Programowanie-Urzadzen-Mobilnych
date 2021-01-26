@@ -12,9 +12,9 @@ interface PhysicistDAO {
     suspend fun insertAll(vararg physicist: Physicist): List<Long>
 
     @Query("SELECT * FROM Physicists")
-    suspend fun getAllPhysicists()
+    suspend fun getAllPhysicists(): List<Physicist>
 
-    @Query("SELECT * FROM physicists WHERE `uuid` = :physicistId")
+    @Query("SELECT * FROM Physicists WHERE `uuid` = :physicistId")
     suspend fun getPhysicist(physicistId: Long): Physicist?
 
     @Query("DELETE FROM Physicists")
