@@ -28,7 +28,8 @@
    "name": "Blaise Pascal",
    "years": "1623-1662",
    "country": "French",
-   "motivation": "discovered that pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of its container (Pascal's principle)"
+   "motivation": "discovered that pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of its container (Pascal's principle)",
+   "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/4.jpg"
  },
  {
    "id": 5,
