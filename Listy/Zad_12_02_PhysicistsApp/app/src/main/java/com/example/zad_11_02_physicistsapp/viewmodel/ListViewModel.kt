@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.zad_11_02_physicistsapp.model.Physicist
 import com.example.zad_11_02_physicistsapp.model.local.PhysicistRoom
 import com.example.zad_11_02_physicistsapp.model.remote.PhysicistsService
+import com.example.zad_11_02_physicistsapp.util.NotificationHelper
 import com.example.zad_11_02_physicistsapp.util.SharedPreferencesHelper
 import com.example.zad_11_02_physicistsapp.util.refreshTime
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -72,6 +73,7 @@ class ListViewModel(application: Application)
                     override fun onSuccess(physicistList: List<Physicist>?) {
                         insertToLocal(physicistList!!)
                         Toast.makeText(getApplication(), "REMOTE", Toast.LENGTH_SHORT).show()
+                        NotificationHelper(getApplication()).createNotification()
                     }
 
                     override fun onError(e: Throwable?) {
