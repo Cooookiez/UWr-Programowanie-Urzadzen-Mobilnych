@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import com.example.zad_11_02_physicistsapp.model.Physicist
 import com.example.zad_11_02_physicistsapp.model.local.PhysicistRoom
 import com.example.zad_11_02_physicistsapp.model.remote.PhysicistsService
+import com.example.zad_11_02_physicistsapp.util.SharedPreferencesHelper
+import com.example.zad_11_02_physicistsapp.util.refreshTime
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.observers.DisposableSingleObserver
@@ -24,6 +26,8 @@ class ListViewModel(application: Application)
     val physicistsLoadError = MutableLiveData<Boolean>()
     val physicistLoading = MutableLiveData<Boolean>()
 
+    private var preferencesHelper = SharedPreferencesHelper(getApplication())
+
     private val physicistService = PhysicistsService()
     private val disposable = CompositeDisposable()
 
@@ -33,7 +37,15 @@ class ListViewModel(application: Application)
         get() = job + Dispatchers.Main
 
     fun refresh() {
-        fetchLocal()
+        val updateTime: Long? = preferencesHelper.getUpdateTime()
+        if (
+            updateTime != null  &&
+            updateTime != 0L    &&
+            System.nanoTime() - updateTime < refreshTime
+        )
+            fetchLocal()
+        else
+            fetchRemote()
     }
 
     fun refreshFromRemote() {
@@ -88,6 +100,7 @@ class ListViewModel(application: Application)
             }
             dataRetrieved(physicistList)
         }
+        preferencesHelper.saveUpdateTime(System.nanoTime())
     }
 
     override fun onCleared() {

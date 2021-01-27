@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.zad_11_02_physicistsapp.R
 
+const val refreshTime: Long = 20 * 1000 * 1000 * 1000L // s * ms * us * ns
+
 fun getProgressDrawable(context: Context): CircularProgressDrawable {
     return CircularProgressDrawable(context).apply {
         strokeWidth = 15f
