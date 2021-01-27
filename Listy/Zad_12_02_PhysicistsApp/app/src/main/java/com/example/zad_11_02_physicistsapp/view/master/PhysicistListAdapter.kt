@@ -3,6 +3,7 @@ package com.example.zad_11_02_physicistsapp.view.master
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zad_11_02_physicistsapp.R
 import com.example.zad_11_02_physicistsapp.databinding.RecyclerViewItemBinding
@@ -44,6 +45,11 @@ class PhysicistListAdapter(
             current.imageUrl,
             getProgressDrawable(holder.binding.rvPicture.context)
         )
+
+        holder.itemView.setOnClickListener {
+            val action = ListFragmentDirections.actionDetailFragment(current.uuid!!)
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     override fun getItemCount(): Int = physicistList.size

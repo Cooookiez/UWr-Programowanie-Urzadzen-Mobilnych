@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import com.example.zad_11_02_physicistsapp.R
 import com.example.zad_11_02_physicistsapp.databinding.FragmentDetailBinding
 import com.example.zad_11_02_physicistsapp.databinding.FragmentListBinding
+import com.example.zad_11_02_physicistsapp.util.getProgressDrawable
+import com.example.zad_11_02_physicistsapp.util.loadImage
 import com.example.zad_11_02_physicistsapp.viewmodel.DetailViewModel
 
 
@@ -16,6 +18,8 @@ class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+
+    private var physicistUuid = 0L
 
     private val viewModel: DetailViewModel by viewModels()
 
@@ -29,7 +33,10 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetch()
+        arguments.let {
+            physicistUuid = DetailFragmentArgs.fromBundle(it!!).physicistUuid
+        }
+        viewModel.fetch(physicistUuid)
         observeViewModel()
     }
 
@@ -40,6 +47,12 @@ class DetailFragment : Fragment() {
                 binding.dvLife.text = physicist.life
                 binding.dvNationality.text = physicist.nationality
                 binding.dvMotivation.text = physicist.motivation
+                context?.let {
+                    binding.dvPicture.loadImage(
+                        physicist.imageUrl,
+                        getProgressDrawable(it)
+                    )
+                }
             }
         })
     }
