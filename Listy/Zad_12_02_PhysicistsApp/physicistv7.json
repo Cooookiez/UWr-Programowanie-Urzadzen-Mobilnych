@@ -1,0 +1,2066 @@
+[
+  {
+    "id": 1,
+    "name": "William Gilbert",
+    "years": "1544-1603",
+    "country": "English",
+    "motivation": "hypothesized that the Earth is a giant magnet",
+    "photo_url": "https://raw.githufbusercontent.com/RLewy/PhysicistsAPI/master/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Galileo Galilei",
+    "years": "1564-1642",
+    "country": "Italian",
+    "motivation": "performed fundamental observations, experiments, and mathematical analyses in astronomy and physics; discovered mountains and craters on the moon, the phases of Venus, and the four largest satellites of Jupiter: Io, Europa, Callisto, and Ganymede",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Willebrod Snell",
+    "years": "1580-1626",
+    "country": "Dutch",
+    "motivation": "discovered law of refraction (Snell's law)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Blaise Pascal",
+    "years": "1623-1662",
+    "country": "French",
+    "motivation": "discovered that pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of its container (Pascal's principle)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Christiaan Huygens",
+    "years": "1629-1695",
+    "country": "Dutch",
+    "motivation": "proposed a simple geometrical wave theory of light, now known as ``Huygen's principle''; pioneered use of the pendulum in clocks",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Robert Hooke",
+    "years": "1635-1703",
+    "country": "English",
+    "motivation": "discovered Hooke's law of elasticity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Sir Isaac Newton",
+    "years": "1643-1727",
+    "country": "English",
+    "motivation": "developed theories of gravitation and mechanics,  and invented differential calculus",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Daniel Bernoulli",
+    "years": "1700-1782",
+    "country": "Swiss",
+    "motivation": "developed the fundamental relationship of fluid flow now known as Bernoulli's principle",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Benjamin Franklin",
+    "years": "1706-1790",
+    "country": "American",
+    "motivation": "the first American physicist; characterized two kinds of electric charge, which he named ``positive'' and ``negative''",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Leonard Euler",
+    "years": "1707-1783",
+    "country": "Swiss",
+    "motivation": "made fundamental contributions to fluid dynamics, lunar orbit theory (tides), and mechanics; also contributed prolifically  to all areas of classical mathematics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Henry Cavendish",
+    "years": "1731-1810",
+    "country": "British",
+    "motivation": "discovered and studied hydrogen; first to measure Newton's  gravitational constant; calculated mass and mean density of Earth",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Charles Augustin de Coulomb",
+    "years": "1736-1806",
+    "country": "French",
+    "motivation": "experiments on elasticity, electricity, and magnetism; established experimentally nature of the force between two charges",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Joseph-Louis Lagrange",
+    "years": "1736-1813",
+    "country": "French",
+    "motivation": "developed new methods of analytical mechanics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "James Watt",
+    "years": "1736-1819",
+    "country": "Scottish",
+    "motivation": "invented the modern condensing steam engine and  a centrifugal governor",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Count Alessandro Volta",
+    "years": "1745-1827",
+    "country": "Italian",
+    "motivation": "pioneer in study of electricity; invented the first electric battery",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Joseph Fourier",
+    "years": "1768-1830",
+    "country": "French",
+    "motivation": "established the differential equation governing heat diffusion and solved it by devising an infinite series of sines and cosines capable of approximating a wide variety of functions",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Thomas Young",
+    "years": "1773-1829",
+    "country": "British",
+    "motivation": "studied light and color; known for his double-slit experiment that demonstrated the wave nature of light",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Jean-Babtiste Biot",
+    "years": "1774-1862",
+    "country": "French",
+    "motivation": "studied polarization of light; co-discovered that intensity of magnetic field set up by a current flowing through a wire varies inversely with the distance from the wire",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Andr%26eacute; Marie Amp%26egrave;re",
+    "years": "1775-1836",
+    "country": "French",
+    "motivation": "father of electrodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Amadeo Avogadro",
+    "years": "1776-1856",
+    "country": "Italian",
+    "motivation": "developed hypothesis that all gases at same volume, pressure, and temperature contain same number of atoms",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Johann Carl Friedrich Gauss",
+    "years": "1777-1855",
+    "country": "German",
+    "motivation": "formulated separate electrostatic and electrodynamical laws, including ``Gauss' law''; contributed to development of number theory,   differential geometry, potential theory, theory of terrestrial magnetism, and methods of calculating planetary orbits",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Hans Christian Oersted",
+    "years": "1777-1851",
+    "country": "Danish",
+    "motivation": "discovered that a current in a wire can produce magnetic effects",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Sir David Brewster",
+    "years": "1781-1868",
+    "country": "English",
+    "motivation": "deduced ``Brewster's law'' giving the angle of incidence that produces reflected light which is completely polarized; invented the kaleidoscope and the stereoscope, and improved the spectroscope",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Augustin-Jean Fresnel",
+    "years": "1788-1827",
+    "country": "French",
+    "motivation": "studied transverse nature of light waves",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Georg Ohm",
+    "years": "1789-1854",
+    "country": "German",
+    "motivation": "discovered that current flow is proportional to potential difference and inversely proportional to resistance  (Ohm's law)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Michael Faraday",
+    "years": "1791-1867",
+    "country": "English",
+    "motivation": "discovered electromagnetic induction and devised first electrical transformer",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Felix Savart",
+    "years": "1791-1841",
+    "country": "French",
+    "motivation": "co-discovered that intensity of magnetic field set up by a current flowing through a wire varies inversely with the distance from the wire",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Sadi Carnot",
+    "years": "1796-1832",
+    "country": "French",
+    "motivation": "founded the science of thermodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Joseph Henry",
+    "years": "1797-1878",
+    "country": "American",
+    "motivation": "performed extensive fundamental studies of electromagnetic phenomena; devised first practical electric motor",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Christian Doppler",
+    "years": "1803-1853",
+    "country": "Austrian",
+    "motivation": "experimented with sound waves; derived an expression for the apparent change in wavelength of a wave due to relative motion between the source and observer",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Wilhelm E. Weber",
+    "years": "1804-1891",
+    "country": "German",
+    "motivation": "developed sensitive magnetometers; worked in electrodynamics and the electrical structure of matter",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Sir William Hamilton",
+    "years": "1805-1865",
+    "country": "Irish",
+    "motivation": "developed the principle of least action and the Hamiltonian form of classical mechanics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "James Prescott Joule",
+    "years": "1818-1889",
+    "country": "British",
+    "motivation": "discovered mechanical equivalent of heat",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Armand-Hippolyte-Louis Fizeau",
+    "years": "1819-1896",
+    "country": "French",
+    "motivation": "made the first terrestrial measurement of the speed of light; invented one of the first interferometers; took the first pictures of the Sun on daguerreotypes; argued that the Doppler effect with respect to sound should also apply to any wave motion, particularly that of light",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Jean-Bernard-L%26eacute;on Foucault",
+    "years": "1819-1868",
+    "country": "French",
+    "motivation": "accurately measured speed of light; invented the gyroscope; demonstrated the Earth's rotation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Sir George Gabriel Stokes",
+    "years": "1819-1903",
+    "country": "British",
+    "motivation": "described the motion of viscous fluids by independently discovering the Navier-Stokes equations of fluid mechanics (or hydrodynamics); developed Stokes theorem by which certain surface integrals may be reduced to line integrals; discovered fluorescence",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Hermann von Helmholtz",
+    "years": "1821-1894",
+    "country": "German",
+    "motivation": "developed first law of thermodynamics, a statement of conservation of energy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/37.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Rudolf Clausius",
+    "years": "1822-1888",
+    "country": "German",
+    "motivation": "developed second law of thermodynamics, a statement that the entropy of the Universe always increases",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/38.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Lord Kelvin",
+    "years": "1824-1907",
+    "country": "British",
+    "motivation": "proposed absolute temperature scale, of essence to development of thermodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/39.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Gustav Kirchhoff",
+    "years": "1824-1887",
+    "country": "German",
+    "motivation": "developed three laws of spectral analysis  and three rules of electric circuit analysis; also contributed to optics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/40.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Johann Balmer",
+    "years": "1825-1898",
+    "country": "Swiss",
+    "motivation": "developed empirical formula to describe hydrogen spectrum",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/41.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Sir Joseph Wilson Swan",
+    "years": "1828-1914",
+    "country": "British",
+    "motivation": "developed a carbon-filament incandescent light; patented the carbon process for printing photographs in permanent pigment",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/42.jpg"
+  },
+  {
+    "id": 43,
+    "name": "James Clerk Maxwell",
+    "years": "1831-1879",
+    "country": "Scottish",
+    "motivation": "propounded the theory of electromagnetism; developed the kinetic theory of gases",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/43.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Josef Stefan",
+    "years": "1835-1893",
+    "country": "Austrian",
+    "motivation": "studied blackbody radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/44.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Ernst Mach",
+    "years": "1838-1916",
+    "country": "Austrian",
+    "motivation": "studied conditions that occur when an object moves through a fluid at high speed (the ``Mach number'' gives the ratio of the speed of the object to the speed of sound in the fluid); proposed ``Mach's principle,'' which states that the inertia of an object is due to the interaction between the object and the rest of the universe",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/45.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Josiah Gibbs",
+    "years": "1839-1903",
+    "country": "American",
+    "motivation": "developed chemical thermodynamics; introduced concepts of free energy and chemical potential",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/46.jpg"
+  },
+  {
+    "id": 47,
+    "name": "James Dewar",
+    "years": "1842-1923",
+    "country": "British",
+    "motivation": "liquified nitrogen and invented the Dewar flask,  which is critical for low-temperature work",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/47.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Osborne Reynolds",
+    "years": "1842-1912",
+    "country": "British",
+    "motivation": "contributed to the fields of hydraulics and hydrodynamics;  developed mathematical framework for  turbulence and introduced the ``Reynolds number,'' which provides a criterion for dynamic similarity and correct modeling in many fluid-flow experiments",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/48.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Ludwig Boltzmann",
+    "years": "1844-1906",
+    "country": "Austrian",
+    "motivation": "developed statistical mechanics and applied it to kinetic theory of gases",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/49.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Roland E%26ouml;tv%26ouml;s",
+    "years": "1848-1919",
+    "country": "Hungarian",
+    "motivation": "demonstrated equivalence of gravitational and  inertial mass",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/50.jpg"
+  },
+  {
+    "id": 51,
+    "name": "Oliver Heaviside",
+    "years": "1850-1925",
+    "country": "English",
+    "motivation": "contributed to the development of electromagnetism; introduced operational calculus and invented the modern notation for vector calculus; predicted existence of the Heaviside layer (a layer of the Earth's ionosphere)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/51.jpg"
+  },
+  {
+    "id": 52,
+    "name": "George Francis FitzGerald",
+    "years": "1851-1901",
+    "country": "Irish",
+    "motivation": "hypothesized foreshortening of moving bodies  (Lorentz-FitzGerald contraction) to explain the result of the Michelson-Morley experiment",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/52.jpg"
+  },
+  {
+    "id": 53,
+    "name": "John Henry Poynting",
+    "years": "1852-1914",
+    "country": "British",
+    "motivation": "demonstrated that the energy flow of electromagnetic waves could be calculated by an equation (now called Poynting's vector)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/53.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Henri Poincar%26eacute;",
+    "years": "1854-1912",
+    "country": "French",
+    "motivation": "founded qualitative dynamics (the mathematical theory of dynamical systems); created topology; contributed to solution of the three-body problem; first described many properties of deterministic chaos; contributed to the development of special relativity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/54.jpg"
+  },
+  {
+    "id": 55,
+    "name": "Janne Rydberg",
+    "years": "1854-1919",
+    "country": "Swedish",
+    "motivation": "analyzed the spectra of many elements;  discovered many line series were described by a formula that depended on a  universal constant (the Rydberg constant)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/55.jpg"
+  },
+  {
+    "id": 56,
+    "name": "Edwin H. Hall",
+    "years": "1855-1938",
+    "country": "American",
+    "motivation": "discovered the ``Hall effect,'' which occurs when charge carriers moving through a material are deflected because of an applied magnetic field - the deflection results in a potential difference across the side of the material that is transverse to both the magnetic field and the current direction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/56.jpg"
+  },
+  {
+    "id": 57,
+    "name": "Heinrich Hertz",
+    "years": "1857-1894",
+    "country": "German",
+    "motivation": "worked on electromagnetic phenomena; discovered radio waves and the photoelectric effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/57.jpg"
+  },
+  {
+    "id": 58,
+    "name": "Nikola Tesla",
+    "years": "1857-1943",
+    "country": "Serbian-born American",
+    "motivation": "created alternating current",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/58.jpg"
+  },
+  {
+    "id": 59,
+    "name": "Johannes van der Waals",
+    "years": "1837-1923",
+    "country": "Dutch",
+    "motivation": "worked on equations of state for gases and liquids",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/59.jpg"
+  },
+  {
+    "id": 60,
+    "name": "Lord Rayleigh",
+    "years": "1842-1919",
+    "country": "British",
+    "motivation": "discovered argon; explained how light scattering is responsible for red color of sunset and blue color of sky",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/60.jpg"
+  },
+  {
+    "id": 61,
+    "name": "Wilhelm R%26ouml;ntgen",
+    "years": "1845-1923",
+    "country": "German",
+    "motivation": "discovered and studied x rays",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/61.jpg"
+  },
+  {
+    "id": 62,
+    "name": "Antoine Henri Becquerel",
+    "years": "1852-1908",
+    "country": "French",
+    "motivation": "discovered natural radioactivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/62.jpg"
+  },
+  {
+    "id": 63,
+    "name": "Albert A. Michelson",
+    "years": "1852-1931",
+    "country": "German-born American",
+    "motivation": "devised an interferometer and used it to try to measure Earth's absolute motion; precisely measured speed of light",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/63.jpg"
+  },
+  {
+    "id": 64,
+    "name": "Hendrik Antoon Lorentz",
+    "years": "1853-1928",
+    "country": "Dutch",
+    "motivation": "introduced Lorentz transformation equations of  special relativity; advanced ideas of relativistic length contraction and relativistic mass increase; contributed to theory of electromagnetism",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/64.jpg"
+  },
+  {
+    "id": 65,
+    "name": "Heike Kamerlingh-Onnes",
+    "years": "1853-1926",
+    "country": "Dutch",
+    "motivation": "liquified helium; discovered superconductivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/65.jpg"
+  },
+  {
+    "id": 66,
+    "name": "Sir Joseph John Thomson",
+    "years": "1856-1940",
+    "country": "British",
+    "motivation": "demonstrated existence of the electron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/66.jpg"
+  },
+  {
+    "id": 67,
+    "name": "Max Planck",
+    "years": "1858-1947",
+    "country": "German",
+    "motivation": "formulated the quantum theory; explained wavelength distribution of blackbody radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/67.jpg"
+  },
+  {
+    "id": 68,
+    "name": "Pierre Curie",
+    "years": "1859-1906",
+    "country": "French",
+    "motivation": "studied radioactivity with wife, Marie Curie; discovered piezoelectricity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/68.jpg"
+  },
+  {
+    "id": 69,
+    "name": "Sir William Henry Bragg",
+    "years": "1862-1942",
+    "country": "British",
+    "motivation": "worked on x-ray spectrometry",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/69.jpg"
+  },
+  {
+    "id": 70,
+    "name": "Philipp von Lenard",
+    "years": "1862-1947",
+    "country": "German",
+    "motivation": "studied cathode rays and the photoelectric effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/70.jpg"
+  },
+  {
+    "id": 71,
+    "name": "Wilhelm Wien",
+    "years": "1864-1928",
+    "country": "German",
+    "motivation": "discovered laws governing radiation of heat",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/71.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Pieter Zeeman",
+    "years": "1865-1943",
+    "country": "Dutch",
+    "motivation": "discovered splitting of spectral lines in a strong magnetic field",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/72.jpg"
+  },
+  {
+    "id": 73,
+    "name": "Marie Curie",
+    "years": "1867-1934",
+    "country": "Polish-born French",
+    "motivation": "discovered radioactivity of thorium; co-discovered radium and polonium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/73.jpg"
+  },
+  {
+    "id": 74,
+    "name": "Robert Millikan",
+    "years": "1868-1953",
+    "country": "American",
+    "motivation": "measured the charge of an electron; introduced term ``cosmic rays'' for the radiation coming from outer space; studied the photoelectric effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/74.jpg"
+  },
+  {
+    "id": 75,
+    "name": "Charles Wilson",
+    "years": "1869-1959",
+    "country": "British",
+    "motivation": "invented the cloud chamber",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/75.jpg"
+  },
+  {
+    "id": 76,
+    "name": "Jean Baptiste Perrin",
+    "years": "1870-1942",
+    "country": "French",
+    "motivation": "experimentally proved that cathode rays were streams  of negatively charged particles; experimentally confirmed the correctness of Einstein's theory of Brownian motion, and through his measurements obtained a new determination of Avogadro's number",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/76.jpg"
+  },
+  {
+    "id": 77,
+    "name": "Lord Ernest Rutherford",
+    "years": "1871-1937",
+    "country": "New Zealander",
+    "motivation": "theorized existence of the atomic nucleus based on results of the alpha-scattering experiment performed by Hans Geiger and Ernest Marsden; developed theory of Rutherford scattering (scattering of spinless, pointlike particles from a Coulomb potential)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/77.jpg"
+  },
+  {
+    "id": 78,
+    "name": "Guglielmo Marconi",
+    "years": "1874-1937",
+    "country": "Italian",
+    "motivation": "invented the first practical system of wireless  telegraphy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/78.jpg"
+  },
+  {
+    "id": 79,
+    "name": "Johannes Stark",
+    "years": "1874-1957",
+    "country": "German",
+    "motivation": "discovered splitting of spectral lines in a strong electric field",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/79.jpg"
+  },
+  {
+    "id": 80,
+    "name": "Charles Glover Barkla",
+    "years": "1877-1944",
+    "country": "British",
+    "motivation": "discovered that every chemical element, when irradiated by x rays, can emit an x-ray spectrum of two line-groups, which he named the K-series and L-series, that are of fundamental importance to understanding atomic structure",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/80.jpg"
+  },
+  {
+    "id": 81,
+    "name": "Albert Einstein",
+    "years": "1879-1955",
+    "country": "German-born American",
+    "motivation": "explained Brownian motion and photoelectric effect; contributed to theory of atomic spectra; formulated theories of  special and general relativity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/81.jpg"
+  },
+  {
+    "id": 82,
+    "name": "Otto Hahn",
+    "years": "1879-1968",
+    "country": "German",
+    "motivation": "discovered the fission of heavy nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/82.jpg"
+  },
+  {
+    "id": 83,
+    "name": "Max von Laue",
+    "years": "1879-1960",
+    "country": "German",
+    "motivation": "discovered diffraction of x rays by crystals",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/83.jpg"
+  },
+  {
+    "id": 84,
+    "name": "Sir Owen Richardson",
+    "years": "1879-1959",
+    "country": "British",
+    "motivation": "discovered the basic law of thermionic emission, now called the Richardson (or Richardson-Dushman) equation, which describes the emission of electrons from a heated conductor",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/84.jpg"
+  },
+  {
+    "id": 85,
+    "name": "Clinton Joseph Davisson",
+    "years": "1881-1958",
+    "country": "American",
+    "motivation": "co-discovered electron diffraction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/85.jpg"
+  },
+  {
+    "id": 86,
+    "name": "Max Born",
+    "years": "1882-1970",
+    "country": "German-born British",
+    "motivation": "contributed to creation of quantum mechanics; pioneer in the theory of crystals",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/86.jpg"
+  },
+  {
+    "id": 87,
+    "name": "Percy Williams Bridgman",
+    "years": "1882-1961",
+    "country": "American",
+    "motivation": "invented an apparatus to produce extremely high pressures; made many discoveries in high-pressure physics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/87.jpg"
+  },
+  {
+    "id": 88,
+    "name": "James Franck",
+    "years": "1882-1964",
+    "country": "German",
+    "motivation": "experimentally confirmed that atomic energy states are quantized",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/88.jpg"
+  },
+  {
+    "id": 89,
+    "name": "Victor Franz Hess",
+    "years": "1883-1964",
+    "country": "Austrian",
+    "motivation": "discovered cosmic radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/89.jpg"
+  },
+  {
+    "id": 90,
+    "name": "Peter Debye",
+    "years": "1884-1966",
+    "country": "Dutch-born German",
+    "motivation": "used methods of statistical mechanics to calculate equilibrium properties of solids; contributed  to knowledge of molecular structure",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/90.jpg"
+  },
+  {
+    "id": 91,
+    "name": "Niels Bohr",
+    "years": "1885-1962",
+    "country": "Danish",
+    "motivation": "contributed to quantum theory and to theory of nuclear reactions and nuclear fission",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/91.jpg"
+  },
+  {
+    "id": 92,
+    "name": "Karl Manne Georg Siegbahn",
+    "years": "1886-1978",
+    "country": "Swedish",
+    "motivation": "made important experimental contributions to the field of x-ray spectroscopy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/92.jpg"
+  },
+  {
+    "id": 93,
+    "name": "Gustav Hertz",
+    "years": "1887-1975",
+    "country": "German",
+    "motivation": "experimentally confirmed that atomic energy states are quantized",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/93.jpg"
+  },
+  {
+    "id": 94,
+    "name": "Erwin Schr%26ouml;dinger",
+    "years": "1887-1961",
+    "country": "Austrian",
+    "motivation": "contributed to creation of quantum mechanics; formulated the Schr%26ouml;dinger wave equation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/94.jpg"
+  },
+  {
+    "id": 95,
+    "name": "Sir Chandrasekhara Raman",
+    "years": "1888-1970",
+    "country": "Indian",
+    "motivation": "studied light scattering and discovered the Raman effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/95.jpg"
+  },
+  {
+    "id": 96,
+    "name": "Otto Stern",
+    "years": "1888-1969",
+    "country": "German-born American",
+    "motivation": "contributed to development of the molecular beam method; discovered the magnetic moment of the proton",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/96.jpg"
+  },
+  {
+    "id": 97,
+    "name": "Frits Zernike",
+    "years": "1888-1966",
+    "country": "Dutch",
+    "motivation": "invented the phase-contrast microscope, a type of  microscope widely used for examining specimens such as biological cells and tissues",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/97.jpg"
+  },
+  {
+    "id": 98,
+    "name": "Sir William Lawrence Bragg",
+    "years": "1890-1971",
+    "country": "British",
+    "motivation": "worked on crystal structure and x rays",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/98.jpg"
+  },
+  {
+    "id": 99,
+    "name": "Walther Bothe",
+    "years": "1891-1957",
+    "country": "German",
+    "motivation": "devised a coincidence counter for studying cosmic rays; demonstrated validity of energy-momentum conservation at the atomic scale",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/99.jpg"
+  },
+  {
+    "id": 100,
+    "name": "Sir James Chadwick",
+    "years": "1891-1974",
+    "country": "British",
+    "motivation": "discovered the neutron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/100.jpg"
+  },
+  {
+    "id": 101,
+    "name": "Sir Edward Appleton",
+    "years": "1892-1965",
+    "country": "English",
+    "motivation": "discovered the layer of the Earth's atmosphere, called the Appleton layer, which is the part of the ionosphere having the highest concentration of free electrons and is the most useful for  radio transmission",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/101.jpg"
+  },
+  {
+    "id": 102,
+    "name": "Prince Louis-Victor de Broglie",
+    "years": "1892-1987",
+    "country": "French",
+    "motivation": "predicted wave properties of the electron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/102.jpg"
+  },
+  {
+    "id": 103,
+    "name": "Arthur Compton",
+    "years": "1892-1962",
+    "country": "American",
+    "motivation": "discovered the increase in wavelength of x rays when scattered by an electron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/103.jpg"
+  },
+  {
+    "id": 104,
+    "name": "Sir George Paget Thomson",
+    "years": "1892-1975",
+    "country": "British",
+    "motivation": "co-discovered electron diffraction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/104.jpg"
+  },
+  {
+    "id": 105,
+    "name": "Harold Clayton Urey",
+    "years": "1893-1981",
+    "country": "American",
+    "motivation": "discovered deuterium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/105.jpg"
+  },
+  {
+    "id": 106,
+    "name": "Pjotr Leonidovich Kapitsa",
+    "years": "1894-1984",
+    "country": "Soviet",
+    "motivation": "heralded a new era of low-temperature physics by inventing a device for producing liquid helium without previous cooling with liquid hydrogen; demonstrated that Helium II is a quantum superfluid",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/106.jpg"
+  },
+  {
+    "id": 107,
+    "name": "Igor Y. Tamm",
+    "years": "1895-1971",
+    "country": "Soviet",
+    "motivation": "co-developed the theoretical interpretation of the radiation of electrons moving through matter faster than the speed of light (the ``Cerenkov effect''), and developed the theory of showers in cosmic rays",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/107.jpg"
+  },
+  {
+    "id": 108,
+    "name": "Robert S. Mulliken",
+    "years": "1896-1986",
+    "country": "American",
+    "motivation": "introduced the theoretical concept of the molecular orbital, which led to a new understanding of the chemical bond and the electronic  structure of molecules",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/108.jpg"
+  },
+  {
+    "id": 109,
+    "name": "Lord Patrick Maynard Stuart Blackett",
+    "years": "1897-1974",
+    "country": "British",
+    "motivation": "developed an automatic Wilson cloud chamber; discovered electron-positron pair production in cosmic rays",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/109.jpg"
+  },
+  {
+    "id": 110,
+    "name": "Sir John Cockcroft",
+    "years": "1897-1967",
+    "country": "British",
+    "motivation": "co-invented the first particle accelerator",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/110.jpg"
+  },
+  {
+    "id": 111,
+    "name": "Ir%26egrave;ne Joliot-Curie",
+    "years": "1897-1956",
+    "country": "French",
+    "motivation": "co-discovered artificial radioactivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/111.jpg"
+  },
+  {
+    "id": 112,
+    "name": "Isador Isaac Rabi",
+    "years": "1898-1988",
+    "country": "Austrian-born American",
+    "motivation": "developed the resonance technique for measuring the magnetic properties of atomic nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/112.jpg"
+  },
+  {
+    "id": 113,
+    "name": "Fr%26eacute;d%26eacute;ric Joliot-Curie",
+    "years": "1900-1958",
+    "country": "French",
+    "motivation": "co-discovered artificial radioactivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/113.jpg"
+  },
+  {
+    "id": 114,
+    "name": "Dennis Gabor",
+    "years": "1900-1979",
+    "country": "Hungarian",
+    "motivation": "invented and developed the holographic method whereby it is possible to record and display a three-dimensional display of an object",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/114.jpg"
+  },
+  {
+    "id": 115,
+    "name": "Wolfgang Pauli",
+    "years": "1900-1958",
+    "country": "Austrian-born American",
+    "motivation": "discovered the exclusion principle; suggested the existence of the neutrino",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/115.jpg"
+  },
+  {
+    "id": 116,
+    "name": "Enrico Fermi",
+    "years": "1901-1954",
+    "country": "Italian-born American",
+    "motivation": "performed experiments leading to first self-sustaining nuclear chain reaction; developed a theory of beta decay that introduced the weak interaction; derived the statistical properties of gases that obey the Pauli exclusion principle",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/116.jpg"
+  },
+  {
+    "id": 117,
+    "name": "Werner Heisenberg",
+    "years": "1901-1976",
+    "country": "German",
+    "motivation": "contributed to creation of quantum mechanics; introduced the ``uncertainty principle'' and the concept of exchange forces",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/117.jpg"
+  },
+  {
+    "id": 118,
+    "name": "Ernest Orlando Lawrence",
+    "years": "1901-1958",
+    "country": "American",
+    "motivation": "invented the cyclotron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/118.jpg"
+  },
+  {
+    "id": 119,
+    "name": "Paul Adrien Maurice Dirac",
+    "years": "1902-1984",
+    "country": "British",
+    "motivation": "helped found quantum electrodynamics; predicted the existence of antimatter by combining quantum mechanics with special relativity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/119.jpg"
+  },
+  {
+    "id": 120,
+    "name": "Alfred Kastler",
+    "years": "1902-1984",
+    "country": "French",
+    "motivation": "discovered and developed optical methods for studying the Hertzian resonances that are produced when atoms interact with radio waves or microwaves",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/120.jpg"
+  },
+  {
+    "id": 121,
+    "name": "Eugene Wigner",
+    "years": "1902-1995",
+    "country": "Hungarian-born American",
+    "motivation": "contributed to theoretical atomic and nuclear physics; introduced concept of the nuclear cross section",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/121.jpg"
+  },
+  {
+    "id": 122,
+    "name": "Cecil F. Powell",
+    "years": "1903-1969",
+    "country": "British",
+    "motivation": "developed the photographic emulsion method  of studying nuclear processes; discovered the charged pion",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/122.jpg"
+  },
+  {
+    "id": 123,
+    "name": "Ernest Walton",
+    "years": "1903-1995",
+    "country": "Irish",
+    "motivation": "co-invented the first particle accelerator",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/123.jpg"
+  },
+  {
+    "id": 124,
+    "name": "Pavel A. Cherenkov",
+    "years": "1904-1990",
+    "country": "Soviet",
+    "motivation": "discovered the ``Cerenkov effect'' whereby light is emitted by a particle passing through a medium at a speed greater  than that of light in the medium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/124.jpg"
+  },
+  {
+    "id": 125,
+    "name": "Carl David Anderson",
+    "years": "1905-1991",
+    "country": "American",
+    "motivation": "discovered the positron and the muon",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/125.jpg"
+  },
+  {
+    "id": 126,
+    "name": "Felix Bloch",
+    "years": "1905-1983",
+    "country": "Swiss-born American",
+    "motivation": "contributed to development of the NMR technique; measured the magnetic moment of the neutron; contributed to the theory of metals",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/126.jpg"
+  },
+  {
+    "id": 127,
+    "name": "Sir Nevill F. Mott",
+    "years": "1905-1996",
+    "country": "British",
+    "motivation": "contributed to theoretical condensed-matter physics by applying quantum theory to complex phenomena in solids; calculated  cross section for relativistic Coulomb scattering",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/127.jpg"
+  },
+  {
+    "id": 128,
+    "name": "Emilio Segr%26egrave;",
+    "years": "1905-1989",
+    "country": "Italian-born American",
+    "motivation": "co-discovered the antiproton; discovered technetium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/128.jpg"
+  },
+  {
+    "id": 129,
+    "name": "Hans Bethe",
+    "years": "1906-2005",
+    "country": "German-born American",
+    "motivation": "contributed to theoretical nuclear physics, especially concerning the mechanism for energy production in stars",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/129.jpg"
+  },
+  {
+    "id": 130,
+    "name": "Maria Goeppert-Mayer",
+    "years": "1906-1972",
+    "country": "German-born American",
+    "motivation": "advanced shell model of nuclear structure",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/130.jpg"
+  },
+  {
+    "id": 131,
+    "name": "Ernst Ruska",
+    "years": "1906-1988",
+    "country": "German",
+    "motivation": "designed the first electron microscope",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/131.jpg"
+  },
+  {
+    "id": 132,
+    "name": "Shin-Ichiro Tomonaga",
+    "years": "1906-1979",
+    "country": "Japanese",
+    "motivation": "co-developed quantum electrodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/132.jpg"
+  },
+  {
+    "id": 133,
+    "name": "J. Hans D. Jensen",
+    "years": "1907-1973",
+    "country": "German",
+    "motivation": "advanced shell model of nuclear structure",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/133.jpg"
+  },
+  {
+    "id": 134,
+    "name": "Edwin M. McMillan",
+    "years": "1907-1991",
+    "country": "American",
+    "motivation": "made discoveries concerning the transuranium elements",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/134.jpg"
+  },
+  {
+    "id": 135,
+    "name": "Hideki Yukawa",
+    "years": "1907-1981",
+    "country": "Japanese",
+    "motivation": "predicted existence of the pion",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/135.jpg"
+  },
+  {
+    "id": 136,
+    "name": "John Bardeen",
+    "years": "1908-1991",
+    "country": "American",
+    "motivation": "co-discovered the transistor effect; developed theory of superconductivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/136.jpg"
+  },
+  {
+    "id": 137,
+    "name": "Il'ja M. Frank",
+    "years": "1908-1990",
+    "country": "Soviet",
+    "motivation": "co-developed the theoretical interpretation of the radiation of electrons moving through matter faster than the speed of light (the ``Cerenkov effect''), and carried out experimental investigations of pair creation by gamma rays",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/137.jpg"
+  },
+  {
+    "id": 138,
+    "name": "Lev Landau",
+    "years": "1908-1968",
+    "country": "Soviet",
+    "motivation": "contributed to condensed matter theory on phenomena of superfluidity and superconductivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/138.jpg"
+  },
+  {
+    "id": 139,
+    "name": "Subramanyan Chandrasekhar",
+    "years": "1910-1995",
+    "country": "Indian-born American",
+    "motivation": "made important theoretical contributions concerning the structure and evolution of stars, especially white dwarfs",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/139.jpg"
+  },
+  {
+    "id": 140,
+    "name": "William Shockley",
+    "years": "1910-1989",
+    "country": "American",
+    "motivation": "co-discovered the transistor effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/140.jpg"
+  },
+  {
+    "id": 141,
+    "name": "Luis Walter Alvarez",
+    "years": "1911-1988",
+    "country": "American",
+    "motivation": "constructed huge bubble chambers and discovered many short-lived hadrons; advanced the impact theory for the extinction of the dinosaurs",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/141.jpg"
+  },
+  {
+    "id": 142,
+    "name": "William Fowler",
+    "years": "1911-1995",
+    "country": "American",
+    "motivation": "studied nuclear reactions of astrophysical significance; developed, with others, a  theory of the formation of chemical elements in the universe",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/142.jpg"
+  },
+  {
+    "id": 143,
+    "name": "Polykarp Kusch",
+    "years": "1911-1993",
+    "country": "American",
+    "motivation": "experimentally established that the  electron has an anomalous magnetic moment and made a precision determination of its magnitude",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/143.jpg"
+  },
+  {
+    "id": 144,
+    "name": "Edward Mills Purcell",
+    "years": "1912-1997",
+    "country": "American",
+    "motivation": "developed method of nuclear resonance absorption that permitted the absolute determination of nuclear magnetic moments;  co-discovered a line in the galactic radiospectrum caused by atomic hydrogen",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/144.jpg"
+  },
+  {
+    "id": 145,
+    "name": "Glenn T. Seaborg",
+    "years": "1912-1999",
+    "country": "American",
+    "motivation": "co-discovered plutonium and all further transuranium elements through element 102",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/145.jpg"
+  },
+  {
+    "id": 146,
+    "name": "Willis E. Lamb, Jr.",
+    "years": "1913-2008",
+    "country": "American",
+    "motivation": "made discoveries concerning fine structure of hydrogen",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/146.jpg"
+  },
+  {
+    "id": 147,
+    "name": "Robert Hofstadter",
+    "years": "1915-1990",
+    "country": "American",
+    "motivation": "measured charge distributions in atomic nuclei with high-energy electron scattering; measured the  charge and magnetic-moment distributions in the proton and neutron",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/147.jpg"
+  },
+  {
+    "id": 148,
+    "name": "Norman F. Ramsey, Jr.",
+    "years": "1915-2011",
+    "country": "American",
+    "motivation": "developed the separated oscillatory fields method, which is the basis of the cesium atomic clock (our present time standard); co-invented the hydrogen maser",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/148.jpg"
+  },
+  {
+    "id": 149,
+    "name": "Clifford G. Shull",
+    "years": "1915-2001",
+    "country": "American",
+    "motivation": "developed a neutron scattering technique in which a neutron diffraction pattern is produced that may be used to determine the atomic structure of a material",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/149.jpg"
+  },
+  {
+    "id": 150,
+    "name": "Charles H. Townes",
+    "years": "1915-2015",
+    "country": "American",
+    "motivation": "created first maser using ammonia to produce coherent microwave radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/150.jpg"
+  },
+  {
+    "id": 151,
+    "name": "Francis Crick",
+    "years": "1916-2004",
+    "country": "English",
+    "motivation": "co-proposed the double-helix structure of DNA",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/151.jpg"
+  },
+  {
+    "id": 152,
+    "name": "Maurice Wilkins",
+    "years": "1916-2004",
+    "country": "British",
+    "motivation": "investigated the structure of DNA",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/152.jpg"
+  },
+  {
+    "id": 153,
+    "name": "Bertram N. Brockhouse",
+    "years": "1918-2003",
+    "country": "Canadian",
+    "motivation": "developed the technique of neutron spectroscopy for studies of condensed matter",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/153.jpg"
+  },
+  {
+    "id": 154,
+    "name": "Richard P. Feynman",
+    "years": "1918-1988",
+    "country": "American",
+    "motivation": "co-developed quantum electrodynamics; created a new formalism for practical calculations by introducing a graphical method called Feynman diagrams",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/154.jpg"
+  },
+  {
+    "id": 155,
+    "name": "Frederick Reines",
+    "years": "1918-1998",
+    "country": "American",
+    "motivation": "established, together with Clyde L. Cowan, Jr., the existence of the electron antineutrino by detecting them using a reactor experiment",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/155.jpg"
+  },
+  {
+    "id": 156,
+    "name": "Julian Schwinger",
+    "years": "1918-1994",
+    "country": "American",
+    "motivation": "co-developed quantum electrodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/156.jpg"
+  },
+  {
+    "id": 157,
+    "name": "Kai M. Siegbahn",
+    "years": "1918-2007",
+    "country": "Swedish",
+    "motivation": "contributed to the development of high-resolution electron spectroscopy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/157.jpg"
+  },
+  {
+    "id": 158,
+    "name": "Nicolaas Bloembergen",
+    "years": "1920-",
+    "country": "Dutch-born American",
+    "motivation": "contributed to the development of laser spectroscopy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/158.jpg"
+  },
+  {
+    "id": 159,
+    "name": "Owen Chamberlain",
+    "years": "1920-2006",
+    "country": "American",
+    "motivation": "co-discovered the antiproton",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/159.jpg"
+  },
+  {
+    "id": 160,
+    "name": "Yoichiro Nambu",
+    "years": "1921-2015",
+    "country": "Japanese-born American",
+    "motivation": "contributed to elementary particle theory; recognized the role played by spontaneous symmetry-breaking in analogy with superconductivity theory; formulated QCD (quantum chromodynamics), the gauge theory of color",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/160.jpg"
+  },
+  {
+    "id": 161,
+    "name": "Andrei Sakharov",
+    "years": "1921-1989",
+    "country": "Russian",
+    "motivation": "father of the Soviet hydrogen bomb; awarded the Nobel Peace Prize for his struggle for human rights, for disarmament, and for  cooperation between all nations",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/161.jpg"
+  },
+  {
+    "id": 162,
+    "name": "Arthur L. Schawlow",
+    "years": "1921-1999",
+    "country": "American",
+    "motivation": "contributed to the development of laser spectroscopy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/162.jpg"
+  },
+  {
+    "id": 163,
+    "name": "Jack Steinberger",
+    "years": "1921-",
+    "country": "German-born American",
+    "motivation": "made many important discoveries in particle physics; co-discovered the neutral pion via photoproduction; co-discovered the muon neutrino",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/163.jpg"
+  },
+  {
+    "id": 164,
+    "name": "Nikolai Basov",
+    "years": "1922-2001",
+    "country": "Soviet",
+    "motivation": "worked in quantum electronics; independently worked out theoretical basis of the maser",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/164.jpg"
+  },
+  {
+    "id": 165,
+    "name": "Aage Bohr",
+    "years": "1922-2009",
+    "country": "Danish",
+    "motivation": "contributed to theoretical understanding of collective motion in nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/165.jpg"
+  },
+  {
+    "id": 166,
+    "name": "Leon Lederman",
+    "years": "1922-",
+    "country": "American",
+    "motivation": "contributed to the discovery of the muon neutrino and the bottom quark",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/166.jpg"
+  },
+  {
+    "id": 167,
+    "name": "Chen Ning Yang",
+    "years": "1922-",
+    "country": "Chinese-born American",
+    "motivation": "co-proposed parity violation in weak interactions",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/167.jpg"
+  },
+  {
+    "id": 168,
+    "name": "Val Logsdon Fitch",
+    "years": "1923-2015",
+    "country": "American",
+    "motivation": "co-discovered that decays of neutral kaons sometime violate CP conservation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/168.jpg"
+  },
+  {
+    "id": 169,
+    "name": "Jack S. Kilby",
+    "years": "1923-2005",
+    "country": "American",
+    "motivation": "invented the monolithic integrated circuit - the microchip - which laid the foundation for the field of microelectronics; co-invented the hand held calculator",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/169.jpg"
+  },
+  {
+    "id": 170,
+    "name": "Willard S. Boyle",
+    "years": "1924-2011",
+    "country": "Canadian",
+    "motivation": "co-invented the CCD (charge-coupled device)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/170.jpg"
+  },
+  {
+    "id": 171,
+    "name": "Georges Charpak",
+    "years": "1924-2010",
+    "country": "French",
+    "motivation": "invented the multiwire proportional chamber",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/171.jpg"
+  },
+  {
+    "id": 172,
+    "name": "Roy J. Glauber",
+    "years": "1925-",
+    "country": "American",
+    "motivation": "made important contributions to the theoretical understanding of quantum optics and high-energy collisions",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/172.jpg"
+  },
+  {
+    "id": 173,
+    "name": "Simon van der Meer",
+    "years": "1925-2011",
+    "country": "Dutch",
+    "motivation": "contributed to experiments that led to the discovery of the carriers (W%26#177; and Z%26#176;) of the weak interaction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/173.jpg"
+  },
+  {
+    "id": 174,
+    "name": "Donald A. Glaser",
+    "years": "1926-2013",
+    "country": "American",
+    "motivation": "invented the bubble chamber",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/174.jpg"
+  },
+  {
+    "id": 175,
+    "name": "Henry W. Kendall",
+    "years": "1926-1999",
+    "country": "American",
+    "motivation": "co-discovered, through investigations of deep-inelastic electron scattering, clear signs that there exists an inner structure (quarks and gluons) in the protons and neutrons of the atomic nucleus",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/175.jpg"
+  },
+  {
+    "id": 176,
+    "name": "Ben Mottelson",
+    "years": "1926-",
+    "country": "American",
+    "motivation": "contributed to theoretical understanding of collective motion in nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/176.jpg"
+  },
+  {
+    "id": 177,
+    "name": "Tsung-Dao Lee",
+    "years": "1926-",
+    "country": "Chinese-born American",
+    "motivation": "co-proposed parity violation in weak interactions",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/177.jpg"
+  },
+  {
+    "id": 178,
+    "name": "Abdus Salam",
+    "years": "1926-1996",
+    "country": "Pakistani",
+    "motivation": "co-developed gauge field theory of the electroweak interaction; suggested that the proton might be unstable",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/178.jpg"
+  },
+  {
+    "id": 179,
+    "name": "K. Alexander M%26uuml;ller",
+    "years": "1927-",
+    "country": "Swiss",
+    "motivation": "co-discovered the first ceramic superconductors",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/179.jpg"
+  },
+  {
+    "id": 180,
+    "name": "Martin L. Perl",
+    "years": "1927-2014",
+    "country": "American",
+    "motivation": "discovered the tau lepton",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/180.jpg"
+  },
+  {
+    "id": 181,
+    "name": "Murray Gell-Mann",
+    "years": "1929-",
+    "country": "American",
+    "motivation": "advanced an explanation of strange particles; predicted the existence of the Omega- particle;  postulated existence of quarks; founded the study of QCD",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/181.jpg"
+  },
+  {
+    "id": 182,
+    "name": "Rudolf Ludwig M%26ouml;ssbauer",
+    "years": "1929-2011",
+    "country": "German",
+    "motivation": "experimented with resonance absorption of gamma  radiation; discovered ``M%26ouml;ssbauer effect,'' the recoilless  emission of gamma rays by nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/182.jpg"
+  },
+  {
+    "id": 183,
+    "name": "Richard E. Taylor",
+    "years": "1929-",
+    "country": "Canadian",
+    "motivation": "co-discovered, through investigations of deep-inelastic electron scattering, clear signs that there exists an inner structure (quarks and gluons) in the protons and neutrons of the atomic nucleus",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/183.jpg"
+  },
+  {
+    "id": 184,
+    "name": "Leon N. Cooper",
+    "years": "1930-",
+    "country": "American",
+    "motivation": "contributed to condensed matter theory on phenomena of superconductivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/184.jpg"
+  },
+  {
+    "id": 185,
+    "name": "Jerome I. Friedman",
+    "years": "1930-",
+    "country": "American",
+    "motivation": "co-discovered, through investigations of deep-inelastic electron scattering, clear signs that there exists an inner structure (quarks and gluons) in the protons and neutrons of the atomic nucleus",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/185.jpg"
+  },
+  {
+    "id": 186,
+    "name": "George E. Smith",
+    "years": "1930-",
+    "country": "American",
+    "motivation": "co-invented the CCD (charge-coupled device)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/186.jpg"
+  },
+  {
+    "id": 187,
+    "name": "James W. Cronin",
+    "years": "1931-",
+    "country": "American",
+    "motivation": "co-discovered that decays of neutral kaons sometime violate CP conservation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/187.jpg"
+  },
+  {
+    "id": 188,
+    "name": "David M. Lee",
+    "years": "1931-",
+    "country": "American",
+    "motivation": "co-discovered that the isotope Helium-3 becomes a quantum superfluid near absolute zero",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/188.jpg"
+  },
+  {
+    "id": 189,
+    "name": "Burton Richter",
+    "years": "1931-",
+    "country": "American",
+    "motivation": "carried out an experiment leading to the discovery of charmonium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/189.jpg"
+  },
+  {
+    "id": 190,
+    "name": "John Robert Schrieffer",
+    "years": "1931-",
+    "country": "American",
+    "motivation": "contributed to condensed matter theory on phenomena of superconductivity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/190.jpg"
+  },
+  {
+    "id": 191,
+    "name": "Pierre-Gilles de Gennes",
+    "years": "1932-2007",
+    "country": "French",
+    "motivation": "developed theories in condensed matter physics applicable to liquid crystals and polymers",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/191.jpg"
+  },
+  {
+    "id": 192,
+    "name": "Sheldon Glashow",
+    "years": "1932-",
+    "country": "American",
+    "motivation": "co-developed gauge field theory of the electroweak interaction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/192.jpg"
+  },
+  {
+    "id": 193,
+    "name": "Melvin Schwartz",
+    "years": "1932-2006",
+    "country": "American",
+    "motivation": "proposed that it should be possible to produce and use a beam of neutrinos; co-discovered the muon neutrino",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/193.jpg"
+  },
+  {
+    "id": 194,
+    "name": "Claude Cohen-Tannoudji",
+    "years": "1933-",
+    "country": "French",
+    "motivation": "developed methods, with his colleagues, of using laser light to cool helium atoms to a temperature of about 0.18 %26#181;K and capturing the chilled atoms  in a trap",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/194.jpg"
+  },
+  {
+    "id": 195,
+    "name": "Charles K. Kao",
+    "years": "1933-",
+    "country": "Chinese-born British-American",
+    "motivation": "pioneer in the development and use of fiber optics in telecommunications",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/195.jpg"
+  },
+  {
+    "id": 196,
+    "name": "Arno A. Penzias",
+    "years": "1933-",
+    "country": "German-born American",
+    "motivation": "co-discovered the cosmic microwave background radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/196.jpg"
+  },
+  {
+    "id": 197,
+    "name": "Heinrich Rohrer",
+    "years": "1933-2013",
+    "country": "Swiss",
+    "motivation": "co-designed the scanning tunneling microscope (STM), a type of microscope in which a fine conducting probe is held close the surface of a sample",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/197.jpg"
+  },
+  {
+    "id": 198,
+    "name": "Steven Weinberg",
+    "years": "1933-",
+    "country": "American",
+    "motivation": "co-developed gauge field theory of the electroweak interaction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/198.jpg"
+  },
+  {
+    "id": 199,
+    "name": "Carlo Rubbia",
+    "years": "1934-",
+    "country": "Italian",
+    "motivation": "contributed to experiments that led to the discovery of the carriers (W%26#177; and Z%26#176;) of the weak interaction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/199.jpg"
+  },
+  {
+    "id": 200,
+    "name": "Robert W. Wilson",
+    "years": "1936-",
+    "country": "American",
+    "motivation": "co-discovered the cosmic microwave background radiation",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/200.jpg"
+  },
+  {
+    "id": 201,
+    "name": "Samuel C. C. Ting",
+    "years": "1936-",
+    "country": "American",
+    "motivation": "carried out an experiment leading to the discovery of charmonium",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/201.jpg"
+  },
+  {
+    "id": 202,
+    "name": "Kenneth Wilson",
+    "years": "1936-2013",
+    "country": "American",
+    "motivation": "invented renormalization group methods  to develop a theory for critical phenomena in connection with phase transitions; contributed to solving QCD using lattice gauge theory",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/202.jpg"
+  },
+  {
+    "id": 203,
+    "name": "Robert C. Richardson",
+    "years": "1937-2013",
+    "country": "American",
+    "motivation": "co-discovered that the isotope Helium-3 becomes a quantum superfluid near absolute zero",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/203.jpg"
+  },
+  {
+    "id": 204,
+    "name": "Albert Fert",
+    "years": "1938-",
+    "country": "French",
+    "motivation": "co-discovered Giant Magnetoresistance, which brought about a breakthrough in gigabyte hard disks",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/204.jpg"
+  },
+  {
+    "id": 205,
+    "name": "Peter Gr%26uuml;nberg",
+    "years": "1939-",
+    "country": "German",
+    "motivation": "co-discovered Giant Magnetoresistance, which brought about a breakthrough in gigabyte hard disks",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/205.jpg"
+  },
+  {
+    "id": 206,
+    "name": "Brian Josephson",
+    "years": "1940-",
+    "country": "Welsh",
+    "motivation": "contributed to theoretical predictions of the properties of a supercurrent through a tunnel barrier",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/206.jpg"
+  },
+  {
+    "id": 207,
+    "name": "Toshihide Maskawa",
+    "years": "1940-",
+    "country": "Japanese",
+    "motivation": "contributed to theoretical understanding of CP-violation; co-discovered the origin of the broken symmetry that predicts the existence of at least three families of quarks",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/207.jpg"
+  },
+  {
+    "id": 208,
+    "name": "David J. Gross",
+    "years": "1941-",
+    "country": "American",
+    "motivation": "co-discovered ``asymptotic freedom'' in non-Abelian gauge theories; contributed to the development of string theory",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/208.jpg"
+  },
+  {
+    "id": 209,
+    "name": "Klaus von Klitzing",
+    "years": "1943-",
+    "country": "German",
+    "motivation": "discovered the quantized Hall effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/209.jpg"
+  },
+  {
+    "id": 210,
+    "name": "Makato Kobayashi",
+    "years": "1944-",
+    "country": "Japanese",
+    "motivation": "contributed to theoretical understanding of CP-violation; co-discovered the origin of the broken symmetry that predicts the existence of at least three families of quarks",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/210.jpg"
+  },
+  {
+    "id": 211,
+    "name": "Douglas D. Osheroff",
+    "years": "1945-",
+    "country": "American",
+    "motivation": "co-discovered that the isotope Helium-3 becomes a quantum superfluid near absolute zero",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/211.jpg"
+  },
+  {
+    "id": 212,
+    "name": "Gerard t' Hooft",
+    "years": "1946-",
+    "country": "Dutch",
+    "motivation": "contributed to theoretical understanding of gauge theories  in elementary particle physics, quantum gravity and black holes,  and fundamental aspects of quantum physics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/212.jpg"
+  },
+  {
+    "id": 213,
+    "name": "Gerd Binnig",
+    "years": "1947-",
+    "country": "German",
+    "motivation": "co-designed the scanning tunneling microscope (STM), a type of microscope in which a fine conducting probe is held close the surface of a sample",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/213.jpg"
+  },
+  {
+    "id": 214,
+    "name": "Steven Chu",
+    "years": "1948-",
+    "country": "American",
+    "motivation": "developed the Doppler cooling method  of using laser light (optical molasses) to cool gases and capturing the chilled atoms in a magneto-optical trap (MOT)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/214.jpg"
+  },
+  {
+    "id": 215,
+    "name": "William D. Phillips",
+    "years": "1948-",
+    "country": "American",
+    "motivation": "developed, with his colleagues, a device called a Zeeman slower, with which he could  slow down and capture atoms in a purely magnetic trap",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/215.jpg"
+  },
+  {
+    "id": 216,
+    "name": "Hugh David Politzer",
+    "years": "1949-",
+    "country": "American",
+    "motivation": "co-discovered ``asymptotic freedom'' in non-Abelian gauge theories; co-predicted the existence of charmonium - the bound state of a charm quark and its antiparticle",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/216.jpg"
+  },
+  {
+    "id": 217,
+    "name": "Johannes Georg Bednorz",
+    "years": "1950-",
+    "country": "German",
+    "motivation": "co-discovered the first ceramic superconductors",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/217.jpg"
+  },
+  {
+    "id": 218,
+    "name": "Robert Laughlin",
+    "years": "1950-",
+    "country": "American",
+    "motivation": "developed a theory of quantum fluids that explained the fractional quantum Hall effect",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/218.jpg"
+  },
+  {
+    "id": 219,
+    "name": "Frank Wilczek",
+    "years": "1951-",
+    "country": "American",
+    "motivation": "co-discovered ``asymptotic freedom'' in non-Abelian gauge theories; contributed to the study of ``anyons''  (particle-like excitations in two-dimensional systems that obey ``fractional statistics'')",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/219.jpg"
+  },
+  {
+    "id": 220,
+    "name": "Andre Geim",
+    "years": "1958-",
+    "country": "Dutch-Russian",
+    "motivation": "co-discovered a simple method for isolating single atomic layers of graphite, known as graphene",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/220.jpg"
+  },
+  {
+    "id": 221,
+    "name": "Konstantin Novoselov",
+    "years": "1974-",
+    "country": "Russian-British",
+    "motivation": "co-discovered a simple method for isolating single atomic layers of graphite, known as graphene",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/221.jpg"
+  },
+  {
+    "id": 222,
+    "name": "Wallace Clement Sabine",
+    "years": "1868-1919",
+    "country": "American",
+    "motivation": "founded the science of architectural acoustics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/222.jpg"
+  },
+  {
+    "id": 223,
+    "name": "Arnold Sommerfeld",
+    "years": "1868-1951",
+    "country": "German",
+    "motivation": "generalized the circular orbits of the atomic Bohr model to elliptical orbits; introduced the magnetic quantum number; used statistical mechanics to explain the electronic properties of metals",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/223.jpg"
+  },
+  {
+    "id": 224,
+    "name": "Lise Meitner",
+    "years": "1878-1968",
+    "country": "Austrian-born Swedish",
+    "motivation": "co-discovered the element protactinium and studied the effects of neutron bombardment on uranium; introduced term ``fission'' for splitting the atomic nucleus",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/224.jpg"
+  },
+  {
+    "id": 225,
+    "name": "Paul Ehrenfest",
+    "years": "1880-1933",
+    "country": "Austrian",
+    "motivation": "applied quantum mechanics to rotating bodies; helped develop the modern statistical theory of nonequilibrium thermodynamics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/225.jpg"
+  },
+  {
+    "id": 226,
+    "name": "Theodor von K%26aacute;rm%26aacute;n",
+    "years": "1881-1963",
+    "country": "Hungarian-born American",
+    "motivation": "provided major contributions to our understanding of fluid mechanics, turbulence theory, and supersonic flight",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/226.jpg"
+  },
+  {
+    "id": 227,
+    "name": "Walther Meissner",
+    "years": "1882-1974",
+    "country": "German",
+    "motivation": "co-discovered the ``Meissner effect'',  whereby a superconductor expells a magnetic field",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/227.jpg"
+  },
+  {
+    "id": 228,
+    "name": "Emmy Noether",
+    "years": "1882-1935",
+    "country": "German",
+    "motivation": "developed Noether's theorem, which relates the continuous symmetries of a physical system to specific conservation laws",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/228.jpg"
+  },
+  {
+    "id": 229,
+    "name": "Hans Geiger",
+    "years": "1883-1945",
+    "country": "German",
+    "motivation": "helped measure charge-to-mass ratio for alpha particles; invented Geiger counter for detecting ionizing particles",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/229.jpg"
+  },
+  {
+    "id": 230,
+    "name": "Hermann Weyl",
+    "years": "1885-1955",
+    "country": "German",
+    "motivation": "attempted to incorporate electromagnetism into general relativity; evolved the concept of continuous groups using matrix representations and applied group theory to quantum mechanics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/230.jpg"
+  },
+  {
+    "id": 231,
+    "name": "Arthur Jeffrey Dempster",
+    "years": "1886-1950",
+    "country": "Canadian-born American",
+    "motivation": "discovered the isotope uranium-235",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/231.jpg"
+  },
+  {
+    "id": 232,
+    "name": "Henry Moseley",
+    "years": "1887-1915",
+    "country": "British",
+    "motivation": "developed the modern form of the period table of elements based on their atomic numbers",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/232.jpg"
+  },
+  {
+    "id": 233,
+    "name": "Sir Robert Watson-Watt",
+    "years": "1892-1973",
+    "country": "Scottish",
+    "motivation": "developed radar",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/233.jpg"
+  },
+  {
+    "id": 234,
+    "name": "Satyendra Bose",
+    "years": "1894-1974",
+    "country": "Indian",
+    "motivation": "worked out statistical method of handling bosons (a group of particles named in his honor)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/234.jpg"
+  },
+  {
+    "id": 235,
+    "name": "Oskar Klein",
+    "years": "1894-1977",
+    "country": "Swedish",
+    "motivation": "introduced the physical notion of extra dimensions that helped develop the Kaluza-Klein theory; co-developed the Klein-Gordon equation describing the relativistic behavior of spinless particles; co-developed the Klein-Nishina formula describing relativistic electron-photon scattering",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/235.jpg"
+  },
+  {
+    "id": 236,
+    "name": "Vladimir A. Fock",
+    "years": "1898-1974",
+    "country": "Russian",
+    "motivation": "made fundamental contributions to quantum theory; invented the Hartree-Fock approximation method and the notion of Fock space",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/236.jpg"
+  },
+  {
+    "id": 237,
+    "name": "Leo Szilard",
+    "years": "1898-1964",
+    "country": "Hungarian-born American",
+    "motivation": "first suggested possibility of a nuclear chain reaction",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/237.jpg"
+  },
+  {
+    "id": 238,
+    "name": "Pierre Auger",
+    "years": "1899-1993",
+    "country": "French",
+    "motivation": "discovered the Auger effect whereby an electron is ejected from an atom without the emission of an x-ray or gamma-ray photon as the result of the de-excitation of an excited electron within the atom; discovered cosmic-ray air showers",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/238.jpg"
+  },
+  {
+    "id": 239,
+    "name": "Ernst Ising",
+    "years": "1900-1998",
+    "country": "German-born American",
+    "motivation": "developed the Ising model of ferromagnetism",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/239.jpg"
+  },
+  {
+    "id": 240,
+    "name": "Fritz London",
+    "years": "1900-1954",
+    "country": "German-born American",
+    "motivation": "co-developed the phenomenological theory of  superconductivity; co-developed the first quantum-mechanical treatment of the hydrogen molecule; determined that the electromagnetic gauge is the phase of the Schr%26ouml;dinger wave function",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/240.jpg"
+  },
+  {
+    "id": 241,
+    "name": "Charles Francis Richter",
+    "years": "1900-1985",
+    "country": "American",
+    "motivation": "established the Richter scale for the measurement of earthquake intensity",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/241.jpg"
+  },
+  {
+    "id": 242,
+    "name": "George E. Uhlenbeck",
+    "years": "1900-1988",
+    "country": "Dutch",
+    "motivation": "co-discovered that the electron has an intrinsic spin",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/242.jpg"
+  },
+  {
+    "id": 243,
+    "name": "Robert J. Van de Graaf",
+    "years": "1901-1967",
+    "country": "American",
+    "motivation": "invented the Van de Graaf electrostatic generator",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/243.jpg"
+  },
+  {
+    "id": 244,
+    "name": "Samuel Abraham Goudsmit",
+    "years": "1902-1978",
+    "country": "Dutch",
+    "motivation": "co-discovered that the electron has an intrinsic spin",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/244.jpg"
+  },
+  {
+    "id": 245,
+    "name": "Igor Vasilievich Kurchatov",
+    "years": "1903-1960",
+    "country": "Soviet",
+    "motivation": "headed the Soviet atomic and hydrogen bomb programs",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/245.jpg"
+  },
+  {
+    "id": 246,
+    "name": "John von Neumann",
+    "years": "1903-1957",
+    "country": "Hungarian-born American",
+    "motivation": "formulated a fully quantum mechanical generalization  of statistical mechanics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/246.jpg"
+  },
+  {
+    "id": 247,
+    "name": "George Gamow",
+    "years": "1904-1968",
+    "country": "Russian-born American",
+    "motivation": "first suggested hydrogen fusion as source of solar energy",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/247.jpg"
+  },
+  {
+    "id": 248,
+    "name": "J. Robert Oppenheimer",
+    "years": "1904-1967",
+    "country": "American",
+    "motivation": "headed Manhattan Project to develop the nuclear fission bomb",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/248.jpg"
+  },
+  {
+    "id": 249,
+    "name": "Sir Rudolf Peierls",
+    "years": "1907-1995",
+    "country": "German-born British",
+    "motivation": "many contributions in theoretical physics, including an improved calculation of the critical mass needed to make a fission bomb",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/249.jpg"
+  },
+  {
+    "id": 250,
+    "name": "Edward Teller",
+    "years": "1908-2003",
+    "country": "Hungarian-born American",
+    "motivation": "helped develop atomic and hydrogen bombs",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/250.jpg"
+  },
+  {
+    "id": 251,
+    "name": "Victor F. Weisskopf",
+    "years": "1908-2002",
+    "country": "Austrian-born American",
+    "motivation": "made theoretical contributions to quantum electrodynamics, nuclear structure, and elementary particle physics",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/251.jpg"
+  },
+  {
+    "id": 252,
+    "name": "Homi Jehangir Bhabha",
+    "years": "1909-1966",
+    "country": "Indian",
+    "motivation": "initiated nuclear research programs in  India; carried out experiments in cosmic rays; calculated  cross section for elastic electron-positron scattering",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/252.jpg"
+  },
+  {
+    "id": 253,
+    "name": "Nikolai N. Bogolubov",
+    "years": "1909-1992",
+    "country": "Russian",
+    "motivation": "theoretical physicist and mathematician who contributed to the microscopic theory of superfluidity; also contributed to theory of elementary particles, including the S-matrix and dispersion relations, and to nonlinear mechanics and the general theory of dynamical systems",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/253.jpg"
+  },
+  {
+    "id": 254,
+    "name": "Maurice Goldhaber",
+    "years": "1911-2011",
+    "country": "Austrian-born American",
+    "motivation": "first measured (with James Chadwick) an accurate mass for the neutron; participated in experiments proving that beta rays are identical to atomic electrons; developed (with Edward Teller) the concept of coherent oscillations of protons and neutrons in nuclei leading to the giant dipole resonance; performed an experiment showing that neutrinos are created with negative helicity, which provided conclusive evidence for the V-A theory of weak interactions; participated in experiments that obtained an upper limit on the rate of proton decay and that provided evidence for neutrino oscillations",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/254.jpg"
+  },
+  {
+    "id": 255,
+    "name": "Chien-Shiung Wu",
+    "years": "1912-1997",
+    "country": "Chinese-born American",
+    "motivation": "experimentally proved that parity is not conserved in nuclear beta decay",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/255.jpg"
+  },
+  {
+    "id": 256,
+    "name": "Henry Primakoff",
+    "years": "1914-1983",
+    "country": "Russian-born American",
+    "motivation": "co-developed the theory of spin waves; first described the process that became known as the ``Primakoff effect'' (the  coherent photoproduction of neutral mesons in the electric field of  an atomic nucleus); contributed to understanding of various manifestations of the weak interaction, including muon capture, double-beta decay, and the interaction of neutrinos with nuclei",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/256.jpg"
+  },
+  {
+    "id": 257,
+    "name": "Robert Rathbun Wilson",
+    "years": "1914-2000",
+    "country": "American",
+    "motivation": "driving force behind creation of Fermilab and  Cornell University's  Laboratory of Nuclear Studies; a leader in the formation of the Federation of Atomic Scientists; did extensive measurements of kaon and pion photoproduction in which he made the first observation of a new state of the nucleon, N(1440)",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/257.jpg"
+  },
+  {
+    "id": 258,
+    "name": "Benoit Mandelbrot",
+    "years": "1924-2010",
+    "country": "French-American",
+    "motivation": "developed theory of fractals",
+    "photo_url": "https://raw.githubusercontent.com/RLewy/PhysicistsAPI/master/258.jpg"
+  }
+ ]
