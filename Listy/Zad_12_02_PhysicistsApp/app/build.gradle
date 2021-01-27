@@ -73,8 +73,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
-    //preference
+    // preference
     implementation "androidx.preference:preference-ktx:1.1.1"
+    // palette
+    implementation "com.android.support:palette-v7:30.0.3"
     //
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -8,11 +8,15 @@
         <variable
             name="physicist"
             type="com.example.zad_11_02_physicistsapp.model.Physicist" />
+        <variable
+            name="palette"
+            type="com.example.zad_11_02_physicistsapp.model.PhysicistPalette" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@{palette.backgroundColor}"
         tools:context=".view.detail.DetailFragment">
 
         <LinearLayout
@@ -43,6 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{physicist.name}"
+                        android:textColor="@{palette.titleColor}"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
@@ -52,6 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{physicist.life}"
+                        android:textColor="@{palette.textColor}"
                         android:textSize="18sp"
                         android:layout_marginBottom="8dp"/>
 
@@ -59,6 +65,7 @@
                         android:id="@+id/dv_nationality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@{palette.textColor}"
                         android:text="@{physicist.nationality}"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
