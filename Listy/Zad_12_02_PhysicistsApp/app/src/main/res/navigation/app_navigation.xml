@@ -26,4 +26,8 @@
             android:name="physicistUuid"
             app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.zad_11_02_physicistsapp.view.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

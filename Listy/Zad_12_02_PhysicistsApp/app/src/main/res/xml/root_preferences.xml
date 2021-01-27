@@ -1,0 +1,13 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <EditTextPreference
+            app:defaultValue="20"
+            app:key="wait_for_sync_duration"
+            android:title="Time to wait for refresh"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

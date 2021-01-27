@@ -35,4 +35,6 @@ class SharedPreferencesHelper {
 
     fun getUpdateTime() = sharedPreferences?.getLong(PREF_TIME, 0)
 
+    fun getStoredRefreshTime() = sharedPreferences?.getString("wait_for_sync_duration", "")
+
 }

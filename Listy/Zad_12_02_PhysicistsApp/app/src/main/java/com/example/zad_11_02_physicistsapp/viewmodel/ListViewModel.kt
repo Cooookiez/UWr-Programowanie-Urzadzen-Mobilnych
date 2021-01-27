@@ -18,6 +18,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.lang.NumberFormatException
 import kotlin.coroutines.CoroutineContext
 
 class ListViewModel(application: Application)
@@ -38,6 +39,8 @@ class ListViewModel(application: Application)
         get() = job + Dispatchers.Main
 
     fun refresh() {
+        checkStoredRefreshTime()
+
         val updateTime: Long? = preferencesHelper.getUpdateTime()
         if (
             updateTime != null  &&
@@ -47,6 +50,16 @@ class ListViewModel(application: Application)
             fetchLocal()
         else
             fetchRemote()
+    }
+
+    private fun checkStoredRefreshTime() {
+        val storedRefreshTime = preferencesHelper.getStoredRefreshTime()
+        try {
+            val time: Int = storedRefreshTime?.toInt()?:20
+            refreshTime = time.toLong() * 1000 * 100 * 100L
+        } catch (e: NumberFormatException) {
+            e.printStackTrace()
+        }
     }
 
     fun refreshFromRemote() {
