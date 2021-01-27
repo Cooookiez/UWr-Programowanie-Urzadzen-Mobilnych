@@ -43,16 +43,17 @@ class DetailFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.physicist.observe(viewLifecycleOwner, { physicist ->
             physicist?.let {
-                binding.dvName.text = physicist.name
-                binding.dvLife.text = physicist.life
-                binding.dvNationality.text = physicist.nationality
-                binding.dvMotivation.text = physicist.motivation
-                context?.let {
-                    binding.dvPicture.loadImage(
-                        physicist.imageUrl,
-                        getProgressDrawable(it)
-                    )
-                }
+                binding.physicist = physicist
+//                binding.dvName.text = physicist.name
+//                binding.dvLife.text = physicist.life
+//                binding.dvNationality.text = physicist.nationality
+//                binding.dvMotivation.text = physicist.motivation
+//                context?.let {
+//                    binding.dvPicture.loadImage(
+//                        physicist.imageUrl,
+//                        getProgressDrawable(it)
+//                    )
+//                }
             }
         })
     }

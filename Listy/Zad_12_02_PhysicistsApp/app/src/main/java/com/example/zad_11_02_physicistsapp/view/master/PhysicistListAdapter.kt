@@ -3,6 +3,7 @@ package com.example.zad_11_02_physicistsapp.view.master
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zad_11_02_physicistsapp.R
@@ -13,7 +14,8 @@ import com.example.zad_11_02_physicistsapp.util.loadImage
 
 class PhysicistListAdapter(
     private val physicistList: ArrayList<Physicist>
-) : RecyclerView.Adapter<PhysicistListAdapter.PhysicistViewHolder>() {
+) : RecyclerView.Adapter<PhysicistListAdapter.PhysicistViewHolder>(),
+    PhysicistClickListener {
 
     inner class PhysicistViewHolder(var binding: RecyclerViewItemBinding)
         : RecyclerView.ViewHolder(binding.root) {}
@@ -36,22 +38,16 @@ class PhysicistListAdapter(
     }
 
     override fun onBindViewHolder(holder: PhysicistListAdapter.PhysicistViewHolder, position: Int) {
-        val current: Physicist = physicistList[position]
-
-        holder.binding.rvName.text = current.name
-        holder.binding.rvLife.text = current.life
-        holder.binding.rvNationality.text = current.nationality
-        holder.binding.rvPicture.loadImage(
-            current.imageUrl,
-            getProgressDrawable(holder.binding.rvPicture.context)
-        )
-
-        holder.itemView.setOnClickListener {
-            val action = ListFragmentDirections.actionDetailFragment(current.uuid!!)
-            Navigation.findNavController(it).navigate(action)
-        }
+        holder.binding.physicist = physicistList[position]
+        holder.binding.listener = this
     }
 
     override fun getItemCount(): Int = physicistList.size
+
+    override fun onPhysicistClicked(view: View) {
+        val uuidString = (view.findViewById<View>(R.id.id) as TextView).text.toString()
+        val action = ListFragmentDirections.actionDetailFragment(uuidString.toLong())
+        Navigation.findNavController(view).navigate(action)
+    }
 
 }

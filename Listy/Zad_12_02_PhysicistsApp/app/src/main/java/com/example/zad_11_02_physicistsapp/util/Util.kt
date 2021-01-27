@@ -2,6 +2,7 @@ package com.example.zad_11_02_physicistsapp.util
 
 import android.content.Context
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -26,4 +27,14 @@ fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable
         .setDefaultRequestOptions(option)
         .load(uri)
         .into(this)
+}
+
+@BindingAdapter("image_url")
+fun loadImage(view: ImageView, url: String?) {
+    if (url != null) {
+        view.loadImage(
+            url,
+            getProgressDrawable(view.context)
+        )
+    }
 }
