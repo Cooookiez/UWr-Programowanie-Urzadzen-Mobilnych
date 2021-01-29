@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "Zad_99_01_Projekt_stoper"
