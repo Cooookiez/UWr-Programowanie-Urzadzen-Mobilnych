@@ -2,4 +2,12 @@
     <string name="app_name">Zad_99_01_Projekt_StopWatch</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="control_stop">Control stop</string>
+    <string name="control_play">Control play</string>
+    <string name="control_pause">Control pause</string>
+    <string name="title">Title</string>
+    <string name="untitled">Untitled</string>
+    <string name="controls_more">Controls more</string>
+    <string name="add_stopwatch">Add stopwatch</string>
+    <string name="control_delete">Control delete</string>
 </resources>
