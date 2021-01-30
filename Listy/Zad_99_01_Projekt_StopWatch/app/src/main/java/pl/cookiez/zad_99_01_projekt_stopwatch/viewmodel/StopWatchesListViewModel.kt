@@ -85,7 +85,7 @@ class StopWatchesListViewModel(application: Application)
         stopWatchesLoading.value = false
     }
 
-    private fun insertToLocal(stopWatchesList: List<StopWatch>) {
+    fun insertToLocal(stopWatchesList: List<StopWatch>) {
         launch {
             stopWatchRoom.deleteAllStopWatches()
             val resultUUID = stopWatchRoom.insertAll(*stopWatchesList.toTypedArray())

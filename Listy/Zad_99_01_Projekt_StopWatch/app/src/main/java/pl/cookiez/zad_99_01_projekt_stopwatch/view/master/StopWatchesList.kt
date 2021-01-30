@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import pl.cookiez.zad_99_01_projekt_stopwatch.R
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchesListBinding
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
+import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchRoom
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchesListViewModel
 
 
@@ -39,7 +40,19 @@ class StopWatchesList : Fragment() {
             observeViewModel()
         }
         binding.stopwatchAddNew.setOnClickListener {
-
+            val newStopwatch = StopWatch(
+                null,
+                "null",
+                "null",
+                "null",
+                System.nanoTime(),
+                0L,
+                true
+            )
+            viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
+            viewModel.stopWatchesList.value?.let { adapter.updateList(it) }
+            viewModel.stopWatchesList.value?.let { viewModel.insertToLocal(it) }
+            adapter.notifyDataSetChanged()
         }
     }
 
