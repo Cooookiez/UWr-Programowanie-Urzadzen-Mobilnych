@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/stopWatchesList">
+
+    <fragment
+        android:id="@+id/stopWatchesList"
+        android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesList"
+        android:label="fragment_stop_watches_list"
+        tools:layout="@layout/fragment_stop_watches_list" >
+        <action
+            android:id="@+id/action_stopWatchesList_to_stopWatchDetail"
+            app:destination="@id/stopWatchDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/stopWatchDetail"
+        android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.detail.StopWatchDetail"
+        android:label="fragment_stop_watch_detail"
+        tools:layout="@layout/fragment_stop_watch_detail" >
+        <action
+            android:id="@+id/action_stopWatchDetail_to_stopWatchesList"
+            app:destination="@id/stopWatchesList" />
+        <argument
+            android:name="stopwatchUUID"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

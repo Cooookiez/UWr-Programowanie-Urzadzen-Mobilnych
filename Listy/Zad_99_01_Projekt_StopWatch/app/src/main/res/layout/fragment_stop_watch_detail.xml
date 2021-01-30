@@ -1,114 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.detail.StopWatchDetail">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="320dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/stopwatch_cur_time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="24sp"/>
-
-        <EditText
-            android:id="@+id/stopwatch_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:hint="@string/untitled"
-            android:autofillHints="title" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/stopwatch_cur_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="88:88"
-        android:textSize="100sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="stopwatch"
+            type="pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/stopwatch_controls"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stopwatch_cur_time">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.detail.StopWatchDetail">
 
-        <ImageButton
-            android:id="@+id/stopwatch_controls_stop"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="@string/control_stop"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_baseline_stop_24"
-            android:tint="#640000"
-            android:visibility="visible"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="320dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/stopwatch_cur_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="24sp"/>
+
+            <EditText
+                android:id="@+id/stopwatch_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="title"
+                android:hint="@{stopwatch.title}"
+                android:inputType="text"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/stopwatch_cur_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88:88"
+            android:textSize="100sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/stopwatch_controls_play"
-            android:layout_width="80dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stopwatch_controls"
+            android:layout_width="200dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/control_play"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_baseline_play_arrow_24"
-            android:tint="#006400"
-            android:visibility="visible"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stopwatch_cur_time">
+
+            <ImageButton
+                android:id="@+id/stopwatch_controls_stop"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/control_stop"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_stop_24"
+                android:tint="#640000"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/stopwatch_controls_play"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/control_play"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_play_arrow_24"
+                android:tint="#006400"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/stopwatch_controls_pause"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/control_pause"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_pause_24"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageButton
-            android:id="@+id/stopwatch_controls_pause"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="@string/control_pause"
+            android:id="@+id/stopwatch_controls_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:contentDescription="@string/control_delete"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_baseline_pause_24"
-            android:visibility="gone"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:tint="#fff"
+            android:background="#640000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/stopwatch_controls_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:padding="8dp"
-        android:contentDescription="@string/control_delete"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_baseline_delete_24"
-        android:tint="#fff"
-        android:background="#640000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

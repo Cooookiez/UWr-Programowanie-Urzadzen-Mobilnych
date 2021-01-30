@@ -19,5 +19,11 @@ abstract class StopWatchRoom : RoomDatabase() {
             StopWatchRoom::class.java,
             "room__stopwatch"
         ).build()
+
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
+            instance ?: buildRoom(context).also {
+                instance = it
+            }
+        }
     }
 }
