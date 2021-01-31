@@ -16,6 +16,7 @@
         tools:context=".view.detail.StopWatchDetail">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="320dp"
@@ -29,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textSize="24sp"/>
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/stopwatch_title"
@@ -37,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="title"
                 android:hint="@string/untitled"
-                android:text="@{stopwatch.title}"
                 android:inputType="text"
+                android:text="@{stopwatch.title}"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -61,7 +62,7 @@
             android:layout_width="200dp"
             android:layout_height="80dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stopwatch_cur_time">
@@ -110,16 +111,70 @@
             android:id="@+id/stopwatch_controls_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
+            android:background="#640000"
             android:contentDescription="@string/control_delete"
+            android:padding="8dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_baseline_delete_24"
             android:tint="#fff"
-            android:background="#640000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/color_cancel"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_baseline_clear_24"/>
+
+            <ImageButton
+                android:id="@+id/color_red"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#F44336"
+                android:layout_marginStart="16dp"/>
+
+            <ImageButton
+                android:id="@+id/color_green"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#8BC34A"
+                android:layout_marginStart="16dp"/>
+
+            <ImageButton
+                android:id="@+id/color_yellow"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#FFEB3B"
+                android:layout_marginStart="16dp"/>
+
+            <ImageButton
+                android:id="@+id/color_blue"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#2196F3"
+                android:layout_marginStart="16dp"/>
+
+            <ImageButton
+                android:id="@+id/color_photo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_baseline_photo_camera_24"/>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
