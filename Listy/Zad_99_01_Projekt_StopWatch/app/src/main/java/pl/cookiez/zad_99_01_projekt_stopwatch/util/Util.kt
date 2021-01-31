@@ -21,7 +21,6 @@ fun nanoTime2strTimeHMS(timeNano: Long): String {
     val sStr: String = if (s >= 10) "$s" else "0$s"
     val mStr: String = if (m >= 10) "$m" else "0$m"
     val timeStr = if (h > 0) "$h:$mStr:$sStr" else "$mStr:$sStr"
-    Log.d("zaq1", "running | $timeStr | $h:$m:$s")
 
     return timeStr
 }

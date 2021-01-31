@@ -17,13 +17,13 @@ interface StopWatchDAO {
     )
     suspend fun updateStopWatch(
         uuid: String,
-        position: Int,
-        title: String,
-        background_color: String,
-        background_url: String,
-        time_start: Long,
-        time_saved_from_previous_counting: Long,
-        stop_watch_is_counting: Boolean
+        position: Int?,
+        title: String?,
+        background_color: String?,
+        background_url: String?,
+        time_start: Long?,
+        time_saved_from_previous_counting: Long?,
+        stop_watch_is_counting: Boolean?
     )
 
     @Query("SELECT * FROM `stopwatches`")

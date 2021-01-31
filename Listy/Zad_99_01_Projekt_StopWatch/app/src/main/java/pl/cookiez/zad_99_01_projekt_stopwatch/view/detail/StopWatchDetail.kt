@@ -1,22 +1,23 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import pl.cookiez.zad_99_01_projekt_stopwatch.R
+import androidx.navigation.Navigation
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchDetailBinding
-import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
 import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListAdapter
+import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListDirections
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchDetailViewModel
 
 
@@ -25,8 +26,8 @@ class StopWatchDetail : Fragment() {
     private var _binding: FragmentStopWatchDetailBinding? = null
     private val binding get() = _binding!!
     private var stopWatchUUID = 0L
-    private var position = 0L
     private val viewModel: StopWatchDetailViewModel by viewModels()
+    private val adapter: StopWatchesListAdapter = StopWatchesListAdapter(arrayListOf())
 
     var handlingStarted: Boolean = false
     var handling: Boolean = true
@@ -43,9 +44,8 @@ class StopWatchDetail : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         arguments.let {
             stopWatchUUID = StopWatchDetailArgs.fromBundle(it!!).stopwatchUUID
-            Log.d("zaq1 – Detail", "uuid: $stopWatchUUID")
         }
-        position = stopWatchUUID-1
+        viewModel.refresh()
         viewModel.fetch(stopWatchUUID)
         observeViewModel()
         if (!handlingStarted) {
@@ -68,7 +68,6 @@ class StopWatchDetail : Fragment() {
                 stopWatch?.title = s.toString()
                 viewModel.updateStopWatch(stopWatch!!)
             }
-
         })
         // play
         binding.stopwatchControlsPlay.setOnClickListener(View.OnClickListener { play() })
@@ -76,9 +75,15 @@ class StopWatchDetail : Fragment() {
         binding.stopwatchControlsPause.setOnClickListener(View.OnClickListener { pause() })
         // reset (stop)
         binding.stopwatchControlsStop.setOnClickListener(View.OnClickListener { stop() })
-        // delete TODO najpeir przemodelowac troche db
+        // delete
         binding.stopwatchControlsDelete.setOnClickListener(View.OnClickListener {
             Toast.makeText(context, "Not Implemented yet", Toast.LENGTH_SHORT).show()
+            viewModel.deleteStopWatch(binding.stopwatch!!)
+            handling = false
+            adapter.notifyDataSetChanged()
+            val action = StopWatchDetailDirections
+                .actionStopWatchDetailToStopWatchesList()
+            Navigation.findNavController(view).navigate(action)
         })
     }
 
@@ -147,7 +152,7 @@ class StopWatchDetail : Fragment() {
     }
 
     private fun observeViewModel() {
-        viewModel.stopWatch.observe(viewLifecycleOwner, {stopWatch ->
+        viewModel.stopWatch.observe(viewLifecycleOwner, { stopWatch ->
             stopWatch?.let {
                 binding.stopwatch = stopWatch
             }

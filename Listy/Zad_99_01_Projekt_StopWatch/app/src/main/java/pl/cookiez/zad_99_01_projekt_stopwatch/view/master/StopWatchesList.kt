@@ -45,9 +45,9 @@ class StopWatchesList : Fragment() {
             val newStopwatch = StopWatch(
                 null,
                 viewModel.stopWatchesList.value!!.size,
-                "null",
-                "null",
-                "null",
+                null,
+                null,
+                null,
                 System.nanoTime(),
                 0L,
                 true

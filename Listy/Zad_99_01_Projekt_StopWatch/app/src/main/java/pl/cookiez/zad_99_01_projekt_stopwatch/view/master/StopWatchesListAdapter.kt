@@ -64,7 +64,7 @@ class StopWatchesListAdapter(
             if (stopWatchesList[position].stopWatchIsCounting == true) View.GONE else View.VISIBLE
         holder.binding.stopwatchControlsPause.visibility =
             if (stopWatchesList[position].stopWatchIsCounting == true) View.VISIBLE else View.GONE
-        // TODO: 1/31/21 tutaj tick?
+
         if (!handlingStarted) {
             handlingStarted = true
             handling = true
@@ -112,7 +112,6 @@ class StopWatchesListAdapter(
         val uuidString =
             ((view.parent as View).findViewById<View>(R.id.stopwatch_uuid) as TextView)
             .text.toString()
-        Log.d("zaq1 – list adapter", "uuid: $uuidString")
         val action = StopWatchesListDirections
             .actionStopWatchesListToStopWatchDetail(uuidString.toLong())
         Navigation.findNavController(view).navigate(action)
@@ -129,11 +128,13 @@ class StopWatchesListAdapter(
         val stopwatchControlsPlay = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_play)
         val stopwatchControlsPause = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_pause)
 
-        val uuid: Int =
+        val uuid: Long =
             (itemView.findViewById<View>(R.id.stopwatch_uuid) as TextView)
+                .text.toString().toLong()
+        val position: Int =
+            (itemView.findViewById<View>(R.id.stopwatch_position) as TextView)
                 .text.toString().toInt()
         Log.d("zaq1", "uuid: $uuid")
-        val position: Int = (uuid-1)
         Log.d("zaq1", "position: $position")
 
         if (stopWatchesList[position].stopWatchIsCounting == true) {
