@@ -9,8 +9,8 @@
     <fragment
         android:id="@+id/stopWatchesList"
         android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesList"
-        android:label="fragment_stop_watches_list"
-        tools:layout="@layout/fragment_stop_watches_list" >
+        android:label="Stopwatches List"
+        tools:layout="@layout/fragment_stop_watches_list">
         <action
             android:id="@+id/action_stopWatchesList_to_stopWatchDetail"
             app:destination="@id/stopWatchDetail" />
@@ -18,8 +18,8 @@
     <fragment
         android:id="@+id/stopWatchDetail"
         android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.detail.StopWatchDetail"
-        android:label="fragment_stop_watch_detail"
-        tools:layout="@layout/fragment_stop_watch_detail" >
+        android:label="Stopwatch"
+        tools:layout="@layout/fragment_stop_watch_detail">
         <action
             android:id="@+id/action_stopWatchDetail_to_stopWatchesList"
             app:destination="@id/stopWatchesList" />
@@ -30,5 +30,5 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="pl.cookiez.zad_99_01_projekt_stopwatch.view.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="Settings" />
 </navigation>

@@ -48,7 +48,9 @@ class StopWatchesListAdapter(
     ): StopWatchesListAdapter.StopWatchViewHolder {
         return StopWatchViewHolder(
             StopWatchesListSingleItemBinding.inflate(
-                LayoutInflater.from(parent.context)
+                LayoutInflater.from(parent.context),
+                parent,
+                false
             )
         )
     }
@@ -65,11 +67,8 @@ class StopWatchesListAdapter(
         holder.binding.stopwatchControlsPause.visibility =
             if (stopWatchesList[position].stopWatchIsCounting == true) View.VISIBLE else View.GONE
 
-        if (!handlingStarted) {
-            handlingStarted = true
-            handling = true
-            tickTime(holder, position)
-        }
+        handling = true
+        tickTime(holder, position)
     }
 
     private fun tickTime(
@@ -81,8 +80,6 @@ class StopWatchesListAdapter(
                 .postDelayed({ tickTime(holder, position, tickDelay) }, tickDelay)
             // on tick this code
             if (stopWatchesList.size > 0) {
-                Log.d("zaq1 – i", "($position/${stopWatchesList.size-1})")
-                Log.d("zaq1 – i", "Count: ${stopWatchesList[position].stopWatchIsCounting}")
                 if (stopWatchesList[position].stopWatchIsCounting == true) {
                     // counting
                     holder.binding.stopwatchControlsPlay.visibility = View.GONE
@@ -95,7 +92,6 @@ class StopWatchesListAdapter(
 
                     holder.binding.stopwatchCurTime.text = strTime
                     stopWatchesList[position].timeStr = strTime
-                    Log.d("zaq1 – holder", "val: ${holder.binding.stopwatchCurTime.text}")
                 } else {
                     // no counting
                     holder.binding.stopwatchControlsPlay.visibility = View.VISIBLE
@@ -128,16 +124,12 @@ class StopWatchesListAdapter(
         val stopwatchControlsPlay = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_play)
         val stopwatchControlsPause = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_pause)
 
-        val uuid: Long =
-            (itemView.findViewById<View>(R.id.stopwatch_uuid) as TextView)
-                .text.toString().toLong()
         val position: Int =
             (itemView.findViewById<View>(R.id.stopwatch_position) as TextView)
                 .text.toString().toInt()
 
         if (stopWatchesList[position].stopWatchIsCounting == true) {
             // is counting / go pause
-            Toast.makeText(view.context, "PLAY -> PAUSE ", Toast.LENGTH_SHORT).show()
             stopwatchControlsPlay.visibility = View.GONE
             stopwatchControlsPause.visibility = View.VISIBLE
 
@@ -150,7 +142,6 @@ class StopWatchesListAdapter(
             stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
         } else {
             // is pause / go counting
-            Toast.makeText(view.context, "PAUSE -> PLAY ", Toast.LENGTH_SHORT).show()
             stopwatchControlsPlay.visibility = View.VISIBLE
             stopwatchControlsPause.visibility = View.GONE
 
