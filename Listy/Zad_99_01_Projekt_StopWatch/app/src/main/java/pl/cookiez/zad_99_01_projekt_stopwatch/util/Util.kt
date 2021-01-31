@@ -10,6 +10,7 @@ var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
 fun nanoTime2strTimeHMS(timeNano: Long): String {
     // count s, m, h from time_nano
     var time: Long = timeNano / 1000_000_000
+    Log.d("zaq1", "time = $time")
     val s: Long = time - (time / 60) * 60L
     time = (time - s) / 60
     val m: Long = time - (time / 60) * 60L

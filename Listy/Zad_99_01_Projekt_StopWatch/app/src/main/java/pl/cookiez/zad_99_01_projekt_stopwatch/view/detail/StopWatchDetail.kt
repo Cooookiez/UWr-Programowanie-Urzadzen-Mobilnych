@@ -1,6 +1,8 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -8,9 +10,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import pl.cookiez.zad_99_01_projekt_stopwatch.R
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchDetailBinding
+import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
+import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListAdapter
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchDetailViewModel
 
 
@@ -21,6 +27,9 @@ class StopWatchDetail : Fragment() {
     private var stopWatchUUID = 0L
     private var position = 0L
     private val viewModel: StopWatchDetailViewModel by viewModels()
+
+    var handlingStarted: Boolean = false
+    var handling: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,25 +48,102 @@ class StopWatchDetail : Fragment() {
         position = stopWatchUUID-1
         viewModel.fetch(stopWatchUUID)
         observeViewModel()
+        if (!handlingStarted) {
+            handlingStarted = true
+            tickTime()
+        }
+        if (binding.stopwatch?.stopWatchIsCounting == true) {
+            visibilityPause()
+        } else {
+            visibilityPlay()
+        }
         binding.stopwatchTitle.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                //TODO("Not yet implemented")
-            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //TODO("Not yet implemented")
-            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
-                //TODO("Not yet implemented")
+                // save this stopwatch to db
                 val stopWatch = binding.stopwatch
-                Log.d("zaq1", "title: ${stopWatch?.title}")
                 stopWatch?.title = s.toString()
-                Log.d("zaq1", "title: ${stopWatch?.title}")
                 viewModel.updateStopWatch(stopWatch!!)
             }
 
         })
+        // play
+        binding.stopwatchControlsPlay.setOnClickListener(View.OnClickListener { play() })
+        // pause
+        binding.stopwatchControlsPause.setOnClickListener(View.OnClickListener { pause() })
+        // reset (stop)
+        binding.stopwatchControlsStop.setOnClickListener(View.OnClickListener { stop() })
+        // delete TODO najpeir przemodelowac troche db
+        binding.stopwatchControlsDelete.setOnClickListener(View.OnClickListener {
+            Toast.makeText(context, "Not Implemented yet", Toast.LENGTH_SHORT).show()
+        })
+    }
+
+
+    private fun tickTime(tickDelay: Long = 1000) {
+        if (handling) {
+            Handler(Looper.getMainLooper()).postDelayed({ tickTime(tickDelay) }, tickDelay)
+            // on tick code
+            if (binding.stopwatch?.stopWatchIsCounting == true) {
+                val nanoTime =
+                    binding.stopwatch?.timeSavedFromPreviousCounting
+                    ?.plus(System.nanoTime() - binding.stopwatch?.timeStart!!)
+                val strTime = nanoTime2strTimeHMS(nanoTime!!)
+                binding.stopwatchCurTime.text = strTime
+            }
+        }
+    }
+
+    private fun play() {
+        visibilityPlay()
+        val stopWatch = binding.stopwatch!!
+        stopWatch.timeStart = System.nanoTime()
+        stopWatch.stopWatchIsCounting = true
+        binding.stopwatch = stopWatch
+        viewModel.updateStopWatch(stopWatch)
+    }
+
+    private fun pause() {
+        visibilityPause()
+        val stopWatch = binding.stopwatch!!
+        stopWatch.timeSavedFromPreviousCounting =
+            stopWatch.timeSavedFromPreviousCounting
+                ?.plus(System.nanoTime() - stopWatch.timeStart!!)
+        stopWatch.timeStart = 0L
+        stopWatch.stopWatchIsCounting = false
+        binding.stopwatch = stopWatch
+        viewModel.updateStopWatch(stopWatch)
+    }
+
+    private fun stop() {
+        visibilityStop()
+        val stopWatch = binding.stopwatch!!
+        stopWatch.timeStart = 0L
+        stopWatch.timeSavedFromPreviousCounting = 0L
+        stopWatch.stopWatchIsCounting = false
+        binding.stopwatch = stopWatch
+        viewModel.updateStopWatch(stopWatch)
+    }
+
+    private fun visibilityPlay() {
+        binding.stopwatchControlsPlay.visibility = View.GONE
+        binding.stopwatchControlsPause.visibility = View.VISIBLE
+        binding.stopwatchControlsStop.visibility = View.GONE
+    }
+
+    private fun visibilityPause() {
+        binding.stopwatchControlsPlay.visibility = View.VISIBLE
+        binding.stopwatchControlsPause.visibility = View.GONE
+        binding.stopwatchControlsStop.visibility = View.VISIBLE
+    }
+
+    private fun visibilityStop() {
+        binding.stopwatchControlsPlay.visibility = View.VISIBLE
+        binding.stopwatchControlsPause.visibility = View.GONE
+        binding.stopwatchControlsStop.visibility = View.GONE
     }
 
     private fun observeViewModel() {
