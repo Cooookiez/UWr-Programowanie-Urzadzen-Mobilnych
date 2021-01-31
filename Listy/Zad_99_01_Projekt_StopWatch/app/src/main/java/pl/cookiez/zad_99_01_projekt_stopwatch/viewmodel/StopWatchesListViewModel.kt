@@ -29,33 +29,6 @@ class StopWatchesListViewModel(application: Application)
 
     private val job by lazy { Job() }
 
-    init {
-//        val stopWatch1 = StopWatch(
-//            1,
-//            "Untitled 1",
-//            "",
-//            "",
-//            0L,
-//            0L,
-//            false
-//        )
-//        val stopWatch2 = StopWatch(
-//            2,
-//            "Untitled 2",
-//            "",
-//            "",
-//            0L,
-//            0L,
-//            false
-//        )
-//        val stopWatchesLis0: ArrayList<StopWatch> = arrayListOf(
-//            stopWatch1,
-//            stopWatch2
-//        )
-//        insertToLocal(stopWatchesLis0)
-//        this.stopWatchesList.value = stopWatchesLis0
-    }
-
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 
@@ -83,6 +56,20 @@ class StopWatchesListViewModel(application: Application)
         this.stopWatchesList.value = stopWatchesList
         stopWatchesLoadingError.value = false
         stopWatchesLoading.value = false
+    }
+
+    fun updateStopWatch(stopWatch: StopWatch) {
+        launch {
+            stopWatchRoom.updateStopWatch(
+                stopWatch.uuid.toString(),
+                stopWatch.title as String,
+                stopWatch.backgroundColor as String,
+                stopWatch.backgroundUrl as String,
+                stopWatch.timeStart as Long,
+                stopWatch.timeSavedFromPreviousCounting as Long,
+                stopWatch.stopWatchIsCounting as Boolean
+            )
+        }
     }
 
     fun insertToLocal(stopWatchesList: List<StopWatch>) {

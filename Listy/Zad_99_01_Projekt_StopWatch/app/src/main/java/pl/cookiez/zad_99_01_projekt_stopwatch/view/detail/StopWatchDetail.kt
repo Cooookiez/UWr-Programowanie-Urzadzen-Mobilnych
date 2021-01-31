@@ -1,6 +1,8 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -35,6 +37,20 @@ class StopWatchDetail : Fragment() {
         }
         viewModel.fetch(stopWatchUUID)
         observeViewModel()
+        binding.stopwatchTitle.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //TODO("Not yet implemented")
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //TODO("Not yet implemented")
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                //TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun observeViewModel() {

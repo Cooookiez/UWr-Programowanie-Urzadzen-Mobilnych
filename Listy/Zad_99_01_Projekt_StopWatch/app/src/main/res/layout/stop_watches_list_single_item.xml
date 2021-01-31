@@ -9,6 +9,9 @@
             name="stopwatch"
             type="pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch" />
         <variable
+            name="strTime"
+            type="String" />
+        <variable
             name="listener"
             type="pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListClickListener" />
     </data>
@@ -33,20 +36,22 @@
             android:background="#ffff00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="@{listener::onMoreClicked}">
 
             <TextView
                 android:id="@+id/stopwatch_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{stopwatch.title}"
+                android:hint="@string/untitled"
                 android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/stopwatch_cur_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_8888"
+                android:text="@{strTime}"
                 android:textSize="48sp"
                 android:textStyle="bold" />
 
@@ -69,11 +74,28 @@
                 android:scaleType="fitCenter"
                 android:tint="#006400"
                 android:onClick="@{listener::onPlayPauseClicked}"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_play_arrow_24"
                 android:contentDescription="@string/control_play" />
+
+            <ImageButton
+                android:id="@+id/stopwatch_controls_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:minWidth="80dp"
+                android:scaleType="fitCenter"
+                android:tint="#006400"
+                android:onClick="@{listener::onPlayPauseClicked}"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_pause_24"
+                android:contentDescription="@string/control_pause" />
 
         </LinearLayout>
 
