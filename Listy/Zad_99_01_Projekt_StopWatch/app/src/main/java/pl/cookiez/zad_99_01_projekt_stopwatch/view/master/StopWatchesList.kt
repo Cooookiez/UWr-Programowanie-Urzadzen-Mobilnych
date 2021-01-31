@@ -44,7 +44,8 @@ class StopWatchesList : Fragment() {
         binding.stopwatchAddNew.setOnClickListener {
             val newStopwatch = StopWatch(
                 null,
-                "",
+                viewModel.stopWatchesList.value!!.size,
+                "null",
                 "null",
                 "null",
                 System.nanoTime(),

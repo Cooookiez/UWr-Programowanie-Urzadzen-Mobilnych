@@ -62,6 +62,7 @@ class StopWatchesListViewModel(application: Application)
         launch {
             stopWatchRoom.updateStopWatch(
                 stopWatch.uuid.toString(),
+                stopWatch.position as Int,
                 stopWatch.title as String,
                 stopWatch.backgroundColor as String,
                 stopWatch.backgroundUrl as String,
@@ -77,7 +78,10 @@ class StopWatchesListViewModel(application: Application)
             stopWatchRoom.deleteAllStopWatches()
             val resultUUID = stopWatchRoom.insertAll(*stopWatchesList.toTypedArray())
             for (i in resultUUID.indices) {
-                resultUUID[i].also { stopWatchesList[i].uuid = it }
+                resultUUID[i].also {
+                    stopWatchesList[i].uuid = it
+                    stopWatchesList[i].position = i
+                }
             }
             dataRetrieved(stopWatchesList)
         }

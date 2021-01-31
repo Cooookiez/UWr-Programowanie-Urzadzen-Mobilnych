@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class StopWatch(
     @PrimaryKey(autoGenerate = true)
     var uuid: Long?,
+    var position: Int?,
     var title: String?,
     @ColumnInfo(name = "background_color")
     var backgroundColor: String?,

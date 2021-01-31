@@ -34,6 +34,7 @@ class StopWatchDetailViewModel(application: Application) : AndroidViewModel(appl
         launch {
             stopWatchRoom.updateStopWatch(
                 stopWatch.uuid.toString(),
+                stopWatch.position as Int,
                 stopWatch.title as String,
                 stopWatch.backgroundColor as String,
                 stopWatch.backgroundUrl as String,

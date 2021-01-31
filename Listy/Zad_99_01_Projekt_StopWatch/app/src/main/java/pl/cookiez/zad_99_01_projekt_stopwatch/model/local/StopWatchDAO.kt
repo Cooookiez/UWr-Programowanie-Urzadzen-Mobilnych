@@ -13,10 +13,11 @@ interface StopWatchDAO {
     suspend fun insertAll(vararg stopWatch: StopWatch): List<Long>
 
     @Query(
-        "UPDATE `StopWatches` SET `title` = :title, `background_color` = :background_color, `background_url` = :background_url, `time_start` = :time_start, `time_saved_from_previous_counting` = :time_saved_from_previous_counting, `stop_watch_is_counting` = :stop_watch_is_counting WHERE `uuid` = :uuid"
+        "UPDATE `StopWatches` SET `position` = :position, `title` = :title, `background_color` = :background_color, `background_url` = :background_url, `time_start` = :time_start, `time_saved_from_previous_counting` = :time_saved_from_previous_counting, `stop_watch_is_counting` = :stop_watch_is_counting WHERE `uuid` = :uuid"
     )
     suspend fun updateStopWatch(
         uuid: String,
+        position: Int,
         title: String,
         background_color: String,
         background_url: String,

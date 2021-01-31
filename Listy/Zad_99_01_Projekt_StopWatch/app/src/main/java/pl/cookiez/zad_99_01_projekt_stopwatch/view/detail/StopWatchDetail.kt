@@ -154,6 +154,11 @@ class StopWatchDetail : Fragment() {
         })
     }
 
+    override fun onPause() {
+        super.onPause()
+        handling = false
+        handlingStarted = false
+    }
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

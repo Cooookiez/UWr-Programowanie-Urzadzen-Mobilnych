@@ -81,8 +81,8 @@ class StopWatchesListAdapter(
                 .postDelayed({ tickTime(holder, position, tickDelay) }, tickDelay)
             // on tick this code
             if (stopWatchesList.size > 0) {
-//                Log.d("zaq1 – i", "($position/${stopWatchesList.size-1})")
-//                Log.d("zaq1 – i", "Count: ${stopWatchesList[position].stopWatchIsCounting}")
+                Log.d("zaq1 – i", "($position/${stopWatchesList.size-1})")
+                Log.d("zaq1 – i", "Count: ${stopWatchesList[position].stopWatchIsCounting}")
                 if (stopWatchesList[position].stopWatchIsCounting == true) {
                     // counting
                     holder.binding.stopwatchControlsPlay.visibility = View.GONE
@@ -94,7 +94,7 @@ class StopWatchesListAdapter(
                     val strTime = nanoTime2strTimeHMS(timeNano)
 
                     holder.binding.strTime = strTime
-//                    Log.d("zaq1 – holder", "val: ${holder.binding.stopwatchCurTime.text}")
+                    Log.d("zaq1 – holder", "val: ${holder.binding.stopwatchCurTime.text}")
                 } else {
                     // no counting
                     holder.binding.stopwatchControlsPlay.visibility = View.VISIBLE
@@ -125,23 +125,23 @@ class StopWatchesListAdapter(
             StopWatchesListViewModel(application = Application())
 
         val itemView = view.parent.parent as View
-//
+
         val stopwatchControlsPlay = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_play)
         val stopwatchControlsPause = itemView.findViewById<ImageButton>(R.id.stopwatch_controls_pause)
-//
+
         val uuid: Int =
             (itemView.findViewById<View>(R.id.stopwatch_uuid) as TextView)
                 .text.toString().toInt()
         Log.d("zaq1", "uuid: $uuid")
         val position: Int = (uuid-1)
         Log.d("zaq1", "position: $position")
-//
+
         if (stopWatchesList[position].stopWatchIsCounting == true) {
-//            // is counting / go pause
+            // is counting / go pause
             Log.d("zaq1", "is counting")
             stopwatchControlsPlay.visibility = View.GONE
             stopwatchControlsPause.visibility = View.VISIBLE
-//
+
             val timeNano =
                 stopWatchesList[position].timeSavedFromPreviousCounting!! +
                         (System.nanoTime() - stopWatchesList[position].timeStart!!)
@@ -149,17 +149,15 @@ class StopWatchesListAdapter(
             stopWatchesList[position].timeStart = 0L
             stopWatchesList[position].stopWatchIsCounting = false
             stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
-//            updateList(stopWatchesList)
         } else {
-//            // is pause / go counting
+            // is pause / go counting
             Log.d("zaq1", "isn't counting")
             stopwatchControlsPlay.visibility = View.VISIBLE
             stopwatchControlsPause.visibility = View.GONE
-//
+
             stopWatchesList[position].timeStart = System.nanoTime()
             stopWatchesList[position].stopWatchIsCounting = true
             stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
-//            updateList(stopWatchesList)
         }
     }
 

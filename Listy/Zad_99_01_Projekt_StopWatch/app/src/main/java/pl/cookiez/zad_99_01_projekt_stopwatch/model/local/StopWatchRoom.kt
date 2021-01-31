@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 
-@Database(entities = [StopWatch::class], version = 1, exportSchema = false)
+@Database(entities = [StopWatch::class], version = 2, exportSchema = false)
 abstract class StopWatchRoom : RoomDatabase() {
     abstract fun stopWatchDAO(): StopWatchDAO
 
