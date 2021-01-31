@@ -9,7 +9,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
-import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchDAO
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchRoom
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.SharedPreferencesHelper
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.notifyTime
@@ -20,8 +19,6 @@ class StopWatchesListViewModel(application: Application)
     : AndroidViewModel(application), CoroutineScope {
 
     val stopWatchesList = MutableLiveData<List<StopWatch>>()
-    val stopWatchesLoadingError = MutableLiveData<Boolean>()
-    val stopWatchesLoading = MutableLiveData<Boolean>()
 
     private var preferencesHelper = SharedPreferencesHelper(getApplication())
     private var stopWatchRoom = StopWatchRoom(getApplication()).stopWatchDAO()
@@ -44,32 +41,24 @@ class StopWatchesListViewModel(application: Application)
 
     fun refresh() = fetchLocal()
     private fun fetchLocal() {
-        stopWatchesLoading.value = true
         launch {
             val stopWatchesList: List<StopWatch> =
                 stopWatchRoom.getAllStopWatches()
+            for (i in stopWatchesList.indices) {
+                stopWatchesList[i].position = i
+            }
+            stopWatchRoom.updateStopWatchesFromObjects(stopWatchesList)
             dataRetrieved(stopWatchesList)
         }
     }
 
     private fun dataRetrieved(stopWatchesList: List<StopWatch>) {
         this.stopWatchesList.value = stopWatchesList
-        stopWatchesLoadingError.value = false
-        stopWatchesLoading.value = false
     }
 
     fun updateStopWatch(stopWatch: StopWatch) {
         launch {
-            stopWatchRoom.updateStopWatch(
-                stopWatch.uuid.toString(),
-                stopWatch.position as Int,
-                stopWatch.title as String,
-                stopWatch.backgroundColor as String,
-                stopWatch.backgroundUrl as String,
-                stopWatch.timeStart as Long,
-                stopWatch.timeSavedFromPreviousCounting as Long,
-                stopWatch.stopWatchIsCounting as Boolean
-            )
+            stopWatchRoom.updateStopWatchFromObject(stopWatch)
         }
     }
 

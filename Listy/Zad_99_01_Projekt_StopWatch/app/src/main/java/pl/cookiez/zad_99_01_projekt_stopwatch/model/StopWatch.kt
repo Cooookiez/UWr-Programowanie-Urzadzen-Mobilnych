@@ -18,6 +18,8 @@ data class StopWatch(
     var timeStart: Long?,
     @ColumnInfo(name = "time_saved_from_previous_counting")
     var timeSavedFromPreviousCounting: Long?,
+    @ColumnInfo(name = "time_str")
+    var timeStr: String?,
     @ColumnInfo(name = "stop_watch_is_counting")
     var stopWatchIsCounting: Boolean?
 )

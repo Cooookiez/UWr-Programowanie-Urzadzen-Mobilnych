@@ -48,7 +48,7 @@
             android:id="@+id/stopwatch_cur_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_8888"
+            android:text="@{String.valueOf(stopwatch.timeStr)}"
             android:textSize="100sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

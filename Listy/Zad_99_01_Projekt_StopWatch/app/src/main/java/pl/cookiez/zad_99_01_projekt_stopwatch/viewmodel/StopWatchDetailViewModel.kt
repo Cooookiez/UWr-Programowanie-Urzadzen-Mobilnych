@@ -34,39 +34,28 @@ class StopWatchDetailViewModel(application: Application) : AndroidViewModel(appl
 
     fun updateStopWatch(stopWatch: StopWatch) {
         launch {
-            stopWatchRoom.updateStopWatch(
-                stopWatch.uuid.toString(),
-                stopWatch.position as Int,
-                stopWatch.title.toString(),
-                stopWatch.backgroundColor.toString(),
-                stopWatch.backgroundUrl.toString(),
-                stopWatch.timeStart as Long,
-                stopWatch.timeSavedFromPreviousCounting as Long,
-                stopWatch.stopWatchIsCounting as Boolean
-            )
+            stopWatchRoom.updateStopWatchFromObject(stopWatch)
         }
     }
 
     fun deleteStopWatch(stopWatch: StopWatch) {
         val stopWatchesList = this.stopWatchesList.value as ArrayList<StopWatch>
-        Log.d("zaq1", "s: ${stopWatchesList.size}")
         insertToLocal(stopWatchesList)
         stopWatchesList.removeAt(stopWatch.position!!)
-        Log.d("zaq1", "s: ${stopWatchesList.size}")
-        this.stopWatchesList.value = stopWatchesList as List<StopWatch>
-        refresh()
+        this.stopWatchesList.value = stopWatchesList
     }
 
     fun insertToLocal(stopWatchesList: List<StopWatch>) {
         launch {
             stopWatchRoom.deleteAllStopWatches()
-            val resultUUID = stopWatchRoom.insertAll(*stopWatchesList.toTypedArray())
+            var resultUUID = stopWatchRoom.insertAll(*stopWatchesList.toTypedArray())
             for (i in resultUUID.indices) {
                 resultUUID[i].also {
-                    stopWatchesList[i].uuid = it
+                    stopWatchesList[i].uuid = null
                     stopWatchesList[i].position = i
                 }
             }
+            stopWatchRoom.updateStopWatchesFromObjects(stopWatchesList)
             dataRetrieved(stopWatchesList)
         }
     }
@@ -76,6 +65,9 @@ class StopWatchDetailViewModel(application: Application) : AndroidViewModel(appl
         launch {
             val stopWatchesList: List<StopWatch> =
                 stopWatchRoom.getAllStopWatches()
+            for (i in stopWatchesList.indices) {
+                stopWatchesList[i].position = i
+            }
             dataRetrieved(stopWatchesList)
         }
     }

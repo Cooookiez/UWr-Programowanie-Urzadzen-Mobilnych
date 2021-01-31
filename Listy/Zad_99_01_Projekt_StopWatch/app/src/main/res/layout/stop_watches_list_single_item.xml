@@ -21,8 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00ff00">
+        android:layout_marginBottom="8dp">
 
         <TextView
             android:id="@+id/stopwatch_uuid"
@@ -40,7 +39,6 @@
 
 
         <LinearLayout
-            android:background="#ffff00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -58,14 +56,13 @@
                 android:id="@+id/stopwatch_cur_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{strTime}"
+                android:text="@{String.valueOf(stopwatch.timeStr)}"
                 android:textSize="48sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:background="#ff00ff"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -76,7 +73,6 @@
                 android:id="@+id/stopwatch_controls_play"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="#ffff00"
                 android:minWidth="80dp"
                 android:scaleType="fitCenter"
                 android:tint="#006400"
@@ -92,7 +88,6 @@
                 android:id="@+id/stopwatch_controls_pause"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="#ffff00"
                 android:minWidth="80dp"
                 android:scaleType="fitCenter"
                 android:tint="#006400"
@@ -108,7 +103,6 @@
 
         <ImageButton
             android:id="@+id/stopwatch_controls_more"
-            android:background="#ffff00"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:minWidth="50dp"

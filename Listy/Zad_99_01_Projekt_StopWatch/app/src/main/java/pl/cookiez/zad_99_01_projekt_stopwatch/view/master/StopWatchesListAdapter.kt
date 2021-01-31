@@ -93,7 +93,8 @@ class StopWatchesListAdapter(
                                 (System.nanoTime() - stopWatchesList[position].timeStart!!)
                     val strTime = nanoTime2strTimeHMS(timeNano)
 
-                    holder.binding.strTime = strTime
+                    holder.binding.stopwatchCurTime.text = strTime
+                    stopWatchesList[position].timeStr = strTime
                     Log.d("zaq1 – holder", "val: ${holder.binding.stopwatchCurTime.text}")
                 } else {
                     // no counting
@@ -107,7 +108,6 @@ class StopWatchesListAdapter(
     override fun getItemCount(): Int = stopWatchesList.size
 
     override fun onMoreClicked(view: View) {
-        Toast.makeText(view.context, "MORE", Toast.LENGTH_SHORT).show()
 
         val uuidString =
             ((view.parent as View).findViewById<View>(R.id.stopwatch_uuid) as TextView)
@@ -118,7 +118,7 @@ class StopWatchesListAdapter(
     }
 
     override fun onPlayPauseClicked(view: View) {
-        Toast.makeText(view.context, "PLAY / PAUSE", Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, "PLAY / PAUSE CLICKED", Toast.LENGTH_SHORT).show()
 
         val stopWatchListViewModel: StopWatchesListViewModel =
             StopWatchesListViewModel(application = Application())
@@ -134,12 +134,10 @@ class StopWatchesListAdapter(
         val position: Int =
             (itemView.findViewById<View>(R.id.stopwatch_position) as TextView)
                 .text.toString().toInt()
-        Log.d("zaq1", "uuid: $uuid")
-        Log.d("zaq1", "position: $position")
 
         if (stopWatchesList[position].stopWatchIsCounting == true) {
             // is counting / go pause
-            Log.d("zaq1", "is counting")
+            Toast.makeText(view.context, "PLAY -> PAUSE ", Toast.LENGTH_SHORT).show()
             stopwatchControlsPlay.visibility = View.GONE
             stopwatchControlsPause.visibility = View.VISIBLE
 
@@ -152,7 +150,7 @@ class StopWatchesListAdapter(
             stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
         } else {
             // is pause / go counting
-            Log.d("zaq1", "isn't counting")
+            Toast.makeText(view.context, "PAUSE -> PLAY ", Toast.LENGTH_SHORT).show()
             stopwatchControlsPlay.visibility = View.VISIBLE
             stopwatchControlsPause.visibility = View.GONE
 

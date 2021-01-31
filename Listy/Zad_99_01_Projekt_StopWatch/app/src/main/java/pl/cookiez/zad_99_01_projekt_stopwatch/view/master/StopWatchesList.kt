@@ -1,7 +1,6 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.master
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,6 +49,7 @@ class StopWatchesList : Fragment() {
                 null,
                 System.nanoTime(),
                 0L,
+                "00:00",
                 true
             )
             viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
