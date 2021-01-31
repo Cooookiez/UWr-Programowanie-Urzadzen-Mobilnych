@@ -19,6 +19,7 @@ class StopWatchDetail : Fragment() {
     private var _binding: FragmentStopWatchDetailBinding? = null
     private val binding get() = _binding!!
     private var stopWatchUUID = 0L
+    private var position = 0L
     private val viewModel: StopWatchDetailViewModel by viewModels()
 
     override fun onCreateView(
@@ -35,6 +36,7 @@ class StopWatchDetail : Fragment() {
             stopWatchUUID = StopWatchDetailArgs.fromBundle(it!!).stopwatchUUID
             Log.d("zaq1 – Detail", "uuid: $stopWatchUUID")
         }
+        position = stopWatchUUID-1
         viewModel.fetch(stopWatchUUID)
         observeViewModel()
         binding.stopwatchTitle.addTextChangedListener(object : TextWatcher {
@@ -48,6 +50,11 @@ class StopWatchDetail : Fragment() {
 
             override fun afterTextChanged(s: Editable?) {
                 //TODO("Not yet implemented")
+                val stopWatch = binding.stopwatch
+                Log.d("zaq1", "title: ${stopWatch?.title}")
+                stopWatch?.title = s.toString()
+                Log.d("zaq1", "title: ${stopWatch?.title}")
+                viewModel.updateStopWatch(stopWatch!!)
             }
 
         })

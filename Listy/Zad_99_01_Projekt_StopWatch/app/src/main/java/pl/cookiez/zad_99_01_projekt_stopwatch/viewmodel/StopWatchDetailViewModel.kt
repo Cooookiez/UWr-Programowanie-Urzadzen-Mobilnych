@@ -13,6 +13,8 @@ import kotlin.coroutines.CoroutineContext
 
 class StopWatchDetailViewModel(application: Application) : AndroidViewModel(application), CoroutineScope {
 
+    private var stopWatchRoom = StopWatchRoom(getApplication()).stopWatchDAO()
+
     val stopWatch = MutableLiveData<StopWatch>()
 
     private val job by lazy { Job() }
@@ -25,6 +27,20 @@ class StopWatchDetailViewModel(application: Application) : AndroidViewModel(appl
             val stopWatchElement = StopWatchRoom(getApplication())
                 .stopWatchDAO().getStopWatch(uuid)
             stopWatch.value = stopWatchElement
+        }
+    }
+
+    fun updateStopWatch(stopWatch: StopWatch) {
+        launch {
+            stopWatchRoom.updateStopWatch(
+                stopWatch.uuid.toString(),
+                stopWatch.title as String,
+                stopWatch.backgroundColor as String,
+                stopWatch.backgroundUrl as String,
+                stopWatch.timeStart as Long,
+                stopWatch.timeSavedFromPreviousCounting as Long,
+                stopWatch.stopWatchIsCounting as Boolean
+            )
         }
     }
 
