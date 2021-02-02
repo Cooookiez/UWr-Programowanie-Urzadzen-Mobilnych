@@ -1,8 +1,11 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.util
 
-import android.util.Log
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import androidx.core.graphics.blue
+import androidx.core.graphics.green
+import androidx.core.graphics.red
 
 
 var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
@@ -10,7 +13,6 @@ var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
 fun nanoTime2strTimeHMS(timeNano: Long): String {
     // count s, m, h from time_nano
     var time: Long = timeNano / 1000_000_000
-    Log.d("zaq1", "time = $time")
     val s: Long = time - (time / 60) * 60L
     time = (time - s) / 60
     val m: Long = time - (time / 60) * 60L
@@ -23,4 +25,16 @@ fun nanoTime2strTimeHMS(timeNano: Long): String {
     val timeStr = if (h > 0) "$h:$mStr:$sStr" else "$mStr:$sStr"
 
     return timeStr
+}
+
+fun backgroundColor2hex(background: ColorDrawable): String {
+    val r = background.color.red.toString(16)
+    val g = background.color.green.toString(16)
+    val b = background.color.blue.toString(16)
+    return "#$r$g$b"
+}
+
+fun hex2background(hex: String): Drawable {
+    val color = Color.parseColor(hex)
+    return ColorDrawable(color)
 }

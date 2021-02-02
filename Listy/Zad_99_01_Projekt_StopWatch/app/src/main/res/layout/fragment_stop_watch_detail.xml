@@ -11,6 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.detail.StopWatchDetail">
@@ -133,7 +134,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:id="@+id/color_cancel"
+                android:id="@+id/color_clear"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"

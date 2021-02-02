@@ -1,5 +1,8 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,14 +13,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.graphics.alpha
+import androidx.core.graphics.blue
+import androidx.core.graphics.green
+import androidx.core.graphics.red
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchDetailBinding
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.backgroundColor2hex
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.hex2background
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
 import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListAdapter
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchDetailViewModel
+import kotlin.math.log
 
 
 class StopWatchDetail : Fragment() {
@@ -83,22 +93,61 @@ class StopWatchDetail : Fragment() {
             }
         })
         // play
-        binding.stopwatchControlsPlay.setOnClickListener(View.OnClickListener { play() })
+        binding.stopwatchControlsPlay.setOnClickListener { play() }
         // pause
-        binding.stopwatchControlsPause.setOnClickListener(View.OnClickListener { pause() })
+        binding.stopwatchControlsPause.setOnClickListener { pause() }
         // reset (stop)
-        binding.stopwatchControlsStop.setOnClickListener(View.OnClickListener { stop() })
+        binding.stopwatchControlsStop.setOnClickListener { stop() }
         // delete
-        binding.stopwatchControlsDelete.setOnClickListener(View.OnClickListener {
+        binding.stopwatchControlsDelete.setOnClickListener {
             viewModel.deleteStopWatch(binding.stopwatch!!)
             handling = false
             adapter.notifyDataSetChanged()
             val action = StopWatchDetailDirections
                 .actionStopWatchDetailToStopWatchesList()
             Navigation.findNavController(view).navigate(action)
-        })
+        }
+        // change colors
+        // clear color
+        binding.colorClear.setOnClickListener {
+            if (binding.stopwatch != null){
+                binding.stopwatch!!.backgroundColor = null
+                binding.stopwatch!!.backgroundUrl = null
+                viewModel.updateStopWatch(binding.stopwatch!!)
+                changeColorOfBg()
+                adapter.notifyDataSetChanged()
+            }
+        }
+        // change color
+        binding.colorRed.setOnClickListener { changeColorToDb(it.background) }
+        binding.colorGreen.setOnClickListener { changeColorToDb(it.background) }
+        binding.colorYellow.setOnClickListener { changeColorToDb(it.background) }
+        binding.colorBlue.setOnClickListener { changeColorToDb(it.background) }
+        binding.colorPhoto.setOnClickListener {
+            Toast
+                .makeText(context, "Not implemented yet", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
+    private fun changeColorToDb(background: Drawable) {
+        if (background is ColorDrawable && binding.stopwatch != null) {
+            val str = backgroundColor2hex(background)
+            binding.stopwatch!!.backgroundColor = str
+            viewModel.updateStopWatch(binding.stopwatch!!)
+            changeColorOfBg()
+            adapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun changeColorOfBg() {
+        if (binding.stopwatch?.backgroundColor != null) {
+            val background = hex2background(binding.stopwatch!!.backgroundColor!!)
+            binding.constraintLayoutMain.background = background
+        } else if (binding.stopwatch != null) {
+            binding.constraintLayoutMain.background = ColorDrawable(Color.TRANSPARENT)
+        }
+    }
 
     private fun tickTime(tickDelay: Long = 1000) {
         if (handling) {
@@ -179,6 +228,7 @@ class StopWatchDetail : Fragment() {
         handling = false
         handlingStarted = false
     }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
