@@ -49,7 +49,7 @@ class StopWatchDetail : Fragment() {
         return binding.root
     }
 
-    // show play or pause&stop
+    // show play or pause&stop on start
     private fun showCorrectUi(repeatCount: Int = 50, delay: Long = 100) {
         Log.d("zaq1", "stopWatchIsCounting: ${viewModel.stopWatch.value?.stopWatchIsCounting}")
         if (repeatCount >= 0 && viewModel.stopWatch.value?.stopWatchIsCounting == null) {
@@ -58,6 +58,7 @@ class StopWatchDetail : Fragment() {
         } else if (repeatCount < 0) {
             // timeout
         } else {
+            changeColorOfBg()
             if (viewModel.stopWatch.value!!.stopWatchIsCounting == true) {
                 visibilityPlay()
             } else {

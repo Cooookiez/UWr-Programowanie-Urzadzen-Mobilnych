@@ -3,9 +3,12 @@ package pl.cookiez.zad_99_01_projekt_stopwatch.util
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.widget.LinearLayout
 import androidx.core.graphics.blue
 import androidx.core.graphics.green
 import androidx.core.graphics.red
+import androidx.databinding.BindingAdapter
+import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 
 
 var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
@@ -38,3 +41,10 @@ fun hex2background(hex: String): Drawable {
     val color = Color.parseColor(hex)
     return ColorDrawable(color)
 }
+
+//@BindingAdapter("image_bg")
+//fun loadBg(view: LinearLayout, stopWatch: StopWatch?) {
+//    if (stopWatch != null) {
+//        view.background = hex2background("#ff00ff")
+//    }
+//}

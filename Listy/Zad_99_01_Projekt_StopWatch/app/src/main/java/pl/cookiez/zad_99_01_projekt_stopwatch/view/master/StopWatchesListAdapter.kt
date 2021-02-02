@@ -1,8 +1,6 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.master
 
 import android.app.Application
-import android.media.Image
-import android.opengl.Visibility
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -10,20 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.contentValuesOf
-import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import pl.cookiez.zad_99_01_projekt_stopwatch.R
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.StopWatchesListSingleItemBinding
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
-import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchDAO
-import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchRoom
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.hex2background
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchesListViewModel
-import kotlin.coroutines.coroutineContext
 
 class StopWatchesListAdapter(
     private val stopWatchesList: ArrayList<StopWatch>
@@ -61,14 +56,31 @@ class StopWatchesListAdapter(
     ) {
         holder.binding.stopwatch = stopWatchesList[position]
         holder.binding.listener = this
-        holder.binding.strTime = "99:99 - $position"
         holder.binding.stopwatchControlsPlay.visibility =
             if (stopWatchesList[position].stopWatchIsCounting == true) View.GONE else View.VISIBLE
         holder.binding.stopwatchControlsPause.visibility =
             if (stopWatchesList[position].stopWatchIsCounting == true) View.VISIBLE else View.GONE
 
         handling = true
+        setBg(holder, position)
         tickTime(holder, position)
+    }
+
+    private fun setBg(holder: StopWatchViewHolder, position: Int) {
+        if (holder.binding.stopwatch?.backgroundColor != null) {
+            setBgColor(holder, position)
+        } else if (holder.binding.stopwatch?.backgroundUrl != null) {
+            setBgImg(holder, position)
+        }
+    }
+
+    private fun setBgColor(holder: StopWatchViewHolder, position: Int) {
+        val hex = holder.binding.stopwatch?.backgroundColor
+        holder.binding.layoutStopwatchListSingleItem?.background = hex2background(hex!!)
+    }
+
+    private fun setBgImg(holder: StopWatchViewHolder, position: Int) {
+        Log.d("zaq1", "Not implemented yet")
     }
 
     private fun tickTime(
