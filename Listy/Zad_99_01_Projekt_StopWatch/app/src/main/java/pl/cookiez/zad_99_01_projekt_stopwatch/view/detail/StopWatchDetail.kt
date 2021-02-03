@@ -1,5 +1,6 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
+import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
@@ -101,12 +102,19 @@ class StopWatchDetail : Fragment() {
         binding.stopwatchControlsStop.setOnClickListener { stop() }
         // delete
         binding.stopwatchControlsDelete.setOnClickListener {
-            viewModel.deleteStopWatch(binding.stopwatch!!)
-            handling = false
-            adapter.notifyDataSetChanged()
-            val action = StopWatchDetailDirections
-                .actionStopWatchDetailToStopWatchesList()
-            Navigation.findNavController(view).navigate(action)
+            AlertDialog.Builder(context)
+                    .setTitle("Are you sure?")
+                    .setMessage("After deleting stopwatch, there is no way to get it back.")
+                    .setPositiveButton("Delete after all") { _, _ ->
+                        viewModel.deleteStopWatch(binding.stopwatch!!)
+                        handling = false
+                        adapter.notifyDataSetChanged()
+                        val action = StopWatchDetailDirections
+                            .actionStopWatchDetailToStopWatchesList()
+                        Navigation.findNavController(view).navigate(action)
+                    }
+                    .setNegativeButton("Cancel") { _, _ -> }
+                    .show()
         }
         // change colors
         // clear color
