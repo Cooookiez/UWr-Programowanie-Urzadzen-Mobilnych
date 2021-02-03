@@ -61,9 +61,10 @@ class StopWatchesList : Fragment() {
                 autoCount
             )
             viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
-            viewModel.stopWatchesList.value?.let { adapter.updateList(it) }
-            viewModel.stopWatchesList.value?.let { viewModel.insertToLocal(it) }
+            adapter.updateList(viewModel.stopWatchesList.value!!)
+            viewModel.insertToLocal(viewModel.stopWatchesList.value!!)
             adapter.notifyDataSetChanged()
+            viewModel.refresh()
         }
         // load color
     }

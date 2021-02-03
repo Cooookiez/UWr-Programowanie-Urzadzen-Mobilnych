@@ -150,11 +150,16 @@ class StopWatchDetail : Fragment() {
     }
 
     private fun changeColorOfBg() {
-        if (binding.stopwatch?.backgroundColor != null) {
-            val background = hex2background(binding.stopwatch!!.backgroundColor!!)
-            binding.constraintLayoutMain.background = background
-        } else if (binding.stopwatch != null) {
-            binding.constraintLayoutMain.background = ColorDrawable(Color.TRANSPARENT)
+        if (binding.stopwatch != null) {
+            // TODO: 2/3/21 sprawdzić czy jak zamienie na "when" to dalej bedzie zachowana funkcjonalnosc else if
+            val bg = if (binding.stopwatch!!.backgroundUrl != null) {
+                ColorDrawable(Color.TRANSPARENT)
+            } else if (binding.stopwatch!!.backgroundColor != null) {
+                hex2background(binding.stopwatch!!.backgroundColor!!)
+            } else {
+                ColorDrawable(Color.TRANSPARENT)
+            }
+            binding.constraintLayoutMain.background = bg
         }
     }
 
