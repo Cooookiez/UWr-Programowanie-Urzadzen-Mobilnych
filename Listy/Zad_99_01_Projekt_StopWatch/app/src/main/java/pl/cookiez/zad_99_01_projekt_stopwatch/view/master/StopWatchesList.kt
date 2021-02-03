@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import pl.cookiez.zad_99_01_projekt_stopwatch.R
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchesListBinding
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.SharedPreferencesHelper
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.autoCount
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.hex2background
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchesListViewModel
 
@@ -26,7 +28,6 @@ class StopWatchesList : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: StopWatchesListViewModel by viewModels()
     private val adapter: StopWatchesListAdapter = StopWatchesListAdapter(arrayListOf())
-    private var colorOrImageLoaded = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +48,7 @@ class StopWatchesList : Fragment() {
         }
         // add Stopwatch
         binding.stopwatchAddNew.setOnClickListener {
+            viewModel.checkAutoCount()
             val newStopwatch = StopWatch(
                 null,
                 viewModel.stopWatchesList.value!!.size,
@@ -56,7 +58,7 @@ class StopWatchesList : Fragment() {
                 System.nanoTime(),
                 0L,
                 "00:00",
-                true
+                autoCount
             )
             viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
             viewModel.stopWatchesList.value?.let { adapter.updateList(it) }
@@ -64,27 +66,6 @@ class StopWatchesList : Fragment() {
             adapter.notifyDataSetChanged()
         }
         // load color
-    }
-
-    private fun waitForViewToLoad(view: View, repeatCount: Int = 50, delay: Long = 100) {
-        when {
-            repeatCount >= 0 -> {
-                Handler(Looper.getMainLooper())
-                        .postDelayed({ waitForViewToLoad(view, repeatCount - 1, delay) }, delay)
-            }
-            repeatCount < 0 -> {
-                // timeout
-            }
-            else -> {
-//                setBg()
-                // TODO: 2/2/21 zmienić by było w odpowiednich funkcjach
-                colorOrImageLoaded = true
-//                view.background = Drawable(Color.parseColor("#ff00ff"))
-//                val layoutMain =
-//                        view.findViewById<LinearLayout>(R.id.layout_stopwatch_list_single_item)
-//                layoutMain.background = hex2background("#ff00ff")
-            }
-        }
     }
 
     override fun onPause() {

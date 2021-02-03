@@ -10,6 +10,8 @@ class SharedPreferencesHelper {
     companion object {
 
         private const val PREF_TIME = "pref_time"
+        private const val PREF_AUTO_PLAY = "pref_auto_play"
+
         private var sharedPreferences: SharedPreferences? = null
         @Volatile private var instance: SharedPreferencesHelper? = null
         private val LOCK = Any()
@@ -29,5 +31,7 @@ class SharedPreferencesHelper {
     }
 
     fun getStoredNotifyTime() = sharedPreferences?.getString("notify_after_m", "30")
+
+    fun getAutoPlay() = sharedPreferences?.getBoolean("auto_play", true)
 
 }

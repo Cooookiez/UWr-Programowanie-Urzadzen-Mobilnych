@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchRoom
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.SharedPreferencesHelper
+import pl.cookiez.zad_99_01_projekt_stopwatch.util.autoCount
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.notifyTime
 import java.lang.NumberFormatException
 import kotlin.coroutines.CoroutineContext
@@ -34,6 +35,15 @@ class StopWatchesListViewModel(application: Application)
         try {
             val time: Int = storedNotifyTime?.toInt() ?: 30
             notifyTime = time.toLong() * 60 * 1000 * 1000 * 1000L
+        } catch (e: NumberFormatException) {
+            e.printStackTrace()
+        }
+    }
+
+    fun checkAutoCount() {
+        val storedAutoCount = preferencesHelper.getAutoPlay()
+        try {
+            autoCount = storedAutoCount ?: true
         } catch (e: NumberFormatException) {
             e.printStackTrace()
         }

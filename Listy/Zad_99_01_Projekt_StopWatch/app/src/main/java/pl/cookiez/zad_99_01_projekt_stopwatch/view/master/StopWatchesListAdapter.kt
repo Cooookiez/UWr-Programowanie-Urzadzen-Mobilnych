@@ -76,7 +76,7 @@ class StopWatchesListAdapter(
 
     private fun setBgColor(holder: StopWatchViewHolder, position: Int) {
         val hex = holder.binding.stopwatch?.backgroundColor
-        holder.binding.layoutStopwatchListSingleItem?.background = hex2background(hex!!)
+        holder.binding.layoutStopwatchListSingleItem.background = hex2background(hex!!)
     }
 
     private fun setBgImg(holder: StopWatchViewHolder, position: Int) {
@@ -87,6 +87,10 @@ class StopWatchesListAdapter(
         holder: StopWatchesListAdapter.StopWatchViewHolder,
         position: Int,
         tickDelay: Long = 1000) {
+
+        val stopWatchListViewModel: StopWatchesListViewModel =
+                StopWatchesListViewModel(application = Application())
+
         if (handling) {
             Handler(Looper.getMainLooper())
                 .postDelayed({ tickTime(holder, position, tickDelay) }, tickDelay)
@@ -103,7 +107,9 @@ class StopWatchesListAdapter(
                     val strTime = nanoTime2strTimeHMS(timeNano)
 
                     holder.binding.stopwatchCurTime.text = strTime
+                    // update str time to db
                     stopWatchesList[position].timeStr = strTime
+                    stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
                 } else {
                     // no counting
                     holder.binding.stopwatchControlsPlay.visibility = View.VISIBLE

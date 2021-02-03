@@ -12,6 +12,7 @@ import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 
 
 var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
+var autoCount: Boolean = true
 
 fun nanoTime2strTimeHMS(timeNano: Long): String {
     // count s, m, h from time_nano
