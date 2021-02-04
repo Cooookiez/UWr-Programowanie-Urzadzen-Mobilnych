@@ -1,12 +1,22 @@
 package pl.cookiez.zad_99_01_projekt_stopwatch.view.detail
 
+import android.Manifest
+import android.app.Activity
 import android.app.AlertDialog
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.ContextWrapper
+import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.MediaStore
+import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -21,6 +31,12 @@ import androidx.core.graphics.red
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import pl.cookiez.zad_99_01_projekt_stopwatch.databinding.FragmentStopWatchDetailBinding
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.backgroundColor2hex
@@ -28,10 +44,20 @@ import pl.cookiez.zad_99_01_projekt_stopwatch.util.hex2background
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
 import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListAdapter
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchDetailViewModel
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
 import kotlin.math.log
 
 
 class StopWatchDetail : Fragment() {
+
+    companion object {
+        private val REQUEST_CAMERA = 0
+        private val REQUEST_GALLERY = 1
+    }
 
     private var _binding: FragmentStopWatchDetailBinding? = null
     private val binding get() = _binding!!
@@ -132,11 +158,104 @@ class StopWatchDetail : Fragment() {
         binding.colorGreen.setOnClickListener { changeColorToDb(it.background) }
         binding.colorYellow.setOnClickListener { changeColorToDb(it.background) }
         binding.colorBlue.setOnClickListener { changeColorToDb(it.background) }
-        binding.colorPhoto.setOnClickListener {
+        binding.colorPicker.setOnClickListener {
             Toast
-                .makeText(context, "Not implemented yet", Toast.LENGTH_SHORT)
+                .makeText(context, "Not yet implemented", Toast.LENGTH_SHORT)
                 .show()
         }
+        binding.colorPhoto.setOnClickListener {
+            val actions = arrayOf("Camera", "Gallery")
+            AlertDialog.Builder(context)
+                .setTitle("Select source of image")
+                .setItems(actions) {_, which ->
+                    when(which) {
+                        0 -> getImageFromCamera()
+                        1 -> getImageFromGallery()
+                    }
+                }
+                .show()
+        }
+    }
+
+    private fun getImageFromCamera() {
+        Dexter.withContext(context).withPermission(Manifest.permission.CAMERA)
+            .withListener(object : PermissionListener {
+                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                    Log.d("zaq1", "p0: $p0")
+                    Log.d("zaq1", "Cam Start")
+                    val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                    Log.d("zaq1", "Cam Mid")
+                    parentFragment!!.startActivityForResult(intent, REQUEST_CAMERA)
+                    Log.d("zaq1", "Cam End")
+                }
+
+                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                    Toast.makeText(
+                        context,
+                        "Permission denied",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onPermissionRationaleShouldBeShown(
+                    p0: PermissionRequest?,
+                    p1: PermissionToken?
+                ) {
+                    showRational()
+                }
+
+            }).onSameThread().check()
+    }
+
+    private fun getImageFromGallery() {
+        Dexter.withContext(context).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+            .withListener(object: PermissionListener {
+                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                    Log.d("zaq1", "p0: $p0")
+                    Log.d("zaq1", "Gal Start")
+                    val intent: Intent = Intent(
+                            Intent.ACTION_PICK,
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    )
+                    Log.d("zaq1", "Gal Mid")
+                    parentFragment!!.startActivityForResult(intent, REQUEST_GALLERY)
+                    Log.d("zaq1", "Gal End")
+                }
+
+                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                    Toast.makeText(
+                            context,
+                            "Permission denied",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onPermissionRationaleShouldBeShown(p0: PermissionRequest?, p1: PermissionToken?) {
+                    showRational()
+                }
+
+            }).onSameThread().check()
+    }
+
+    private fun showRational() {
+        AlertDialog.Builder(context)
+            .setTitle("Permissions required")
+            .setMessage("Camera permission was already denied. Go to settings and turn it on manually.")
+            .setPositiveButton("Go to settings") { _, _ ->
+                try {
+                    val intent: Intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                    val uri: Uri =
+                            Uri.fromParts("package", context?.packageName, null)
+                    intent.data = uri
+                    parentFragment?.startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
+            .setNegativeButton("Cancel") { _, _ ->
+
+            }
+            .show()
     }
 
     private fun changeColorToDb(background: Drawable) {
@@ -235,6 +354,45 @@ class StopWatchDetail : Fragment() {
                 binding.stopwatch = stopWatch
             }
         })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.d("zaq1", "onActivityResult")
+        Log.d("zaq1", "requestCode: $requestCode")
+        Log.d("zaq1", "resultCode: $resultCode")
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                REQUEST_CAMERA -> {
+                    Log.d("zaq1", "REQUEST_CAMERA ->")
+                    if (binding.stopwatch != null) {
+                        val image: Bitmap = data?.extras?.get("data") as Bitmap
+                        val imagePath = saveImage(image)
+                        binding.stopwatch!!.backgroundUrl = imagePath
+                        viewModel.updateStopWatch(binding.stopwatch!!)
+                        adapter.notifyItemChanged(binding.stopwatch!!.position!!)
+                    }
+                }
+                REQUEST_GALLERY -> {
+
+                }
+            }
+        }
+    }
+
+    private fun saveImage(image: Bitmap): String {
+        val wrapper: ContextWrapper = ContextWrapper(context)
+        var file: File = wrapper.getDir("myGallery", Context.MODE_PRIVATE)
+        file = File(file, "${UUID.randomUUID()}.jpg")
+        try {
+            val stream: OutputStream = FileOutputStream(file)
+            image.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            stream.flush()
+            stream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return Uri.parse(file.absolutePath).toString()
     }
 
     override fun onPause() {

@@ -29,6 +29,8 @@ class StopWatchesList : Fragment() {
     private val viewModel: StopWatchesListViewModel by viewModels()
     private val adapter: StopWatchesListAdapter = StopWatchesListAdapter(arrayListOf())
 
+    private var isAdding = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,23 +50,27 @@ class StopWatchesList : Fragment() {
         }
         // add Stopwatch
         binding.stopwatchAddNew.setOnClickListener {
-            viewModel.checkAutoCount()
-            val newStopwatch = StopWatch(
-                null,
-                viewModel.stopWatchesList.value!!.size,
-                null,
-                null,
-                null,
-                System.nanoTime(),
-                0L,
-                "00:00",
-                autoCount
-            )
-            viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
-            adapter.updateList(viewModel.stopWatchesList.value!!)
-            viewModel.insertToLocal(viewModel.stopWatchesList.value!!)
-            adapter.notifyDataSetChanged()
-            viewModel.refresh()
+            if (!isAdding) {
+                isAdding = true
+                viewModel.checkAutoCount()
+                val newStopwatch = StopWatch(
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        System.nanoTime(),
+                        0L,
+                        "00:00",
+                        autoCount
+                )
+                viewModel.stopWatchesList.value = viewModel.stopWatchesList.value?.plus(newStopwatch)
+                adapter.updateList(viewModel.stopWatchesList.value!!)
+                adapter.notifyDataSetChanged()
+                viewModel.insertToLocal(viewModel.stopWatchesList.value!!)
+                viewModel.refresh()
+                isAdding = false
+            }
         }
         // load color
     }

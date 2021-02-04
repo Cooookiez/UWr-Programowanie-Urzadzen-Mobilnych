@@ -122,7 +122,6 @@ class StopWatchesListAdapter(
     override fun getItemCount(): Int = stopWatchesList.size
 
     override fun onMoreClicked(view: View) {
-
         val uuidString =
             ((view.parent as View).findViewById<View>(R.id.stopwatch_uuid) as TextView)
             .text.toString()
@@ -132,8 +131,6 @@ class StopWatchesListAdapter(
     }
 
     override fun onPlayPauseClicked(view: View) {
-        Toast.makeText(view.context, "PLAY / PAUSE CLICKED", Toast.LENGTH_SHORT).show()
-
         val stopWatchListViewModel: StopWatchesListViewModel =
             StopWatchesListViewModel(application = Application())
 

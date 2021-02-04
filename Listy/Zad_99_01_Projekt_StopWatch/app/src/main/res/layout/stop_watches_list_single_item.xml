@@ -83,6 +83,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+                android:background="?android:selectableItemBackground"
                 android:contentDescription="@string/control_play" />
 
             <ImageButton
@@ -91,13 +92,13 @@
                 android:layout_height="match_parent"
                 android:minWidth="80dp"
                 android:scaleType="fitCenter"
-                android:tint="#006400"
                 android:onClick="@{listener::onPlayPauseClicked}"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_pause_24"
+                android:background="?android:selectableItemBackground"
                 android:contentDescription="@string/control_pause" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -109,8 +110,8 @@
             android:minWidth="50dp"
             android:scaleType="fitCenter"
             android:onClick="@{listener::onMoreClicked}"
-            android:background="?android:selectableItemBackground"
             app:srcCompat="@drawable/ic_baseline_more_vert_24"
+            android:background="?android:selectableItemBackground"
             android:contentDescription="@string/controls_more" />
 
     </LinearLayout>
