@@ -9,6 +9,8 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -24,10 +26,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.graphics.alpha
-import androidx.core.graphics.blue
-import androidx.core.graphics.green
-import androidx.core.graphics.red
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -44,6 +42,7 @@ import pl.cookiez.zad_99_01_projekt_stopwatch.util.hex2background
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.nanoTime2strTimeHMS
 import pl.cookiez.zad_99_01_projekt_stopwatch.view.master.StopWatchesListAdapter
 import pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel.StopWatchDetailViewModel
+import top.defaults.colorpicker.ColorPickerPopup
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -55,8 +54,8 @@ import kotlin.math.log
 class StopWatchDetail : Fragment() {
 
     companion object {
-        private val REQUEST_CAMERA = 0
-        private val REQUEST_GALLERY = 1
+        private const val REQUEST_CAMERA = 0
+        private const val REQUEST_GALLERY = 1
     }
 
     private var _binding: FragmentStopWatchDetailBinding? = null
@@ -71,7 +70,7 @@ class StopWatchDetail : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentStopWatchDetailBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -159,9 +158,33 @@ class StopWatchDetail : Fragment() {
         binding.colorYellow.setOnClickListener { changeColorToDb(it.background) }
         binding.colorBlue.setOnClickListener { changeColorToDb(it.background) }
         binding.colorPicker.setOnClickListener {
-            Toast
-                .makeText(context, "Not yet implemented", Toast.LENGTH_SHORT)
-                .show()
+            var defaultColor = Color.RED
+            if (viewModel.stopWatch.value?.backgroundColor != null) {
+                val defaultColorHex = viewModel.stopWatch.value!!.backgroundColor!!
+                val defaultColorColorDrawable = hex2background(defaultColorHex) as ColorDrawable
+                defaultColor = defaultColorColorDrawable.color
+            }
+            ColorPickerPopup.Builder(context)
+                .initialColor(defaultColor)
+                .enableBrightness(true)
+                .enableAlpha(false)
+                .okTitle("Ok")
+                .cancelTitle("Cancel")
+                .showIndicator(true)
+                .showValue(false)
+                .build()
+                .show(
+                    parentFragment?.view,
+                    object: ColorPickerPopup.ColorPickerObserver() {
+                        override fun onColorPicked(color: Int) {
+                            val hex = backgroundColor2hex(ColorDrawable(color))
+                            binding.stopwatch!!.backgroundColor = hex
+                            Log.d("zaq1", "hex: $hex")
+                            viewModel.updateStopWatch(binding.stopwatch!!)
+                            changeColorOfBg()
+                        }
+                    }
+                )
         }
         binding.colorPhoto.setOnClickListener {
             val actions = arrayOf("Camera", "Gallery")
@@ -271,12 +294,15 @@ class StopWatchDetail : Fragment() {
     private fun changeColorOfBg() {
         if (binding.stopwatch != null) {
             // TODO: 2/3/21 sprawdzić czy jak zamienie na "when" to dalej bedzie zachowana funkcjonalnosc else if
-            val bg = if (binding.stopwatch!!.backgroundUrl != null) {
-                ColorDrawable(Color.TRANSPARENT)
+            var bg = ColorDrawable(Color.TRANSPARENT)
+
+            if (binding.stopwatch!!.backgroundUrl != null) {
+                bg = ColorDrawable(Color.TRANSPARENT)
             } else if (binding.stopwatch!!.backgroundColor != null) {
-                hex2background(binding.stopwatch!!.backgroundColor!!)
-            } else {
-                ColorDrawable(Color.TRANSPARENT)
+                bg = hex2background(binding.stopwatch!!.backgroundColor!!) as ColorDrawable
+                Log.d("zaq1", "ColorFilter: ${bg.color}")
+                val filter = PorterDuffColorFilter(bg.color, PorterDuff.Mode.MULTIPLY)
+                binding.colorPicker.colorFilter = filter
             }
             binding.constraintLayoutMain.background = bg
         }

@@ -28,9 +28,12 @@ fun nanoTime2strTimeHMS(timeNano: Long): String {
 }
 
 fun backgroundColor2hex(background: ColorDrawable): String {
-    val r = background.color.red.toString(16)
-    val g = background.color.green.toString(16)
-    val b = background.color.blue.toString(16)
+    var r = background.color.red.toString(16)
+    var g = background.color.green.toString(16)
+    var b = background.color.blue.toString(16)
+    if (r.length == 1) r = "0$r"
+    if (g.length == 1) g = "0$g"
+    if (b.length == 1) b = "0$b"
     return "#$r$g$b"
 }
 
