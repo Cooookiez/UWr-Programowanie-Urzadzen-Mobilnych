@@ -8,7 +8,6 @@ import androidx.core.graphics.green
 import androidx.core.graphics.red
 
 
-var notifyTime: Long = 30 * 60 * 1000 * 1000 * 1000L // m * s * ms * us * ns
 var autoCount: Boolean = true
 
 fun nanoTime2strTimeHMS(timeNano: Long): String {
@@ -41,10 +40,3 @@ fun hex2background(hex: String): Drawable {
     val color = Color.parseColor(hex)
     return ColorDrawable(color)
 }
-
-//@BindingAdapter("image_bg")
-//fun loadBg(view: LinearLayout, stopWatch: StopWatch?) {
-//    if (stopWatch != null) {
-//        view.background = hex2background("#ff00ff")
-//    }
-//}

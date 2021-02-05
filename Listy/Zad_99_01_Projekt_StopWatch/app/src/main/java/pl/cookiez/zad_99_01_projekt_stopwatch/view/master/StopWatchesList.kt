@@ -82,6 +82,13 @@ class StopWatchesList : Fragment() {
         adapter.handlingStarted = false
     }
 
+    override fun onResume() {
+        super.onResume()
+        adapter.handling = true
+        adapter.handlingStarted = true
+        viewModel.refresh()
+    }
+
     private fun observeViewModel() {
         viewModel.stopWatchesList.observe(viewLifecycleOwner, { stopWatchesList ->
             stopWatchesList.let {
@@ -94,6 +101,8 @@ class StopWatchesList : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        adapter.handling = false
+        adapter.handlingStarted = false
     }
 
 }

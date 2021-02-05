@@ -3,7 +3,6 @@ package pl.cookiez.zad_99_01_projekt_stopwatch.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import io.reactivex.rxjava3.disposables.CompositeDisposable
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -12,7 +11,6 @@ import pl.cookiez.zad_99_01_projekt_stopwatch.model.StopWatch
 import pl.cookiez.zad_99_01_projekt_stopwatch.model.local.StopWatchRoom
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.SharedPreferencesHelper
 import pl.cookiez.zad_99_01_projekt_stopwatch.util.autoCount
-import pl.cookiez.zad_99_01_projekt_stopwatch.util.notifyTime
 import java.lang.NumberFormatException
 import kotlin.coroutines.CoroutineContext
 
@@ -23,22 +21,11 @@ class StopWatchesListViewModel(application: Application)
 
     private var preferencesHelper = SharedPreferencesHelper(getApplication())
     private var stopWatchRoom = StopWatchRoom(getApplication()).stopWatchDAO()
-    private var disposable = CompositeDisposable()
 
     private val job by lazy { Job() }
 
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
-
-    fun checkStoredNotifyTime() {
-        val storedNotifyTime = preferencesHelper.getStoredNotifyTime()
-        try {
-            val time: Int = storedNotifyTime?.toInt() ?: 30
-            notifyTime = time.toLong() * 60 * 1000 * 1000 * 1000L
-        } catch (e: NumberFormatException) {
-            e.printStackTrace()
-        }
-    }
 
     fun checkAutoCount() {
         val storedAutoCount = preferencesHelper.getAutoPlay()
@@ -64,6 +51,7 @@ class StopWatchesListViewModel(application: Application)
 
     private fun dataRetrieved(stopWatchesList: List<StopWatch>) {
         this.stopWatchesList.value = stopWatchesList
+
     }
 
     fun updateStopWatch(stopWatch: StopWatch) {
@@ -88,7 +76,6 @@ class StopWatchesListViewModel(application: Application)
 
     override fun onCleared() {
         super.onCleared()
-        disposable.clear()
         job.cancel()
     }
 

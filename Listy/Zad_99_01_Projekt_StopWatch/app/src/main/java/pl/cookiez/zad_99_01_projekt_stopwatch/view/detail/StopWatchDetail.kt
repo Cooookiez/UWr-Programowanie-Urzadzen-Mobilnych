@@ -131,12 +131,14 @@ class StopWatchDetail : Fragment() {
                     .setTitle("Are you sure?")
                     .setMessage("After deleting stopwatch, there is no way to get it back.")
                     .setPositiveButton("Delete after all") { _, _ ->
-                        viewModel.deleteStopWatch(binding.stopwatch!!)
-                        handling = false
-                        adapter.notifyDataSetChanged()
-                        val action = StopWatchDetailDirections
-                            .actionStopWatchDetailToStopWatchesList()
-                        Navigation.findNavController(view).navigate(action)
+                        if (binding.stopwatch != null) {
+                            viewModel.deleteStopWatch(binding.stopwatch!!)
+                            handling = false
+                            adapter.notifyDataSetChanged()
+                            Navigation.findNavController(view).popBackStack()
+                        } else {
+                            Toast.makeText(context, "try Again", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     .setNegativeButton("Cancel") { _, _ -> }
                     .show()
@@ -421,15 +423,16 @@ class StopWatchDetail : Fragment() {
         return Uri.parse(file.absolutePath).toString()
     }
 
-    override fun onPause() {
-        super.onPause()
-        handling = false
-        handlingStarted = false
+    override fun onResume() {
+        super.onResume()
+        showCorrectUi()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        handling = false
+        handlingStarted = false
     }
 
 }

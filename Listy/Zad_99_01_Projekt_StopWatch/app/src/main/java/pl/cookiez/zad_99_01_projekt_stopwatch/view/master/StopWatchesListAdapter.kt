@@ -95,25 +95,28 @@ class StopWatchesListAdapter(
             Handler(Looper.getMainLooper())
                 .postDelayed({ tickTime(holder, position, tickDelay) }, tickDelay)
             // on tick this code
-            if (stopWatchesList[position].stopWatchIsCounting == true) {
-                // counting
-                holder.binding.stopwatchControlsPlay.visibility = View.GONE
-                holder.binding.stopwatchControlsPause.visibility = View.VISIBLE
+            if (stopWatchesList.size > position) {
+                if (stopWatchesList[position].stopWatchIsCounting == true) {
+                    // counting
+                    holder.binding.stopwatchControlsPlay.visibility = View.GONE
+                    holder.binding.stopwatchControlsPause.visibility = View.VISIBLE
 
-                val timeNano =
-                    stopWatchesList[position].timeSavedFromPreviousCounting!! +
-                            (System.nanoTime() - stopWatchesList[position].timeStart!!)
-                val strTime = nanoTime2strTimeHMS(timeNano)
+                    val timeNano =
+                        stopWatchesList[position].timeSavedFromPreviousCounting!! +
+                                (System.nanoTime() - stopWatchesList[position].timeStart!!)
+                    val strTime = nanoTime2strTimeHMS(timeNano)
 
-                holder.binding.stopwatchCurTime.text = strTime
-                // update str time to db
-                stopWatchesList[position].timeStr = strTime
-                stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
-            } else {
-                // no counting
-                holder.binding.stopwatchControlsPlay.visibility = View.VISIBLE
-                holder.binding.stopwatchControlsPause.visibility = View.GONE
+                    holder.binding.stopwatchCurTime.text = strTime
+                    // update str time to db
+                    stopWatchesList[position].timeStr = strTime
+                    stopWatchListViewModel.updateStopWatch(stopWatchesList[position])
+                } else {
+                    // no counting
+                    holder.binding.stopwatchControlsPlay.visibility = View.VISIBLE
+                    holder.binding.stopwatchControlsPause.visibility = View.GONE
+                }
             }
+
         }
     }
 
