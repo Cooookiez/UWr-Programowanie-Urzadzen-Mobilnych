@@ -265,7 +265,7 @@ class StopWatchDetail : Fragment() {
     private fun showRational() {
         AlertDialog.Builder(context)
             .setTitle("Permissions required")
-            .setMessage("Camera permission was already denied. Go to settings and turn it on manually.")
+            .setMessage("Permission was already denied. Go to settings and turn it on manually.")
             .setPositiveButton("Go to settings") { _, _ ->
                 try {
                     val intent: Intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
